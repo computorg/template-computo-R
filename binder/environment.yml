@@ -5,6 +5,7 @@ dependencies:
   - numpy
   - matplotlib
   - scikit-learn
+  - seaborn
   - nilearn
   - pandas
   - r-base=4.0.3

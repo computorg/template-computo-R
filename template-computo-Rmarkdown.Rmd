@@ -112,12 +112,12 @@ library("reticulate")
 use_virtualenv("computo-template")
 ```
 
-Firt make sure (here, in `R`) that the required python modules are available
+First make sure (here, in `R`) that the required python modules are available
 
 ```{r install-python-modules, eval=TRUE, results="hide"}
-py_module_available("seaborn") || py_install("seaborn")
-py_module_available("pandas") || py_install("pandas")
-py_module_available("matplotlib") || py_install("matplotlib")
+if (!py_module_available("seaborn")) py_install("seaborn")
+if (!py_module_available("pandas")) py_install("pandas")
+if (!py_module_available("matplotlib")) py_install("matplotlib")
 ```
 
 ### Using python

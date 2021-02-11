@@ -35,11 +35,17 @@ jobs:
           export LANG=en_US.UTF-8
           conda run -n computorbuild Rscript -e 'rmarkdown::render(list.files(".", pattern = "*.Rmd"), output_dir = "output")'
           conda run -n computorbuild Rscript -e 'pagedown::chrome_print(paste0("output/",strsplit(list.files(".", pattern = "*.Rmd"), ".Rmd")[[1]], ".html"))'
+      - name: Uploading artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: built_manuscript
+          path: ./output/ 
+
 # - name: Deploying article on gitHub pages # memo: create gh-pages first time - see below
 #   uses: peaceiris/actions-gh-pages@v3
 #   with:
 #     deploy_key: ${{ secrets.GH_PAGES }}
-#     publish_dir: ./computoRticle
+#     publish_dir: ./output
 
 # memo ; create gh-pages first time
 # git checkout --orphan gh-pages
