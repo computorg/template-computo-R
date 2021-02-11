@@ -28,6 +28,7 @@ jobs:
         shell: bash -l {0}
         run: | 
           export LANG=en_US.UTF-8
+          conda run -n computorbuild Rscript -e 'dir.create(Sys.getenv("R_LIBS_USER"), recursive = TRUE); .libPaths(Sys.getenv("R_LIBS_USER"))'  # create personal library
           conda run -n computorbuild Rscript binder/install.R
       - name: Rendering Rmd file to HTML and PDF
         shell: bash -l {0}
