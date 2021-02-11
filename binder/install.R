@@ -12,7 +12,7 @@ local({
 ## ____________________________________________________
 
 ## ____________________________________________________
-## Additional R packages needed for generating Computo article
+## R package needed for generating the PDF file
 install.packages("pagedown")
 ## ____________________________________________________
 
