@@ -39,9 +39,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: built_article
-          path: ./output/ 
-      if: "contains(github.event.head_commit.message, 'do_release')"
+          path: ./output/
       - name: Create Release
+        if: "contains(github.event.head_commit.message, 'do_release')"
         id: create_release
         uses: actions/create-release@v1
         env:
