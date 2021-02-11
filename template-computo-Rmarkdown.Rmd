@@ -17,7 +17,6 @@ link-citations: yes
 ---
 
 ```{r setup, include=FALSE}
-library("computoR")
 knitr::opts_chunk$set(tidy = FALSE, fig.width = 8, fig.height = 8, echo = TRUE)
 options(htmltools.dir.version = FALSE)
 ```
