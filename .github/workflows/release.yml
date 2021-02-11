@@ -1,13 +1,13 @@
-name: computorbuild
+name: computorrelease
 on:
   push:
-    branches:
-      - main
+    # Sequence of patterns matched against refs/tags
+    tags:
+    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
   computorticle:
-    name: Build Computo article with Rmarkdown
-    if: "contains(github.event.head_commit.message, 'do_build')"
+    name: Build and Release a Computo article with Rmarkdown
     runs-on: "ubuntu-latest"
     steps:
       - name: Checking out repository for Github action
@@ -35,21 +35,26 @@ jobs:
           export LANG=en_US.UTF-8
           conda run -n computorbuild Rscript -e 'rmarkdown::render(list.files(".", pattern = "*.Rmd"), output_dir = "output")'
           conda run -n computorbuild Rscript -e 'pagedown::chrome_print(paste0("output/",strsplit(list.files(".", pattern = "*.Rmd"), ".Rmd")[[1]], ".html"))'
-      - name: Uploading artifacts
-        uses: actions/upload-artifact@v2
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: built_article
-          path: ./output/
-
-# - name: Deploying article on gitHub pages # memo: create gh-pages first time - see below
-#   uses: peaceiris/actions-gh-pages@v3
-#   with:
-#     deploy_key: ${{ secrets.GH_PAGES }}
-#     publish_dir: ./output
-
-# memo ; create gh-pages first time
-# git checkout --orphan gh-pages
-# git reset --hard
-# git commit --allow-empty -m "Initializing gh-pages branch"
-# git push origin gh-pages
-# git checkout master
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: Prepare a file zip for releasing # zip the output
+        run: |
+          zip -r --junk-paths built_article output
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
+          asset_path: ./build_article.zip
+          asset_name: build_article.zip
+          asset_content_type: application/zip
