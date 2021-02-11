@@ -15,16 +15,16 @@ jobs:
       - name: Installing additional system libraries with APT if any
         run: xargs -a binder/apt.txt sudo apt-get install
       - name: Setting up miniconda with specified Python and R dependencies
-        uses: goanpeca/setup-miniconda@v1 # setup miniconda
+        uses: conda-incubator/setup-miniconda@v2
         with:
           auto-update-conda: true
           environment-file: binder/environment.yml
-          activate-environment: computorticle
+          activate-environment: computorbuild
       - name: Installing pandoc for R
         uses: r-lib/actions/setup-pandoc@v1 # setup miniconda instal pandoc and pandoc-citeproc
         with:
           pandoc-version: '2.7.3' # The pandoc version to download (if necessary) and use.
-      - name: Install additional R depenencies
+      - name: Install additional R dependencies
         shell: bash -l {0}
         run: | 
           export LANG=en_US.UTF-8
