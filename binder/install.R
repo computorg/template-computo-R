@@ -14,11 +14,10 @@ local({
 ## ____________________________________________________
 ## Additional R packages needed for generating Computo article
 install.packages("pagedown")
-remotes::install_github("computorg/computor")
 ## ____________________________________________________
 
 ## ____________________________________________________
 ## Additional R packages needed by the user
-remotes::install_github("pneuvial/sanssouci@develop")
+## remotes::install_github("")
 ## ____________________________________________________
 
