@@ -1,4 +1,4 @@
-name: computorticle
+name: computorbuild
 channels:
   - conda-forge
 dependencies:
