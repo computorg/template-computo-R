@@ -1,0 +1,200 @@
+---
+title: "Template for contribution to Computo"
+subtitle: "Example based on the Rmarkdown system"
+author: "the Computo team"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    theme: yeti
+    highlight: tango
+    toc: true
+    toc_depth: 2
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+bibliography: template-computo-Rmarkdown.bib
+link-citations: yes
+---
+
+```{r setup, include=FALSE}
+library("computoR")
+knitr::opts_chunk$set(tidy = FALSE, fig.width = 8, fig.height = 8, echo = TRUE)
+options(htmltools.dir.version = FALSE)
+```
+
+# Introduction
+
+## About this document
+
+This document provides a Rmarkdown^[rmarkdown.rstudio.com] template for contributions to the **Computo** Journal. We show how `R` or `Python` code can be included.
+
+It also serves as a documentation for configuring the github repository which will host the Rmarkdown source of your manuscript and prove us the reproducibility of your work. To this end, we use binder to generate the final rendering of your manuscript both in HTML and PDF.
+
+## Computo template
+
+In order to submit a manuscript to Computo, you need two thing: first, some scientific content, typically equations, codes and figures, written as a notebook; a second, a proof that this content is reproducible. We choose to do that by means of the standard notebook systems available for R, Python and Julia (Jupyter notebook anbd Rmarkdown) couple to the binder building system. 
+
+A Computo template is thus a git(hub) repository typically containing 
+
+(use for bibliography )
+
+- the source of the notebook (either Rmarkdown or Jupyter notebook + Myst), here a '.Rmd' file
+- some auxiliary files (a BibTeX file .bib, some non-dynamically-generated  figures in the repository figs/, etc.)
+- some configuration files for the binder environment to setup the machine that will build the final notebook file (HTML and/or PDF)
+
+A thus need to learn 
+
+1. How to format a notebook with Rmarkdown or MyST
+2. Possibly configure the binder environment (telling which R packages / Python model / system librairies and needed on the virtual machine)
+
+This document will hopefully helps you for both. At the end of the day, a PDF file will be generated directly in the github repository via a github action, ready to be submitted to the Computo submission platform.
+
+## Advice in writting your manuscript
+
+First make sure that you are able to build your manuscript as a regular notebook on your system. Then you can star confugre the binder environment (which we configure to use an Ubuntu machine with last LTS release).
+
+# Formating the notebook
+
+This first part is about writting a notebook with the Rmarkdown system, typically for R users.
+
+## Rmarkdown basics
+
+We first quickly cover rhe most basic features of Rmarkdown, that is, formatting text with markdown, math with $\LaTeX$ via MathJax and bibliographical references via $Bib\TeX$. 
+
+### Markdown
+
+`Rmarkdown` allows the user to is the markdown formating system, a simple formatting syntax for authoring HTML, PDF documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+To render the document as html, click the **Knit** button so that a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. Alternatively, the shortcut Ctrl + Maj + K will produces the same result.
+
+### Mathematical formulae
+
+$\LaTeX$ code is natively supported, which makes it possible to use mathematical formulae:
+
+$$
+f(x_1, \dots, x_n; \mu, \sigma^2) = 
+\frac{1}{\sigma \sqrt{2\pi}} \exp{\left(- \frac{1}{2\sigma^2}\sum_{i=1}^n(x_i - \mu)^2\right)}
+$$
+
+### References
+
+References are displayed as footnotes using bibtex, e.g. `[@computo]` will gives [@computo] where `computo` is the bibtex key for this entry. The bibliographic information is automatically retrieved from the `.bib` file specified in the header of this document (here: `template-computo-Rmarkdown.bib`).
+
+## R code
+
+You can naturally embed an `R` code [@R-base] chunk like this:
+
+```{r cars}
+knitr::kable(summary(cars))
+```
+
+### Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+library("ggplot2")
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point() +
+  geom_smooth()
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+## Python Code
+
+The R package [reticulate](https://cran.r-project.org/package=reticulate) [@R-reticulate] includes a Python engine for R Markdown that enables easy interoperability between Python and R chunks.
+Below we demonstrate a small subset of the available functionalities. We refer to the vignette [R Markdown Python Engine](https://cran.r-project.org/web/packages/reticulate/vignettes/r_markdown.html) for a more detailed description.
+
+### Setup
+
+```{r load-reticulate}
+library("reticulate")
+use_virtualenv("computo-template")
+```
+
+Firt make sure (here, in `R`) that the required python modules are available
+
+```{r install-python-modules, eval=TRUE, results="hide"}
+py_module_available("seaborn") || py_install("seaborn")
+py_module_available("pandas") || py_install("pandas")
+py_module_available("matplotlib") || py_install("matplotlib")
+```
+
+### Using python
+
+Example of python code and associated output:
+
+```{python iris-python, echo = TRUE}
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.set(style="whitegrid", palette="muted")
+
+# Load the example iris dataset
+iris = sns.load_dataset("iris")
+
+# "Melt" the dataset to "long-form" or "tidy" representation
+iris = pd.melt(iris, "species", var_name="measurement")
+plt.figure()
+
+# Draw a categorical scatterplot to show each observation
+sns.swarmplot(x="measurement", y="value", hue="species", palette=["r", "c", "y"], data=iris)
+plt.show()
+```
+
+## Communication between R and python chunks
+
+All objects created within Python chunks are available to R using the `py` object exported by the reticulate package, e.g.:
+
+```{r iris-r, echo=TRUE}
+rmarkdown::paged_table(py$iris)
+```
+
+Conversely, all objects created within R are available from Python using the `r` object exported by the reticulate:
+
+First, let us create an object within R:
+
+```{r rvolcano-r, echo=TRUE}
+data(volcano)
+```
+
+```{r volcano-table}
+rmarkdown::paged_table(as.data.frame(volcano))
+```
+
+This object is accessible from Python:
+
+```{python volcano-python, echo=TRUE}
+print(r.volcano)
+```
+
+## Other languages
+
+Theoretically, you can include many others languages into Rmarkdown including Julia and C++. If you are comfortable enough to configure binder and prove us the reproducibility of your code, feel free to use any other language.
+
+# Configuring binder for proving reproducibility
+
+
+## Basic binder setup
+
+## System libraries
+
+`apt.txt`
+
+## R packages
+
+`environment.yml` for packages available in conda, or `install.R` for other packages (including git(hub) packages available via `remotes` or Bioconductor packages availabl via `BiocManager`).
+
+## Building
+
+Make a commit which include de string "do_build" in its message. (try to lower the footprint...)
+
+# Session information
+
+```{r session-info}
+sessionInfo()
+```
+
+# References

@@ -1,0 +1,49 @@
+name: computorbuild
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  computorticle:
+    name: Build Computo article with Rmarkdown
+    if: "contains(github.event.head_commit.message, 'do_build')"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: Checking out repository for Github action
+        uses: actions/checkout@v2
+      - name: Installing additional system libraries with APT if any
+        run: xargs -a binder/apt.txt sudo apt-get install
+      - name: Setting up miniconda with specified Python and R dependencies
+        uses: goanpeca/setup-miniconda@v1 # setup miniconda
+        with:
+          auto-update-conda: true
+          environment-file: binder/environment.yml
+          activate-environment: computorticle
+      - name: Installing pandoc for R
+        uses: r-lib/actions/setup-pandoc@v1 # setup miniconda instal pandoc and pandoc-citeproc
+        with:
+          pandoc-version: '2.7.3' # The pandoc version to download (if necessary) and use.
+      - name: Install additional R depenencies
+        shell: bash -l {0}
+        run: | 
+          export LANG=en_US.UTF-8
+          conda run -n computorbuild Rscript binder/install.R
+      - name: Rendering Rmd file to HTML and PDF
+        shell: bash -l {0}
+        run: | 
+          export LANG=en_US.UTF-8
+          conda run -n computorbuild Rscript -e 'rmarkdown::render(list.files(".", pattern = "*.Rmd"), output_dir = "output")'
+          conda run -n computorbuild Rscript -e 'pagedown::chrome_print(paste0("output/",strsplit(list.files(".", pattern = "*.Rmd"), ".Rmd")[[1]], ".html"))'
+# - name: Deploying article on gitHub pages # memo: create gh-pages first time - see below
+#   uses: peaceiris/actions-gh-pages@v3
+#   with:
+#     deploy_key: ${{ secrets.GH_PAGES }}
+#     publish_dir: ./computoRticle
+
+# memo ; create gh-pages first time
+# git checkout --orphan gh-pages
+# git reset --hard
+# git commit --allow-empty -m "Initializing gh-pages branch"
+# git push origin gh-pages
+# git checkout master

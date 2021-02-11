@@ -1,0 +1,16 @@
+name: computorticle
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - matplotlib
+  - scikit-learn
+  - nilearn
+  - pandas
+  - r-base=4.0.3
+  - r-codetools
+  - r-remotes
+  - r-reticulate
+  - r-rmarkdown
+  - r-tidyverse
+
