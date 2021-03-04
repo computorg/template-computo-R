@@ -8,7 +8,7 @@ output:
     theme: yeti
     highlight: tango
     toc: true
-    toc_depth: 2
+    toc_depth: 1
     toc_float:
       collapsed: false
       smooth_scroll: false
@@ -25,46 +25,45 @@ options(htmltools.dir.version = FALSE)
 
 ## About this document
 
-This document provides a Rmarkdown^[rmarkdown.rstudio.com] template for contributions to the **Computo** Journal. We show how `R` or `Python` code can be included.
+This document provides a Rmarkdown^[https://rmarkdown.rstudio.com/] template for contributions to the **Computo** Journal. We show how `R` or `Python` code can be included.
 
 It also serves as a documentation for configuring the github repository which will host the Rmarkdown source of your manuscript and prove us the reproducibility of your work. To this end, we use binder to generate the final rendering of your manuscript both in HTML and PDF.
 
 ## Computo template
 
-In order to submit a manuscript to Computo, you need two thing: first, some scientific content, typically equations, codes and figures, written as a notebook; a second, a proof that this content is reproducible. We choose to do that by means of the standard notebook systems available for R, Python and Julia (Jupyter notebook anbd Rmarkdown) couple to the binder building system. 
+Sumbissions to Computo require both scientific content (typically equations, codes and figures) and a proof that this content is reproducible. This is achieved via the standard notebook systems available for R, Python and Julia (Jupyter notebook anbd Rmarkdown), coupled with the binder building system. 
 
-A Computo template is thus a git(hub) repository typically containing 
+A Computo submission is thus a git(hub) repository typically containing 
 
-(use for bibliography )
+- the source of the notebook, which may be a Rmarkdown document (such as the present document) or a Jupyter notebook + Myst **link to other templates when available**);
+- auxiliary files, e.g.:
+  - a BibTeX file (e.g. `./template-computo-Rmarkdown.bib`)
+  - some static figures in the`figs/` subdirectory (e.g. `figs/picture.png`)
+- configuration files for the binder environment to setup the machine that will build the final notebook file (HTML and/or PDF)
 
-- the source of the notebook (either Rmarkdown or Jupyter notebook + Myst), here a '.Rmd' file
-- some auxiliary files (a BibTeX file .bib, some non-dynamically-generated  figures in the repository figs/, etc.)
-- some configuration files for the binder environment to setup the machine that will build the final notebook file (HTML and/or PDF)
+The present document explains how to:
 
-A thus need to learn 
+1. format a notebook with Rmarkdown
+2. (optionally) configure the binder environment
 
-1. How to format a notebook with Rmarkdown or MyST
-2. Possibly configure the binder environment (telling which R packages / Python model / system librairies and needed on the virtual machine)
-
-This document will hopefully helps you for both. At the end of the day, a PDF file will be generated directly in the github repository via a github action, ready to be submitted to the Computo submission platform.
+The compiled notebook (pdf file) will be generated directly in the github repository (via a github action), ready to be submitted to the [Computo submission platform](https://computo.scholasticahq.com/).
 
 ## Advice in writting your manuscript
 
-First make sure that you are able to build your manuscript as a regular notebook on your system. Then you can star confugre the binder environment (which we configure to use an Ubuntu machine with last LTS release).
+First make sure that you are able to build your manuscript as a regular notebook on your system. Then you can star configure the binder environment (which we configure to use an Ubuntu machine with latest LTS release).
 
 # Formating the notebook
 
-This first part is about writting a notebook with the Rmarkdown system, typically for R users.
+This section is about writting a notebook with the Rmarkdown system, typically for R users.
 
 ## Rmarkdown basics
 
-We first quickly cover rhe most basic features of Rmarkdown, that is, formatting text with markdown, math with $\LaTeX$ via MathJax and bibliographical references via $Bib\TeX$. 
+We first quickly cover the most basic features of Rmarkdown, that is, formatting text with markdown, math with $\LaTeX$ via MathJax and bibliographical references via $Bib\TeX$. 
 
-### Markdown
+[Rmarkdown](http://rmarkdown.rstudio.com) is a simple formatting system for authoring HTML and PDF documents, 
+that relies on the markdown markup language.
 
-`Rmarkdown` allows the user to is the markdown formating system, a simple formatting syntax for authoring HTML, PDF documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-To render the document as html, click the **Knit** button so that a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. Alternatively, the shortcut Ctrl + Maj + K will produces the same result.
+To render the document as HTML within Rstudio, click the **Knit** button. A document will be generated that includes both content as well as the output of any embedded R code chunks within the document. Alternatively, the shortcut Ctrl + Maj + K will produces the same result.
 
 ### Mathematical formulae
 
@@ -77,11 +76,11 @@ $$
 
 ### References
 
-References are displayed as footnotes using bibtex, e.g. `[@computo]` will gives [@computo] where `computo` is the bibtex key for this entry. The bibliographic information is automatically retrieved from the `.bib` file specified in the header of this document (here: `template-computo-Rmarkdown.bib`).
+References are displayed as footnotes using bibtex, e.g. `[@computo]` will display as [@computo], where `computo` is the bibtex key for this entry. The bibliographic information is automatically retrieved from the `.bib` file specified in the header of this document (here: `template-computo-Rmarkdown.bib`).
 
 ## R code
 
-You can naturally embed an `R` code [@R-base] chunk like this:
+`R` code [@R-base] chunks may be embedded as follows:
 
 ```{r cars}
 knitr::kable(summary(cars))
@@ -89,16 +88,25 @@ knitr::kable(summary(cars))
 
 ### Including Plots
 
-You can also embed plots, for example:
+Plots can be generated as:
 
 ```{r pressure, echo=FALSE}
 library("ggplot2")
-ggplot(mpg, aes(displ, hwy)) +
+p <- ggplot(mpg, aes(displ, hwy)) +
   geom_point() +
   geom_smooth()
+p
 ```
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+Interative plots may also be produced in the HTML output of the document:
+
+```{r, message=FALSE}
+library("plotly")
+ggplotly(p)
+```
+
 
 ## Python Code
 
@@ -173,8 +181,7 @@ print(r.volcano)
 
 Theoretically, you can include many others languages into Rmarkdown including Julia and C++. If you are comfortable enough to configure binder and prove us the reproducibility of your code, feel free to use any other language.
 
-# Configuring binder for proving reproducibility
-
+# Configuring binder
 
 ## Basic binder setup
 
