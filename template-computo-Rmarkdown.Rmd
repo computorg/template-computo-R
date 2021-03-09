@@ -50,11 +50,11 @@ The compiled notebook (pdf file) will be generated directly in the github reposi
 
 ## Advice in writting your manuscript
 
-First make sure that you are able to build your manuscript as a regular notebook on your system. Then you can star configure the binder environment (which we configure to use an Ubuntu machine with latest LTS release).
+First make sure that you are able to build your manuscript as a regular notebook on your system. Then you can start configure the binder environment (which we configure to use an Ubuntu machine with latest LTS release).
 
 # Formating the notebook
 
-This section is about writting a notebook with the Rmarkdown system, typically for R users.
+This section is about writing a notebook with the Rmarkdown system, typically for R users.
 
 ## Rmarkdown basics
 
