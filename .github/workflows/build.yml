@@ -43,7 +43,7 @@ jobs:
       - name: Deploying article on gitHub pages # memo: create gh-pages first time - see below
         uses: peaceiris/actions-gh-pages@v3
         with:
-          deploy_key: ${{ secrets.GITHUB_TOKEN }}
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           publish_dir: ./output
 
 # memo ; create gh-pages first time
