@@ -14,4 +14,4 @@ dependencies:
   - r-reticulate
   - r-rmarkdown
   - r-tidyverse
-
+  - r-plotly

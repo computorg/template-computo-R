@@ -13,12 +13,12 @@ jobs:
       - name: Checking out repository for Github action
         uses: actions/checkout@v2
       - name: Installing additional system libraries with APT if any
-        run: xargs -a binder/apt.txt sudo apt-get install
+        run: xargs -a config/apt.txt sudo apt-get install
       - name: Setting up miniconda with specified Python and R dependencies
         uses: conda-incubator/setup-miniconda@v2
         with:
           auto-update-conda: true
-          environment-file: binder/environment.yml
+          environment-file: config/environment.yml
           activate-environment: computorbuild
       - name: Installing pandoc for R
         uses: r-lib/actions/setup-pandoc@v1 # setup miniconda instal pandoc and pandoc-citeproc
@@ -28,7 +28,7 @@ jobs:
         shell: bash -l {0}
         run: | 
           export LANG=en_US.UTF-8
-          conda run -n computorbuild Rscript binder/install.R
+          conda run -n computorbuild Rscript config/install.R
       - name: Rendering Rmd file to HTML and PDF
         shell: bash -l {0}
         run: | 
