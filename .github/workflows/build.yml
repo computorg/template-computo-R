@@ -35,6 +35,8 @@ jobs:
           export LANG=en_US.UTF-8
           conda run -n computorbuild Rscript -e 'rmarkdown::render(list.files(".", pattern = "*.Rmd"), output_dir = "output")'
           conda run -n computorbuild Rscript -e 'pagedown::chrome_print(paste0("output/",strsplit(list.files(".", pattern = "*.Rmd"), ".Rmd")[[1]], ".html"))'
+          mv output/*.html output/index.html
+          mv output/*.pdf output/article.pdf
       - name: Uploading artifacts
         uses: actions/upload-artifact@v2
         with:
