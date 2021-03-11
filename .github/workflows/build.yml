@@ -23,11 +23,11 @@ jobs:
       - id: computorticle
         uses: computorg/build-Rmarkdown@v1
         with:
-	  Rmarkdown-file: ${{ env.Rmarkdown-file }}
-	  environment-file: ${{ env-file }}
-	  systems-libs-file: ${{ sys-file }}
-	  r-addons-file: ${{ add-file }}
-	  destination: output
+          Rmarkdown-file: ${{ env.Rmarkdown-file }}
+          environment-file: ${{ env-file }}
+          systems-libs-file: ${{ sys-file }}
+          r-addons-file: ${{ add-file }}
+          destination: output
       - name: Deploying article on gitHub pages # memo: create a branch for gh-pages first time - see below
         uses: peaceiris/actions-gh-pages@v3
         with:
