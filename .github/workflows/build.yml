@@ -32,13 +32,31 @@ jobs:
       - name: Installing pandoc for R
         uses: r-lib/actions/setup-pandoc@v1 # setup miniconda install pandoc and pandoc-citeproc
 
-      - id: computorticle
-        uses: computorg/build-Rmarkdown@v1
-        with:
-          Rmarkdown-file: ${{ env.Rmarkdown-file }}
-          systems-libs-file: ${{ env.sys-file }}
-          r-addons-file: ${{ env.add-file }}
-          conda-name: computorbuild
+      - name: Installing additional system libraries with APT if any
+        shell: bash
+        if: ${{ env.system.lib }} != ''
+        run: xargs -a ${{ env.system-libs }} sudo apt-get install
+
+      - name: Install additional R dependencies
+        shell: bash
+        run: | 
+          export LANG=en_US.UTF-8
+          conda run -n computorbuild Rscript ${{ env.add-file }}
+
+      - name: Rendering Rmd file to HTML and PDF
+        shell: bash
+        run: | 
+          export LANG=en_US.UTF-8
+          conda run -n computorbuild Rscript -e 'rmarkdown::render(${{ env.Rmarkdown-file }}, output_file = "index.html", output_dir = "output")'
+          conda run -n computorbuild Rscript -e 'pagedown::chrome_print("output/index.html", output = "output/article.pdf")'
+
+#      - id: computorticle
+#        uses: computorg/build-Rmarkdown@v1
+#        with:
+#          Rmarkdown-file: ${{ env.Rmarkdown-file }}
+#          system-libs-file: ${{ env.sys-file }}
+#          r-addons-file: ${{ env.add-file }}
+#          conda-name: computorbuild
 
       - name: Uploading artifacts
         uses: actions/upload-artifact@v2
