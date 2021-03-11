@@ -1,52 +1,38 @@
-name: computorbuild
+name: build
+
 on:
   push:
     branches:
       - main
+      - master
+
+env: # Change this if needed
+  Rmarkdown-file: template-computo-Rmarkdown.Rmd
+  env-file: environment.yml
+  sys-file: system-libs
+  add-file: r-addons.R
 
 jobs:
-  computorticle:
+  build_computorticle:
     name: Build Computo article with Rmarkdown
     if: "contains(github.event.head_commit.message, 'do_build')"
     runs-on: "ubuntu-latest"
     steps:
       - name: Checking out repository for Github action
         uses: actions/checkout@v2
-      - name: Installing additional system libraries with APT if any
-        run: xargs -a config/apt.txt sudo apt-get install
-      - name: Setting up miniconda with specified Python and R dependencies
-        uses: conda-incubator/setup-miniconda@v2
+      - id: computorticle
+        uses: computorg/build-Rmarkdown@v1
         with:
-          auto-update-conda: true
-          environment-file: config/environment.yml
-          activate-environment: computorbuild
-      - name: Installing pandoc for R
-        uses: r-lib/actions/setup-pandoc@v1 # setup miniconda instal pandoc and pandoc-citeproc
-        with:
-          pandoc-version: '2.7.3' # The pandoc version to download (if necessary) and use.
-      - name: Install additional R dependencies
-        shell: bash -l {0}
-        run: | 
-          export LANG=en_US.UTF-8
-          conda run -n computorbuild Rscript config/install.R
-      - name: Rendering Rmd file to HTML and PDF
-        shell: bash -l {0}
-        run: | 
-          export LANG=en_US.UTF-8
-          conda run -n computorbuild Rscript -e 'rmarkdown::render(list.files(".", pattern = "*.Rmd"), output_dir = "output")'
-          conda run -n computorbuild Rscript -e 'pagedown::chrome_print(paste0("output/",strsplit(list.files(".", pattern = "*.Rmd"), ".Rmd")[[1]], ".html"))'
-          mv output/*.html output/index.html
-          mv output/*.pdf output/article.pdf
-      - name: Uploading artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: built_article
-          path: ./output/
-      - name: Deploying article on gitHub pages # memo: create gh-pages first time - see below
+	  Rmarkdown-file: ${{ env.Rmarkdown-file }}
+	  environment-file: ${{ env-file }}
+	  systems-libs-file: ${{ sys-file }}
+	  r-addons-file: ${{ add-file }}
+	  destination: output
+      - name: Deploying article on gitHub pages # memo: create a branch for gh-pages first time - see below
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./output
+          publish_dir: output
 
 # memo ; create gh-pages first time
 # git checkout --orphan gh-pages
