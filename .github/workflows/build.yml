@@ -45,7 +45,7 @@ jobs:
         with:
           name: built_article
           path: output
-	
+
       - name: Deploying article on gitHub pages # memo: create a branch for gh-pages first time - see below
         uses: peaceiris/actions-gh-pages@v3
         with:
