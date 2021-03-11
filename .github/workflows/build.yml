@@ -8,7 +8,7 @@ on:
 
 env: # Change this if needed
   Rmarkdown-file: template-computo-Rmarkdown.Rmd
-  bin-file: environment.yml
+  binder-file: environment.yml
   sys-file: system-libs
   add-file: r-addons.R
 
@@ -17,17 +17,35 @@ jobs:
     name: Build Computo article with Rmarkdown
     if: "contains(github.event.head_commit.message, 'do_build')"
     runs-on: "ubuntu-latest"
+
     steps:
       - name: Checking out repository for Github action
         uses: actions/checkout@v2
+
+      - name: Setting up miniconda with specified Python and R dependencies
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          auto-update-conda: true
+          environment-file: ${{ env.binder-file }}
+          activate-environment: computorbuild
+
+      - name: Installing pandoc for R
+        uses: r-lib/actions/setup-pandoc@v1 # setup miniconda install pandoc and pandoc-citeproc
+
       - id: computorticle
         uses: computorg/build-Rmarkdown@v1
         with:
           Rmarkdown-file: ${{ env.Rmarkdown-file }}
-          environment-file: ${{ env.bin-file }}
           systems-libs-file: ${{ env.sys-file }}
           r-addons-file: ${{ env.add-file }}
-          destination: output
+          conda-name: computorbuild
+
+      - name: Uploading artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: built_article
+          path: output
+	
       - name: Deploying article on gitHub pages # memo: create a branch for gh-pages first time - see below
         uses: peaceiris/actions-gh-pages@v3
         with:
