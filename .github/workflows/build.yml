@@ -8,7 +8,7 @@ on:
 
 env: # Change this if needed
   Rmarkdown-file: template-computo-Rmarkdown.Rmd
-  env-file: environment.yml
+  bin-file: environment.yml
   sys-file: system-libs
   add-file: r-addons.R
 
@@ -24,9 +24,9 @@ jobs:
         uses: computorg/build-Rmarkdown@v1
         with:
           Rmarkdown-file: ${{ env.Rmarkdown-file }}
-          environment-file: ${{ env-file }}
-          systems-libs-file: ${{ sys-file }}
-          r-addons-file: ${{ add-file }}
+          environment-file: ${{ env.bin-file }}
+          systems-libs-file: ${{ env.sys-file }}
+          r-addons-file: ${{ env.add-file }}
           destination: output
       - name: Deploying article on gitHub pages # memo: create a branch for gh-pages first time - see below
         uses: peaceiris/actions-gh-pages@v3
