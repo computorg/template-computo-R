@@ -29,6 +29,7 @@ jobs:
         with:
           path: ~/conda_pkgs_dir
           key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('environment.yml') }}
+
       - name: Setting up miniconda with specified Python and R dependencies
         uses: conda-incubator/setup-miniconda@v2
         with:
@@ -36,13 +37,14 @@ jobs:
           activate-environment: computorbuild
           environment-file: environment.yml
           channel-priority: strict
-          use-only-tar-bz2: true        
-      - name: Installing pandoc for R
+          use-only-tar-bz2: true
+
+      - name: Setup pandoc for Rmarkdown
         uses: r-lib/actions/setup-pandoc@v1 # setup miniconda install pandoc and pandoc-citeproc
 
       - name: Installing pagedown for R to output the PDF file from HTML
         run: |
-          conda run -n computorbuild Rscript -e 'install.packages("pkgdown", type = "binary")'
+          conda run -n computorbuild Rscript -e 'install.packages("pkgdown")'
 #          conda run -n computorbuild Rscript -e 'remotes::install_deps(dependencies = TRUE)'
           
       - name: Rendering Rmd file to HTML and PDF
