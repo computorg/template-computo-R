@@ -9,8 +9,6 @@ on:
 env: # Change this if needed
   Rmarkdown-file: template-computo-Rmarkdown.Rmd
   binder-file: environment.yml
-  sys-file: system-libs
-  add-file: r-addons.R
 
 jobs:
   build_computorticle:
@@ -30,18 +28,22 @@ jobs:
           auto-update-conda: true
           environment-file: ${{ env.binder-file }}
           activate-environment: computorbuild
-      - run: | # pagedown is not yet on anaconda
-          conda skeleton cran pagedown
-          conda build ./r-pagedown
 
       - name: Installing pandoc for R
         uses: r-lib/actions/setup-pandoc@v1 # setup miniconda install pandoc and pandoc-citeproc
 
+      - name: Installing pagedown for R to output the PDF file from HTML
+        run: |
+          conda run -n computorbuild Rscript -e 'remotes::install_deps(dependencies = TRUE)'
+          conda run -n computorbuild Rscript -e 'install.packages("pkgdown", type = "binary")'
+          
       - name: Rendering Rmd file to HTML and PDF
-        run: | 
-          export LANG=en_US.UTF-8
+        run: |          
           conda run -n computorbuild Rscript -e 'rmarkdown::render(${{ env.Rmarkdown-file }}, output_file = "index.html", output_dir = "output")'
           conda run -n computorbuild Rscript -e 'pagedown::chrome_print("output/index.html", output = "output/article.pdf")'
+          
+#          conda run -n computorbuild Rscript -e 'rmarkdown::render(${{ env.Rmarkdown-file }}, output_file = "index.html", output_dir = "output")'
+#          conda run -n computorbuild Rscript -e 'pagedown::chrome_print("output/index.html", output = "output/article.pdf")'
 
 #      - id: computorticle
 #        uses: computorg/build-Rmarkdown@v1
@@ -50,6 +52,9 @@ jobs:
 #          system-libs-file: ${{ env.sys-file }}
 #          r-addons-file: ${{ env.add-file }}
 #          conda-name: computorbuild
+
+
+#           export LANG=en_US.UTF-8
 
       - name: Uploading artifacts
         uses: actions/upload-artifact@v2

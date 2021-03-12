@@ -2,7 +2,6 @@ name: computorbuild
 channels:
   - conda-forge
 dependencies:
-  - conda-build
   - numpy
   - matplotlib
   - scikit-learn
