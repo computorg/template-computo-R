@@ -16,8 +16,10 @@ jobs:
   build_computorticle:
     name: Build Computo article with Rmarkdown
     if: "contains(github.event.head_commit.message, 'do_build')"
-    runs-on: "ubuntu-latest"
-
+    runs-on: "macos-latest"
+    defaults:
+      run:
+        shell: bash -l {0}
     steps:
       - name: Checking out repository for Github action
         uses: actions/checkout@v2
@@ -28,22 +30,14 @@ jobs:
           auto-update-conda: true
           environment-file: ${{ env.binder-file }}
           activate-environment: computorbuild
+      - run: | # pagedown is not yet on anaconda
+          conda skeleton cran pagedown
+          conda build ./r-pagedown
 
       - name: Installing pandoc for R
         uses: r-lib/actions/setup-pandoc@v1 # setup miniconda install pandoc and pandoc-citeproc
 
-      - name: Installing additional system libraries with APT if any
-        shell: bash
-        run: xargs -a ${{ env.sysfile }} sudo apt-get install
-
-      - name: Install additional R dependencies
-        shell: bash
-        run: | 
-          export LANG=en_US.UTF-8
-          conda run -n computorbuild Rscript ${{ env.add-file }}
-
       - name: Rendering Rmd file to HTML and PDF
-        shell: bash
         run: | 
           export LANG=en_US.UTF-8
           conda run -n computorbuild Rscript -e 'rmarkdown::render(${{ env.Rmarkdown-file }}, output_file = "index.html", output_dir = "output")'
