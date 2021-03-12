@@ -8,7 +8,6 @@ on:
 
 env: # Change this if needed
   Rmarkdown-file: template-computo-Rmarkdown.Rmd
-  binder-file: environment.yml
 
 jobs:
   build_computorticle:
@@ -22,20 +21,29 @@ jobs:
       - name: Checking out repository for Github action
         uses: actions/checkout@v2
 
+      - name: Cache conda
+        uses: actions/cache@v1
+        env:
+          # Increase this value to reset cache if environment.yml has not changed
+          CACHE_NUMBER: 0
+        with:
+          path: ~/conda_pkgs_dir
+          key: ${{ runner.os }}-conda-${{ env.CACHE_NUMBER }}-${{ hashFiles('environment.yml') }}
       - name: Setting up miniconda with specified Python and R dependencies
         uses: conda-incubator/setup-miniconda@v2
         with:
           auto-update-conda: true
-          environment-file: ${{ env.binder-file }}
           activate-environment: computorbuild
-
+          environment-file: environment.yml
+          channel-priority: strict
+          use-only-tar-bz2: true        
       - name: Installing pandoc for R
         uses: r-lib/actions/setup-pandoc@v1 # setup miniconda install pandoc and pandoc-citeproc
 
       - name: Installing pagedown for R to output the PDF file from HTML
         run: |
-          conda run -n computorbuild Rscript -e 'remotes::install_deps(dependencies = TRUE)'
           conda run -n computorbuild Rscript -e 'install.packages("pkgdown", type = "binary")'
+#          conda run -n computorbuild Rscript -e 'remotes::install_deps(dependencies = TRUE)'
           
       - name: Rendering Rmd file to HTML and PDF
         run: |          
