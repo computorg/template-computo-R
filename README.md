@@ -5,5 +5,9 @@
 
 Documentation and sample of an Rmarkdown-based submission for the _Computo_ journal.
 
+Show how to setup and automatically build the following outputs, ready to submit to our Peer-review platform: 
+
+- [HTML output](https://computorg.github.io/template-computo-Rmarkdown/)
+- [PDF output](https://computorg.github.io/template-computo-Rmarkdown/articles.pdf)
 
 
