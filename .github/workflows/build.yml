@@ -49,7 +49,7 @@ jobs:
           
       - name: Rendering Rmd file to HTML and PDF
         run: |          
-          conda run -n computorbuild Rscript -e 'rmarkdown::render(${{ env.Rmarkdown-file }}, output_file = "index.html", output_dir = "output")'
+          conda run -n computorbuild Rscript -e 'rmarkdown::render("${{ env.Rmarkdown-file }}", output_file = "index.html", output_dir = "output")'
           conda run -n computorbuild Rscript -e 'pagedown::chrome_print("output/index.html", output = "output/article.pdf")'
           
 #          conda run -n computorbuild Rscript -e 'rmarkdown::render(${{ env.Rmarkdown-file }}, output_file = "index.html", output_dir = "output")'
