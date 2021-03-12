@@ -51,9 +51,6 @@ jobs:
         run: |          
           conda run -n computorbuild Rscript -e 'rmarkdown::render("${{ env.Rmarkdown-file }}", output_file = "index.html", output_dir = "output")'
           conda run -n computorbuild Rscript -e 'pagedown::chrome_print("output/index.html", output = "output/article.pdf")'
-          
-#          conda run -n computorbuild Rscript -e 'rmarkdown::render(${{ env.Rmarkdown-file }}, output_file = "index.html", output_dir = "output")'
-#          conda run -n computorbuild Rscript -e 'pagedown::chrome_print("output/index.html", output = "output/article.pdf")'
 
 #      - id: computorticle
 #        uses: computorg/build-Rmarkdown@v1
@@ -62,9 +59,6 @@ jobs:
 #          system-libs-file: ${{ env.sys-file }}
 #          r-addons-file: ${{ env.add-file }}
 #          conda-name: computorbuild
-
-
-#           export LANG=en_US.UTF-8
 
       - name: Uploading artifacts
         uses: actions/upload-artifact@v2

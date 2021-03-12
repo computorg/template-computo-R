@@ -8,10 +8,7 @@ output:
     theme: yeti
     highlight: tango
     toc: true
-    toc_depth: 1
-    toc_float:
-      collapsed: false
-      smooth_scroll: false
+    toc_depth: 2
 bibliography: template-computo-Rmarkdown.bib
 link-citations: yes
 ---
@@ -31,7 +28,7 @@ It also serves as a documentation for configuring the github repository which wi
 
 ## Computo template
 
-Sumbissions to Computo require both scientific content (typically equations, codes and figures) and a proof that this content is reproducible. This is achieved via the standard notebook systems available for R, Python and Julia (Jupyter notebook anbd Rmarkdown), coupled with the binder building system. 
+Subissions to Computo require both scientific content (typically equations, codes and figures) and a proof that this content is reproducible. This is achieved via the standard notebook systems available for R, Python and Julia (Jupyter notebook and Rmarkdown), coupled with the binder building system. 
 
 A Computo submission is thus a git(hub) repository typically containing 
 
