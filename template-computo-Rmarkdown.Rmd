@@ -24,27 +24,6 @@ options(htmltools.dir.version = FALSE)
 
 This document provides a Rmarkdown^[https://rmarkdown.rstudio.com/] template for contributions to the **Computo** Journal. We show how `R` or `Python` code can be included.
 
-It also serves as a documentation for configuring the github repository which will host the Rmarkdown source of your manuscript and prove us the reproducibility of your work. To this end, we use binder to generate the final rendering of your manuscript both in HTML and PDF.
-
-## Computo template
-
-Subissions to Computo require both scientific content (typically equations, codes and figures) and a proof that this content is reproducible. This is achieved via the standard notebook systems available for R, Python and Julia (Jupyter notebook and Rmarkdown), coupled with the binder building system. 
-
-A Computo submission is thus a git(hub) repository typically containing 
-
-- the source of the notebook, which may be a Rmarkdown document (such as the present document) or a Jupyter notebook + Myst **link to other templates when available**);
-- auxiliary files, e.g.:
-  - a BibTeX file (e.g. `./template-computo-Rmarkdown.bib`)
-  - some static figures in the`figs/` subdirectory (e.g. `figs/picture.png`)
-- configuration files for the binder environment to setup the machine that will build the final notebook file (HTML and/or PDF)
-
-The present document explains how to:
-
-1. format a notebook with Rmarkdown
-2. (optionally) configure the binder environment
-
-The compiled notebook (pdf file) will be generated directly in the github repository (via a github action), ready to be submitted to the [Computo submission platform](https://computo.scholasticahq.com/).
-
 ## Advice in writting your manuscript
 
 First make sure that you are able to build your manuscript as a regular notebook on your system. Then you can start configure the binder environment (which we configure to use an Ubuntu machine with latest LTS release).
@@ -104,11 +83,9 @@ library("plotly")
 ggplotly(p)
 ```
 
-
 ## Python Code
 
-The R package [reticulate](https://cran.r-project.org/package=reticulate) [@R-reticulate] includes a Python engine for R Markdown that enables easy interoperability between Python and R chunks.
-Below we demonstrate a small subset of the available functionalities. We refer to the vignette [R Markdown Python Engine](https://cran.r-project.org/web/packages/reticulate/vignettes/r_markdown.html) for a more detailed description.
+The R package [reticulate](https://cran.r-project.org/package=reticulate) [@R-reticulate] includes a Python engine for R Markdown that enables easy interoperability between Python and R chunks. Below we demonstrate a small subset of the available functionalities. We refer to the vignette [R Markdown Python Engine](https://cran.r-project.org/web/packages/reticulate/vignettes/r_markdown.html) for a more detailed description.
 
 ### Setup
 
@@ -177,22 +154,6 @@ print(r.volcano)
 ## Other languages
 
 Theoretically, you can include many others languages into Rmarkdown including Julia and C++. If you are comfortable enough to configure binder and prove us the reproducibility of your code, feel free to use any other language.
-
-# Configuring binder
-
-## Basic binder setup
-
-## System libraries
-
-`apt.txt`
-
-## R packages
-
-`environment.yml` for packages available in conda, or `install.R` for other packages (including git(hub) packages available via `remotes` or Bioconductor packages availabl via `BiocManager`).
-
-## Building
-
-Make a commit which include de string "do_build" in its message. (try to lower the footprint...)
 
 # Session information
 
