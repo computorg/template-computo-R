@@ -1,7 +1,7 @@
 ---
 title: "Template for contribution to Computo"
 subtitle: "Example based on the Rmarkdown system"
-author: "the Computo team"
+author: "Computo team"
 date: "`r Sys.Date()`"
 output: 
   html_document:
@@ -26,7 +26,7 @@ This document provides a Rmarkdown^[https://rmarkdown.rstudio.com/] template for
 
 ## Advice in writting your manuscript
 
-First make sure that you are able to build your manuscript as a regular notebook on your system. Then you can start configure the binder environment (which we configure to use an Ubuntu machine with latest LTS release).
+First make sure that you are able to build your manuscript as a regular notebook on your system. Then you can start configure the binder environment.
 
 # Formating the notebook
 
