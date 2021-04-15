@@ -108,7 +108,7 @@ This action will
 - Render your Rmd file to HTML and PDF files
 - Deploy your HTML on a github page on the gh-page branch
 
-Note that, by default, your action is triggered only if you push a commit which includes the string `do_build` in its message (yes, we try to lower the footprint...).
+Note that, by default, your action is triggered only if you push a commit which includes the string `[build]` in its message (yes, we try to lower the footprint...).
 
 ### Step 4. submit
 
