@@ -40,7 +40,7 @@ jobs:
           use-only-tar-bz2: true
 
       - name: Setup pandoc for Rmarkdown
-        uses: r-lib/actions/setup-pandoc@v1 # setup miniconda install pandoc and pandoc-citeproc
+        uses: r-lib/actions/setup-pandoc@v1 
 
       - name: Install additional R dependencies
         run: | 
@@ -52,12 +52,6 @@ jobs:
           conda run -n computorbuild Rscript -e 'rmarkdown::render("${{ env.Rmarkdown-file }}", output_file = "index.html", output_dir = "_build")'
           conda run -n computorbuild Rscript -e 'pagedown::chrome_print(_build/index.html", output = _build/article.pdf")'
 
-#      - name: Uploading artifacts
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: built_article
-#          path: output
-
       - name: Deploying article on github pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
@@ -65,16 +59,3 @@ jobs:
           BRANCH: gh-pages
           FOLDER: _build
           CLEAN: true
-          
-      # - name: Deploying article on gitHub pages # memo: create a branch for gh-pages first time - see below
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: output
-
-# memo ; create gh-pages first time
-# git checkout --orphan gh-pages
-# git reset --hard
-# git commit --allow-empty -m "Initializing gh-pages branch"
-# git push origin gh-pages
-# git checkout main
