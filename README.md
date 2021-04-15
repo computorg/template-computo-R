@@ -112,6 +112,8 @@ Note that, by default, your action is triggered only if you push a commit which 
 
 ### Step 4. submit
 
-Once step 3 is successful, you should end up with an HTML version published as a gh-page and a corresponding PDF build via pagedown. This PDF version can be submitted to the [Computo submission platform](https://computo.scholasticahq.com/):
+Once step 3 is successful, you should end up with an HTML version published as a gh-page and a corresponding PDF build via pagedown. The PDF file is named by default `article.pdf` is available at the root of your published gh-page (for this tempalte for instance, it is available at [https://computorg.github.io/template-computo-Rmarkdown/article.pdf](https://computorg.github.io/template-computo-Rmarkdown/article.pdf) since [https://computorg.github.io/template-computo-Rmarkdown/](https://computorg.github.io/template-computo-Rmarkdown/) is the URL of the gh-page associated with the current repo).
+
+The PDF version can be submitted to the [Computo submission platform](https://computo.scholasticahq.com/):
 
 <div id="scholastica-submission-button" style="margin-top: 10px; margin-bottom: 10px;"><a href="https://computo.scholasticahq.com/for-authors" style="outline: none; border: none;"><img style="outline: none; border: none;" src="https://s3.amazonaws.com/docs.scholastica/law-review-submission-button/submit_via_scholastica.png" alt="Submit to Computo"></a></div>
