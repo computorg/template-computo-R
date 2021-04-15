@@ -49,14 +49,14 @@ jobs:
           
       - name: Rendering Rmd file to HTML and PDF
         run: |          
-          conda run -n computorbuild Rscript -e 'rmarkdown::render("${{ env.Rmarkdown-file }}", output_file = "index.html", output_dir = "output")'
-          conda run -n computorbuild Rscript -e 'pagedown::chrome_print("output/index.html", output = "output/article.pdf")'
+          conda run -n computorbuild Rscript -e 'rmarkdown::render("${{ env.Rmarkdown-file }}", output_file = "index.html", output_dir = "_build")'
+          conda run -n computorbuild Rscript -e 'pagedown::chrome_print(_build/index.html", output = _build/article.pdf")'
 
-      - name: Uploading artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: built_article
-          path: output
+#      - name: Uploading artifacts
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: built_article
+#          path: output
 
       - name: Deploying article on github pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
