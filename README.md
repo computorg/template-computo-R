@@ -24,9 +24,18 @@ A Computo submission is thus a git(hub) repository like this one typically conta
 
 ### Step 0: setup a github repository
 
-Copy/fork this repo to use it as a starter for your own contributions.
+Clone/copy this repo to use it as a starter for your own contributions.
 
 **Note**: _You can rename the .Rmd and .bib files at your convenience, but we suggest you to keep the name of the config files unchanged, unless you know what you are doing._
+
+Typical git manipulations involves the following commands (change `my_github_account` and `my_article_for_computo`): by doing so, you will keep changes from the computo template if need (optional)
+
+``` bash
+git clone https://github.com/computorg/template-computo-Rmarkdown.git
+git remote rm origin
+git remote add origin https://github.com/my_github_account/my_article_for_computo.git
+git remote add upstream https://github.com/computorg/template-computo-Rmarkdown
+```
 
 ### Step 1. write your contribution 
 
