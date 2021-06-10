@@ -2,13 +2,7 @@ name: computorbuild
 channels:
   - conda-forge
 dependencies:
-  - numpy
-  - matplotlib
-  - scikit-learn
-  - seaborn
-  - nilearn
-  - pandas
-  - r-base=4.0.3
+  - r-base=4.1.0
   - r-codetools
   - r-remotes
   - r-reticulate
