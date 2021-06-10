@@ -87,7 +87,7 @@ ggplotly(p)
 
 It is also possible to create figures from static images:
 
-```{r figure-sfds, out.width="20%", fig.cap="SFdS logo (c.a. 2020).", fig.align='center'}
+```{r figure-sfds, out.width="20%", fig.cap="SFdS logo (c.a. 2021).", fig.align='center'}
 knitr::include_graphics("figs/sfds.png")
 ```
 
