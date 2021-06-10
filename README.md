@@ -49,20 +49,14 @@ Write your notebook as usual, as demonstrated in the `template-computo-Rmarkdown
 
 The file `environment.yml` tells binder how to set-up the machine that will be use to build your notebook, with a conda environement. It must be setup to have all the dependencies required to run you notebook (R, Python or system). 
 
-The default uses conda-forge and includes a couple of popular Python modules and R packages, with a recent version of `R`:
+The default uses conda-forge and includes a couple of popular R packages, with a recent version of `R`:
 
 ``` yaml
 name: computorbuild
 channels:
   - conda-forge
 dependencies:
-  - numpy
-  - matplotlib
-  - scikit-learn
-  - seaborn
-  - nilearn
-  - pandas
-  - r-base=4.0.3
+  - r-base=4.1.0
   - r-codetools
   - r-remotes
   - r-reticulate
