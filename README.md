@@ -20,6 +20,10 @@ A Computo submission is thus a git(hub) repository like this one typically conta
 - the source of the notebook (a .Rmd file + a BibTeX + some statics files typically in `figs/`)
 - configuration files for the binder environment to build the final notebook files, HTML and PDF (`environment.yml`, `r-addons.R` and optionnaly `apt.txt`). 
 
+The following picture gives an overview of the process on the author' side (with both Rmarkdown/Jupyter Myst approcahes):
+
+![Computo author process](https://github.com/computorg/computorg.github.io/raw/source/assets/img/computo_process_authors.png)
+
 ## Step-by-step procedure
 
 ### Step 0: setup a github repository
@@ -41,7 +45,7 @@ git remote add upstream https://github.com/computorg/template-computo-Rmarkdown
 
 Write your notebook as usual, as demonstrated in the `template-computo-Rmarkdown.Rmd` sample.
 
-**Note**: _Make sure that you are able to build your manuscript as a regular notebook on your system before proceeding to the next step._
+7**Note**: _Make sure that you are able to build your manuscript as a regular notebook on your system before proceeding to the next step._
 
 ### Step 2: configure your binder environement
 
