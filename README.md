@@ -6,21 +6,21 @@
 
 Documentation and sample of an Rmarkdown-based submission for the Computo journal.
 
-Show how to setup and automatically build the following outputs, ready to submit to our Peer-review platform: 
+Shows how to automatically setup and build the following outputs, ready to submit to our peer-review platform:
 
 - [HTML output](https://computorg.github.io/template-computo-Rmarkdown/)
 - [PDF output](https://computorg.github.io/template-computo-Rmarkdown/article.pdf)
 
 ## Process overview
 
-Submissions to Computo require both scientific content (typically equations, codes and figures) and a proof that this content is reproducible. This is achieved via the standard notebook systems available for R, Python and Julia (Jupyter notebook and Rmarkdown), coupled with the binder building system. 
+Submissions to Computo require both scientific content (typically equations, codes and figures) and aproof that this content is reproducible. This is achieved via the standard notebook systems available for R, Python and Julia (Jupyter notebook and Rmarkdown), coupled with the binder build system. 
 
 A Computo submission is thus a git(hub) repository like this one typically containing 
 
 - the source of the notebook (a .Rmd file + a BibTeX + some statics files typically in `figs/`)
 - configuration files for the binder environment to build the final notebook files, HTML and PDF (`environment.yml`, `r-addons.R` and optionnaly `apt.txt`). 
 
-The following picture gives an overview of the process on the author' side (with both Rmarkdown/Jupyter Myst approcahes):
+The following picture gives an overview of the process on the author's side (with both Rmarkdown/Jupyter Myst approaches):
 
 ![Computo author process](https://github.com/computorg/computorg.github.io/raw/source/assets/img/computo_process_authors.png)
 
@@ -32,7 +32,7 @@ Clone/copy this repo to use it as a starter for your own contributions.
 
 **Note**: _You can rename the .Rmd and .bib files at your convenience, but we suggest you to keep the name of the config files unchanged, unless you know what you are doing._
 
-Typical git manipulations involves the following commands (change `my_github_account` and `my_article_for_computo`): by doing so, you will keep changes from the computo template if need (optional)
+Typical git manipulations involve the following commands (change `my_github_account` and `my_article_for_computo`): by doing so, you will keep changes from the computo template if need (optional)
 
 ``` bash
 git clone https://github.com/computorg/template-computo-Rmarkdown.git
@@ -45,13 +45,13 @@ git remote add upstream https://github.com/computorg/template-computo-Rmarkdown
 
 Write your notebook as usual, as demonstrated in the `template-computo-Rmarkdown.Rmd` sample.
 
-7**Note**: _Make sure that you are able to build your manuscript as a regular notebook on your system before proceeding to the next step._
+**Note**: _Make sure that you are able to build your manuscript as a regular notebook on your system before proceeding to the next step._
 
 ### Step 2: configure your binder environement
 
 #### a. Setup Conda: `environment.yml`
 
-The file `environment.yml` tells binder how to set-up the machine that will be use to build your notebook, with a conda environement. It must be setup to have all the dependencies required to run you notebook (R, Python or system). 
+The file `environment.yml` tells binder how to setup the machine used to build your notebook, with a conda environment. It must be configured to have all the dependencies required to run you notebook installed (R, Python or system).
 
 The default uses conda-forge and includes a couple of popular R packages, with a recent version of `R`:
 
@@ -119,7 +119,7 @@ Note that, by default, your action is triggered only if you push a commit which 
 
 ### Step 4. submit
 
-Once step 3 is successful, you should end up with an HTML version published as a gh-page and a corresponding PDF build via pagedown. The PDF file is named by default `article.pdf` is available at the root of your published gh-page (for this tempalte for instance, it is available at [https://computorg.github.io/template-computo-Rmarkdown/article.pdf](https://computorg.github.io/template-computo-Rmarkdown/article.pdf) since [https://computorg.github.io/template-computo-Rmarkdown/](https://computorg.github.io/template-computo-Rmarkdown/) is the URL of the gh-page associated with the current repo).
+Once step 3 is successful, you should end up with an HTML version published as a gh-page and a corresponding PDF built via pagedown. The PDF file - named by default `article.pdf` - is available at the root of your published gh-page (for this template for instance, it is available at [https://computorg.github.io/template-computo-Rmarkdown/article.pdf](https://computorg.github.io/template-computo-Rmarkdown/article.pdf) since [https://computorg.github.io/template-computo-Rmarkdown/](https://computorg.github.io/template-computo-Rmarkdown/) is the URL of the gh-page associated with the current repo).
 
 The PDF version can be submitted to the [Computo submission platform](https://computo.scholasticahq.com/):
 
