@@ -10,18 +10,16 @@ output:
     toc: yes
     toc_depth: 2
     number_sections: yes
-  pdf_document:
-    toc: yes
-    toc_depth: '2'
-    number_sections: yes
 link-citations: yes
-bibliography: template-computo-Rmarkdown.bib
+bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(tidy = FALSE, fig.width = 8, fig.height = 8, echo = FALSE)
 options(htmltools.dir.version = FALSE)
 ```
+
+<button type="button" class="btn" title="Print to PDF" onClick="window.print()">Export to PDF</button>
 
 # Abstract
 

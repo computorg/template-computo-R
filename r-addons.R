@@ -12,11 +12,12 @@ local({
 ## ____________________________________________________
 
 ## ____________________________________________________
-## R package needed for generating the PDF file
-install.packages("pagedown")
+## Additional R packages needed by the user (CRAN)
+## example: remote
+## install.packages("anRpackage")
 ## ____________________________________________________
 
 ## ____________________________________________________
-## Additional R packages needed by the user
-## remotes::install_github("")
+## Additional R packages needed by the user ()
+## remotes::install_github("user/package")
 ## ____________________________________________________

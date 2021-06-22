@@ -6,23 +6,22 @@
 
 Documentation and sample of an Rmarkdown-based submission for the Computo journal.
 
-Shows how to automatically setup and build the following outputs, ready to submit to our peer-review platform:
-
-- [HTML output](https://computorg.github.io/template-computo-Rmarkdown/)
-- [PDF output](https://computorg.github.io/template-computo-Rmarkdown/article.pdf)
+Shows how to automatically setup and build the HTML and PDF outputs, ready to submit to our peer-review platform.
 
 ## Process overview
 
-Submissions to Computo require both scientific content (typically equations, codes and figures) and aproof that this content is reproducible. This is achieved via the standard notebook systems available for R, Python and Julia (Jupyter notebook and Rmarkdown), coupled with the binder build system. 
+Submissions to Computo require both scientific content (typically equations, codes and figures) and a proof that this content is reproducible. This is achieved via the standard notebook systems available for R, Python and Julia (Jupyter-book and Rmarkdown), coupled with the binder build system. 
 
 A Computo submission is thus a git(hub) repository like this one typically containing 
 
 - the source of the notebook (a .Rmd file + a BibTeX + some statics files typically in `figs/`)
-- configuration files for the binder environment to build the final notebook files, HTML and PDF (`environment.yml`, `r-addons.R` and optionnaly `apt.txt`). 
+- configuration files for the binder environment to build the final notebook files in HTML (`environment.yml`, and optionally `r-addons.R`). 
 
 The following picture gives an overview of the process on the author's side (with both Rmarkdown/Jupyter Myst approaches):
 
+<center>
 ![Computo author process](https://github.com/computorg/computorg.github.io/raw/source/assets/img/computo_process_authors.png)
+</center>
 
 ## Step-by-step procedure
 
@@ -51,7 +50,7 @@ Write your notebook as usual, as demonstrated in the `template-computo-Rmarkdown
 
 #### a. Setup Conda: `environment.yml`
 
-The file `environment.yml` tells binder how to setup the machine used to build your notebook, with a conda environment. It must be configured to have all the dependencies required to run you notebook installed (R, Python or system).
+The file `environment.yml` tells binder how to setup the machine used to build your notebook with a conda environment. It must be configured to have all the dependencies required to run you notebook (R, Python, packages/feedstocks and system dependencies).
 
 The default uses conda-forge and includes a couple of popular R packages, with a recent version of `R`:
 
@@ -75,7 +74,7 @@ The available feedstocks (Python modules and R packages) for conda-forge are lis
 
 If you need R dependencies _which are not available on any conda channel_, you can install them from source. In particular, you can install any R packages available on CRAN, on github or BioConductor. 
 
-The file `r-addons.R` includes the commands performing these installations, which will be executed from the `R` instance of your binder. The default only installs the `pagedown` package from CRAN, which is required to generate the PDF file from the HTML output of your notebook. You can install any R packages that you need here, but be aware that it will slow down the whole process (the conda solution is the fastest as it contains precompiled versions).
+The file `r-addons.R` includes the commands performing these installations, which will be executed from the `R` instance of your binder (by default, nothing is installed by these means). You can install any R packages that you need here, but be aware that it will slow down the whole process (the conda solution is the fastest as it contains precompiled versions).
 
 ```r
 ## ====================================================
@@ -93,12 +92,12 @@ local({
 
 ## ____________________________________________________
 ## R package needed for generating the PDF file
-install.packages("pagedown")
+## install.packages("anRpackage")
 ## ____________________________________________________
 
 ## ____________________________________________________
 ## Additional R packages needed by the user
-## remotes::install_github("")
+## remotes::install_github("user/package")
 ## ____________________________________________________
 ```
 
@@ -112,15 +111,13 @@ This action will
 
 - Check out repository for Github action on a Mac OS machine
 - Set up conda with the Python and R dependencies specified in `environment.yml`
-- Render your Rmd file to HTML and PDF files
+- Render your Rmd file to HTML
 - Deploy your HTML on a github page on the gh-page branch
 
 Note that, by default, your action is triggered only if you push a commit which includes the string `[build]` in its message (yes, we try to lower the footprint...).
 
 ### Step 4. submit
 
-Once step 3 is successful, you should end up with an HTML version published as a gh-page and a corresponding PDF built via pagedown. The PDF file - named by default `article.pdf` - is available at the root of your published gh-page (for this template for instance, it is available at [https://computorg.github.io/template-computo-Rmarkdown/article.pdf](https://computorg.github.io/template-computo-Rmarkdown/article.pdf) since [https://computorg.github.io/template-computo-Rmarkdown/](https://computorg.github.io/template-computo-Rmarkdown/) is the URL of the gh-page associated with the current repo).
-
-The PDF version can be submitted to the [Computo submission platform](https://computo.scholasticahq.com/):
+Once step 3 is successful, you should end up with an HTML version published as a gh-page. A PDF file can be obtained by clicking the "Export to PDF" button, which just calls the printing function of your browser (using Chrome should facilitate the rendering of your PDF). This PDF version can be submitted to the [Computo submission platform](https://computo.scholasticahq.com/):
 
 <div id="scholastica-submission-button" style="margin-top: 10px; margin-bottom: 10px;"><a href="https://computo.scholasticahq.com/for-authors" style="outline: none; border: none;"><img style="outline: none; border: none;" src="https://s3.amazonaws.com/docs.scholastica/law-review-submission-button/submit_via_scholastica.png" alt="Submit to Computo"></a></div>
