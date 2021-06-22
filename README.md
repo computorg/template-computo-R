@@ -19,9 +19,7 @@ A Computo submission is thus a git(hub) repository like this one typically conta
 
 The following picture gives an overview of the process on the author's side (with both Rmarkdown/Jupyter Myst approaches):
 
-<center>
 ![Computo author process](https://github.com/computorg/computorg.github.io/raw/source/assets/img/computo_process_authors.png)
-</center>
 
 ## Step-by-step procedure
 
