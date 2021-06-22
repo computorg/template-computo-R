@@ -15,7 +15,6 @@ env: # Change this if needed
 jobs:
   build_computorticle:
     name: Build Computo article with Rmarkdown
-    if: "contains(github.event.head_commit.message, '[build]')"
     runs-on: "macos-latest"
     defaults:
       run:
@@ -50,7 +49,7 @@ jobs:
           export LANG=en_US.UTF-8
           conda run -n computorbuild Rscript r-addons.R
           
-      - name: Rendering Rmd file to HTML and PDF
+      - name: Rendering Rmd file to HTML
         run: |          
           conda run -n computorbuild Rscript -e 'rmarkdown::render("${{ env.Rmarkdown-file }}", output_file = "index.html", output_dir = "_build")'
 

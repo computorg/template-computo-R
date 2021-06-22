@@ -112,8 +112,6 @@ This action will
 - Render your Rmd file to HTML
 - Deploy your HTML on a github page on the gh-page branch
 
-Note that, by default, your action is triggered only if you push a commit which includes the string `[build]` in its message (yes, we try to lower the footprint...).
-
 ### Step 4. submit
 
 Once step 3 is successful, you should end up with an HTML version published as a gh-page. A PDF file can be obtained by clicking the "Export to PDF" button, which just calls the printing function of your browser (using Chrome should facilitate the rendering of your PDF). This PDF version can be submitted to the [Computo submission platform](https://computo.scholasticahq.com/):
