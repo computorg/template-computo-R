@@ -46,7 +46,6 @@ jobs:
 
       - name: Install additional R dependencies
         run: | 
-          export LANG=en_US.UTF-8
           conda run -n computorbuild Rscript r-addons.R
           
       - name: Rendering Rmd file to HTML
