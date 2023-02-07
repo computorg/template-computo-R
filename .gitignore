@@ -12,3 +12,4 @@ logo_text_white.pdf
 *.html
 /.quarto/
 _extensions/
+renv/
