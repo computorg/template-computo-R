@@ -1,14 +1,12 @@
 ---
-title: "Template for contribution to Computo for R users"
-subtitle: "Example using `quarto` with the `knit` kernel and `renv`"
+title: "Template for contribution to Computo"
+subtitle: "Example dedicated to `R` users"
 author:
   - name: Jane Doe
     corresponding: true
     email: janedoe@nowhere.moon
     url: https://janedoe.someplace.themoon.org
     orcid: 0000-0000-0000-0000
-    acknowledgements: |
-      Jane Doe's acknowledgements
     affiliations:
       - name: Name of Affiliation one
         department: Statistics
@@ -17,8 +15,6 @@ author:
     email: johndoe@nowhere.moon
     url: https://johndoe.someplace.themoon.org
     orcid: 0000-0000-0000-0000
-    acknowledgements: |
-      John Doe's acknowledgements
     affiliations:
       - name: Name of Afficiliation two
         department: Computer Science
@@ -26,7 +22,7 @@ author:
 date: last-modified
 date-modified: last-modified
 description: |
-  This document provides a template based on the quarto system for contributions to Computo, using the journal extension, the knitr kernel (R user) and `renv` to set-up the dependencies.
+  This document provides a template based on the [`quarto`](https://quarto.org/) system for contributions to Computo, using the [`quarto journal extension`](https://github.com/computorg/computo-quarto-extension), the knitr kernel (R user) and [`renv`](https://rstudio.github.io/renv/articles/renv.html) to set-up the dependencies.
 abstract: >+
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere vestibulum facilisis. Aenean pretium orci augue, quis lobortis libero accumsan eu. Nam mollis lorem sit amet pellentesque ullamcorper. Curabitur lobortis libero eget malesuada vestibulum. Nam nec nibh massa. Pellentesque porttitor cursus tellus. Mauris urna erat, rhoncus sed faucibus sit amet, venenatis eu ipsum.
 keywords: [key1, key2, key3]
@@ -51,19 +47,27 @@ format:
 
 ## About this document
 
-This document provides a template based on the [quarto system](https://quarto.org/) for contributions to **Computo** @computo. We show how `R` [@R-base] code can be included and how the repository can be set-up for triggering github-action with `renv`.
+This document, accompanied with the [hopefully finely tuned git repos](https://github.com/computorg/template-computo-R/), provides a template based on the [quarto system](https://quarto.org/) for contributions to **Computo** @computo. We show how `R` [@R-base] code can be included and how the repository can be set-up for triggering github-action with `renv`.
 
-## Advice for writting your manuscript
+## Prerequisites
 
-First make sure that you are able to build your manuscript as a regular notebook on your system.
+You need [quarto](https://quarto.org/) installed on your system and the [Computo extension](https://github.com/computorg/computo-quarto-extension) to prepare your document
+
+```.bash
+quarto add computorg/computo-quarto-extension
+```
+
+## Setup a github repository for preparing your submission
+
+You can start with by clicking "use this template" button, on the top of the page of the [github repository associated to this template](https://github.com/computorg/template-computo-R/). Of course, you can set your repository private during the preparation of your manuscript.
 
 # Formatting
 
-This section covers basic formatting guidelines. [Quarto](https://quarto.org/) is a versatile  formatting system for authoring HTML based on markdown, integrating LaTeX and various code block interpreted either via Jupyter or Knitr (and thus deal with Python, R and many other langages). It relies on the [Pandoc Markdown](https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html) markup language.
+This section covers basic formatting guidelines with [Quarto](https://quarto.org/), a versatile formatting system for authoring HTML based on markdown, integrating LaTeX and various code block interpreted either via Jupyter or Knitr (and thus deal with Python, R and many other langages). It relies on the [Pandoc Markdown](https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html) markup language.
 
 To render/compile a document, run `quarto render`. A document will be generated that includes both content as well as the output of any embedded code chunks within the document:
 
-``` .bash
+```.bash
 quarto render template-computo-R.qmd # will render both to html and PDF
 ```
 
@@ -85,9 +89,9 @@ But we can also do a numbered list
 
 ### Mathematical formulae
 
-[LaTeX](https://www.latex-project.org/) code is natively supported[^katex], which makes it possible to use mathematical formulae:
+[LaTeX](https://www.latex-project.org/) code is natively supported[^lualatex], which makes it possible to use mathematical formulae:
 
-[^katex]: We use [katex](https://katex.org/) for this purpose.
+[^lualatex]: We use [lualatex](https://lualatex.org/) for this purpose.
 
 will render
 
@@ -124,19 +128,9 @@ $$\overline{X}_n\ \xrightarrow{\text{a.s.}}\ \mu \qquad\textrm{when}\ n \to \inf
 
 See @thm-slln.
 
-## Code
+## R Code
 
-Quarto uses either Jupyter or knitr to render code chunks. This can be triggered in the yaml header, e.g., for Jupyter (should be installed on your computer) use
-
-``` yaml
----
-title: "My Document"
-author "Jane Doe"
-jupyter: python3
----
-```
-
-For knitr (R + knitr must be installed on your computer)
+Quarto uses either Jupyter or knitr to render code chunks. This can be triggered in the yaml header. In this tutorial, we use `knitr`, (`R`, `knitr` and `markdown` must be installed on your computer)
 
 ``` yaml
 ---
@@ -144,10 +138,6 @@ title: "My Document"
 author "Jane Doe"
 ---
 ```
-
-You can use Jupyter for Python code and more. And R + KnitR for if you want to mix R with Python (via the package reticulate @R-reticulate).
-
-### R
 
 `R` code [@R-base] chunks may be embedded as follows:
 
@@ -216,13 +206,58 @@ page](https://quarto.org/docs/authoring/cross-references.html).
 
 ## For more information
 
-- [The template available in the Computo Quarto extension  ](https://computo.sfds.asso.fr/published-paper-tsne/) uses advanced features and the KnitR kernel (interactive plots and pseudocode).
+- [The Quarto web site](https://quarto.org) for comprehensive documentation.
+
+- [The template available in the Computo Quarto extension](https://computo.sfds.asso.fr/published-paper-tsne/), which uses advanced features and the knitr kernel (interactive plots, pseudocode, diagrams, etc.).
 
 - [Check our mock version of the t-SNE paper](https://computo.sfds.asso.fr/published-paper-tsne/) for a full and advanced example using the Jupyter kernel.
 
-- Also look at the previously published paper in Computo for even advanced examples.
+- Also look at the previously published paper in Computo for even mroe advanced examples.
 
 :::
+
+# Finalize your submission
+
+## Handle `R` dependencies with `renv`
+
+To make your work reproducible, you need to fix the packages and environment used to run your analysis. For the `R` system, the `renv` package is a reliable method, supported by the `quarto` community. You basically need a couples of command to setup your environment on your local machine:
+
+```{r, eval = FALSE}
+renv::init()
+```
+
+will intialize your repository. Then you just need to install the dependencies required to run your contribution, for instance, 
+
+
+```{r, eval=FALSE}
+renv::install("ggplot2")
+renv::install("plotly")
+```
+
+Once you are down, you can fix everything via the commmand
+
+```{r, eval=FALSE}
+renv::snapshot()
+```
+
+The only file that needs to be versioned by git is `renv.lock`. By default, the rest is ignored thanks to `.gitignore`. More details for using `renv` can be found either
+
+- on the [`renv` packge webpage](https://rstudio.github.io/renv/articles/renv.html)
+- on the [quarto page dedicated to environments](https://quarto.org/docs/projects/virtual-environments.html#using-renv)
+
+## Continuous integration
+
+The repository associated with this template is preconfigure to trigger an action on push that performs the following:
+
+1. Check out repository on the ubuntu-latest machine
+2. Install quarto and dependencies, including the Computo extension for Quarto
+3. Install a recent version of R
+4. Install R Dependencies with `renv`, suing your `renv.lock` file
+5. Render your .qmd file and Publish the results on a gh-page (both HTML and PDF)
+
+The file [.github/workflows/build_n_publish.yml](https://github.com/computorg/template-computo-R/blob/main/.github/workflows/build_n_publish.yml) is largely inspired from [this file](https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv).
+
+Once this is succesful, you are ready to submit your manuscript to the [Computo submission platform](https://computo.scholasticahq.com/).
 
 # References {.unnumbered}
 

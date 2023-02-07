@@ -20,37 +20,41 @@ A Computo submission is thus a git(hub) repository like this one typically conta
 
 ### Step 0: setup a github repository
 
-This can be simply achieved by using this repository as a template, via the "use this template" button on the top of this page.
+Use this repository as a template via the "use this template" button on the top of this page.
 
 **Note**: _You can rename the files at your convenience, but we suggest you to keep the name of the config files unchanged, unless you know what you are doing._
 
 ### Step 1. setup quarto on your system
 
-TODO
+You need [quarto](https://quarto.org/) installed on your system and the [Computo extension](https://github.com/computorg/computo-quarto-extension) to prepare your document
+
+```.bash
+quarto add computorg/computo-quarto-extension
+```
 
 ### Step 2. write your contribution 
 
-Write your notebook as usual, as demonstrated in the `template-computo-R.qmd` sample. More advanced features are examplified [in this page](https://computo.sfds.asso.fr/computo-quarto-extension/) or in our [remake fo the t-SNE paper](https://computo.sfds.asso.fr/published-paper-tsne/).
+Write your notebook as usual, as demonstrated in the `template-computo-R.qmd` sample.
 
 **Note**: _Make sure that you are able to build your manuscript as a regular notebook on your system before proceeding to the next step._
 
-### Step 2: configure `renv`
+### Step 3: configure `renv`
 
+Use the [`renv` package](https://rstudio.github.io/renv/articles/renv.html) to setup an reproducible environment handling R dependencies.
 
-### Step 3: proof reproducibility
+### Step 4: proof reproducibility
 
-It is now time to put everything together and check that your work is indeed reproducible! 
-
-To this end, you need to rely on a github action, whose default is found here: [.github/workflows/build.yml](https://github.com/computorg/template-computo-R/blob/main/.github/workflows/build.yml)
+It is now time to put everything together and check that your work is indeed reproducible! To this end, you need to rely on a github action, whose default is found here: [.github/workflows/build_n_publish.yml](https://github.com/computorg/template-computo-R/blob/main/.github/workflows/build_n_publish.yml)
 
 This action will
 
-- Check out repository for Github action on an Ubuntu machine
-- Set up conda with the Python and R dependencies specified in `environment.yml`
-- Render your Rmd file to HTML
-- Deploy your HTML on a github page on the gh-page branch
+1. Check out repository on the ubuntu-latest machine
+2. Install quarto and dependencies, including the Computo extension for Quarto
+3. Install a recent version of R
+4. Install R Dependencies with `renv`, suing your `renv.lock` file
+5. Render your .qmd file and Publish the results on a gh-page (both HTML and PDF)
 
-### Step 4. submit
+### Step 5. submit
 
 Once step 3 is successful, you should end up with an HTML version published as a gh-page. A PDF file can be obtained by clicking the "Export to PDF" button, which just calls the printing function of your browser (using Chrome should facilitate the rendering of your PDF). This PDF version can be submitted to the [Computo submission platform](https://computo.scholasticahq.com/):
 
