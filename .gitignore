@@ -3,13 +3,14 @@
 .Rapp.history
 .RData
 .Ruserdata
-logo_text_white.pdf
 /*.Rcheck/
 .Rproj.user/
 *_cache/
 /cache/
 *_files/
-*.html
+template-computo-R.html
+logo_text_white.pdf
+template-computo-R.pdf
 /.quarto/
 _extensions/
 renv/
