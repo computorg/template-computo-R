@@ -1,7 +1,7 @@
 
 # Template for contribution to Computo for R users
 
-[![build output](https://github.com/computorg/template-computo-R/workflows/build/badge.svg)](https://computorg.github.io/template-computo-R/)
+[![build and publish](https://github.com/computorg/template-computo-R/actions/workflows/build_n_publish.yml/badge.svg)](https://github.com/computorg/template-computo-R/actions/workflows/build_n_publish.yml)
 
 Documentation and sample of a simple `R`-based submission for the [Computo journal](https://computorg.github.io), using our Quarto-based template and `renv` for handling dependencies.
 
