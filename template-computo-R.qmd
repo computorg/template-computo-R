@@ -47,15 +47,15 @@ format:
 
 ## About this document
 
-This document, accompanied with the [hopefully finely tuned git repos](https://github.com/computorg/template-computo-R/), provides a template for writing contributions to **Computo** [@computo]. We show how `R` [@R-base] code can be included and how the repository can be set up for triggering github actions for rendering the document, where dependencies are handled by `renv`.
+This document, accompanied with the [hopefully finely tuned git repos](https://github.com/computorg/template-computo-R/), provides a template for writing contributions to **Computo** [@computo]. We show how `R` code [@R-base] can be included and how the repository can be set up for triggering github actions for rendering the document, with dependencies handled by `renv`.
 
 ## Setup a github repository for preparing your submission
 
-You can start by clicking the "use this template" button, on the top of the page of the [github repository associated to this template](https://github.com/computorg/template-computo-R/). Of course, you can set your repository private during the preparation of your manuscript.
+You can start by clicking the "use this template" button, on the top of the page of the [github repository associated to this document](https://github.com/computorg/template-computo-R/). Of course, you can set your repository private during the preparation of your manuscript.
 
 ## Quarto
 
-You need [quarto](https://quarto.org/) installed on your system and the [Computo extension](https://github.com/computorg/computo-quarto-extension) to prepare your document. For the latter, once quarto is installed,  run the following to install the extension in the current directory (it creates a `_extension` directory which is ignored by tanks to `.gitignore` by default):
+You need [quarto](https://quarto.org/) installed on your system and the [Computo extension](https://github.com/computorg/computo-quarto-extension) to prepare your document. For the latter, once quarto is installed,  run the following to install the extension in the current directory (it creates a `_extension` directory which is ignored by git thanks to `.gitignore` by default):
 
 ```.bash
 quarto add computorg/computo-quarto-extension
@@ -65,11 +65,17 @@ quarto add computorg/computo-quarto-extension
 
 This section covers basic formatting guidelines for [Quarto](https://quarto.org/), a versatile formatting system for authoring document integrating markdown, LaTeX and various code block interpreted either via Jupyter or Knitr (and thus dealing with Python, R or Julia). It relies on the [Pandoc](https://pandoc.org/MANUAL.html) document converter.
 
-To render/compile a document, run `quarto render`. By default, both PDF and HTML documents are generated:
+To render a document, run `quarto render`. By default, both PDF and HTML documents are generated:
 
 ```.bash
 quarto render template-computo-R.qmd # will render both to html and PDF
 ```
+
+::: {.callout-info}
+## Note
+
+To check the syntax of the formatting below, you can use the `</> source` button at the top left of this document.
+:::
 
 ## Basic markdown formatting
 
@@ -92,8 +98,6 @@ But we can also do a numbered list
 [LaTeX](https://www.latex-project.org/) code is natively supported[^lualatex], which makes it possible to use mathematical formulae:
 
 [^lualatex]: We use [lualatex](https://lualatex.org/) for this purpose.
-
-will render
 
 $$
 f(x_1, \dots, x_n; \mu, \sigma^2) =
@@ -204,16 +208,18 @@ page](https://quarto.org/docs/authoring/cross-references.html).
 
 ## Advanced formatting
 
+Advanced formatting features are possible and documented (including interactive plots, pseudo-code, (Tikz) diagrams, Lua filters, mixing R + Python in the same document), but are beyond the scope of this simple introducton. We point several entries in this direction.
+
 ::: {.callout-warning}
-## For more information
+## More information
 
 - [The Quarto web site](https://quarto.org) for comprehensive documentation.
 
-- [The template available in the Computo Quarto extension](https://computo.sfds.asso.fr/published-paper-tsne/), which uses advanced features and the knitr kernel (interactive plots, pseudocode, diagrams, etc.).
+- [The template distributed with the Computo Quarto extension](https://computo.sfds.asso.fr/published-paper-tsne/), which uses such advanced features.
 
-- [Our mock version of the t-SNE paper](https://computo.sfds.asso.fr/published-paper-tsne/) for a full and advanced example using the Jupyter kernel.
+- [Our mock version of the t-SNE paper](https://computo.sfds.asso.fr/published-paper-tsne/), a full and advanced example using Python and the Jupyter kernel.
 
-- [Also look at the previously published papers in Computo](https://computo.sfds.asso.fr/publications/) for even more advanced examples.
+- [The previously published papers in Computo](https://computo.sfds.asso.fr/publications/) can be used as references.
 
 :::
 
@@ -221,20 +227,20 @@ page](https://quarto.org/docs/authoring/cross-references.html).
 
 ## Handle `R` dependencies with `renv`
 
-To make your work reproducible, you need to fix the packages and environment used to run your analysis. For the `R` system, the `renv` package is a possible reliable method, supported by the `quarto` community. You basically need a couples of command to setup your environment on your local machine:
+To make your work reproducible, you need to fix the packages and environment used to run your analysis. For the `R` system, the `renv` package is one of the possible reliable method, supported by the community. You basically need a couple of commands to setup your environment on your local machine. First,
 
 ```{r, eval = FALSE}
 renv::init()
 ```
 
-This will initialize your repository. Then you just need to install the dependencies required to run your contribution, for instance, 
+will initialize your repository. Then you just need to install the dependencies required to run your contribution, for instance, 
 
 
 ```{r, eval=FALSE}
-renv::install("ggplot2")
+renv::install("ggplot2") # or equivalently install.packages("ggplot2")
 ```
 
-Once you are done, you can fix everything via the command
+Non-CRAN packages (*e.g.* Github packages) can be used. Once you are done, you can fix everything with the command
 
 ```{r, eval=FALSE}
 renv::snapshot()

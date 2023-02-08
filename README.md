@@ -50,7 +50,7 @@ Write your notebook as usual, [as demonstrated in the `template-computo-R.qmd` s
 
 ### Step 3: setup dependencies with `renv`
 
-Use the [`renv` package manager](https://rstudio.github.io/renv/articles/renv.html) to setup an reproducible environment handling your `R` dependencies.
+Use the [`renv` package manager](https://rstudio.github.io/renv/articles/renv.html) to setup a reproducible environment handling your `R` dependencies.
 
 ### Step 4: proof reproducibility
 
