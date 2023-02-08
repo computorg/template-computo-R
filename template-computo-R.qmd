@@ -47,15 +47,15 @@ format:
 
 ## About this document
 
-This document, accompanied with the [hopefully finely tuned git repos](https://github.com/computorg/template-computo-R/), provides a template for writing contributions to **Computo** [@computo]. We show how `R` [@R-base] code can be included and how the repository can be set-up for triggering github-action for rendering the document, where dependencies are handled by `renv`.
+This document, accompanied with the [hopefully finely tuned git repos](https://github.com/computorg/template-computo-R/), provides a template for writing contributions to **Computo** [@computo]. We show how `R` [@R-base] code can be included and how the repository can be set up for triggering github actions for rendering the document, where dependencies are handled by `renv`.
 
 ## Setup a github repository for preparing your submission
 
-You can start with by clicking "use this template" button, on the top of the page of the [github repository associated to this template](https://github.com/computorg/template-computo-R/). Of course, you can set your repository private during the preparation of your manuscript.
+You can start by clicking the "use this template" button, on the top of the page of the [github repository associated to this template](https://github.com/computorg/template-computo-R/). Of course, you can set your repository private during the preparation of your manuscript.
 
 ## Quarto
 
-You need [quarto](https://quarto.org/) installed on your system and the [Computo extension](https://github.com/computorg/computo-quarto-extension) to prepare your document. For the latter, once quarto is installed,  run the following to install the extension in the current directory (is ignored by .gitignore by default)
+You need [quarto](https://quarto.org/) installed on your system and the [Computo extension](https://github.com/computorg/computo-quarto-extension) to prepare your document. For the latter, once quarto is installed,  run the following to install the extension in the current directory (it creates a `_extension` directory which is ignored by tanks to `.gitignore` by default):
 
 ```.bash
 quarto add computorg/computo-quarto-extension
@@ -63,9 +63,9 @@ quarto add computorg/computo-quarto-extension
 
 # Formatting
 
-This section covers basic formatting guidelines for [Quarto](https://quarto.org/), a versatile formatting system for authoring document integrating markdown, $ \LaTeX\ $ and various code block interpreted either via Jupyter or Knitr (and thus dealing with Python, R or Julia). It relies on the [Pandoc Markdown](https://rmarkdown.rstudio.com/authoring_pandoc_markdown.html) markup language.
+This section covers basic formatting guidelines for [Quarto](https://quarto.org/), a versatile formatting system for authoring document integrating markdown, LaTeX and various code block interpreted either via Jupyter or Knitr (and thus dealing with Python, R or Julia). It relies on the [Pandoc](https://pandoc.org/MANUAL.html) document converter.
 
-To render/compile a document, run `quarto render`. A document will be generated that includes both content as well as the output of any embedded code chunks within the document:
+To render/compile a document, run `quarto render`. By default, both PDF and HTML documents are generated:
 
 ```.bash
 quarto render template-computo-R.qmd # will render both to html and PDF
@@ -202,8 +202,9 @@ bibliographic references for sections, equations, theorems, figures,
 lists, etc. Have a look at [this
 page](https://quarto.org/docs/authoring/cross-references.html).
 
-::: {.callout-warning}
+## Advanced formatting
 
+::: {.callout-warning}
 ## For more information
 
 - [The Quarto web site](https://quarto.org) for comprehensive documentation.
@@ -231,7 +232,6 @@ This will initialize your repository. Then you just need to install the dependen
 
 ```{r, eval=FALSE}
 renv::install("ggplot2")
-renv::install("plotly")
 ```
 
 Once you are done, you can fix everything via the command
@@ -249,11 +249,10 @@ The only file that needs to be versioned by git is `renv.lock`. By default, the 
 
 The repository associated with this template is pre-configure to trigger an action on push that performs the following:
 
-1. Check out repository on the ubuntu-latest machine
-2. Install quarto and dependencies, including the Computo extension for Quarto
-3. Install a recent version of R
-4. Install R Dependencies with `renv`, using your `renv.lock` file
-5. Render your .qmd file and Publish the results on a gh-page (both HTML and PDF)
+1. Check out repository on the `ubuntu-latest` machine
+2. Install quarto and dependencies, including the Computo extension
+3. Install R and dependencies with `renv`, using your `renv.lock` file
+4. Render your .qmd file and Publish the results on a gh-page (both HTML and PDF)
 
 The file [.github/workflows/build_n_publish.yml](https://github.com/computorg/template-computo-R/blob/main/.github/workflows/build_n_publish.yml) is largely inspired from [this file](https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv).
 

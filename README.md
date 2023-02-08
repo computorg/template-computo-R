@@ -11,19 +11,19 @@ Additional details can be found [in the template manuscript](https://computo.sfd
 
   ## Process overview
 
-Submissions to [Computo](https://computorg.github.io) require both scientific content (typically equations, codes and figures, data) and a proof that this content is reproducible. This is achieved by means of [Quarto](https://quarto.org), a virtual environment fixing your dependencies and continuous integration (CI) (plus, if required, a external website such a [Zenodo](https://zenodo.org/) or [OSF](https://osf.io/) storing your large data files). 
+Submissions to [Computo](https://computorg.github.io) require both scientific content (typically equations, codes and figures, data) and a proof that this content is reproducible. This is achieved by means of i) a notebook system, ii) a virtual environment fixing the dependencies and iii) continuous integration (plus, if needed, an external website to store large data files such a [Zenodo](https://zenodo.org/) or [OSF](https://osf.io/) ). 
 
-A Computo submission is thus a git(hub) repository like this one typically containing 
+A Computo submission is thus a git(hub) repository like this one containing 
 
-- the sources of the notebook (a quarto .qmd file + a BibTeX + some statics files, _e.g._ figures or small data tables)
-- configuration files to setup dependencies in a virtual environment
-- configuration files to setup the CI that render the final HTML and PDF documents
+- the source files of the notebook (a quarto .qmd file + a BibTeX .bib file + some statics files, _e.g._ figures or small .csv data tables)
+- configuration files to set up the dependencies in a virtual environment
+- configuration files to set up the continuous integration rendering the final documents
 
 In this template, we focus on `R` users and detail a solution based on
 
 - The `knitr` kernel of Quarto for rendering the document,
 - The `renv` package for setting the virtual environment,
-- github action for handling the continuous integration.
+- Github actions for handling the continuous integration.
 
 ## Step-by-step procedure
 
@@ -31,7 +31,7 @@ In this template, we focus on `R` users and detail a solution based on
 
 Use this repository as a template via the "use this template" button on the top of this page.
 
-**Note**: _You can use Gitlab for submitting for Computo. We hope giving more support for this in the future._
+**Note**: _You can use Gitlab for submitting for Computo. We hope giving more support in the future._
 
 ### Step 1. setup Quarto and Computo extension on your system
 
@@ -46,7 +46,7 @@ quarto add computorg/computo-quarto-extension
 
 Write your notebook as usual, [as demonstrated in the `template-computo-R.qmd` sample](https://computorg.github.io/template-computo-R/).
 
-**Note**: _Make sure that you are able to build your manuscript as a standalone notebook on your system before proceeding to the next step._
+**Note**: _Make sure that you are able to build your manuscript as a standard notebook on your system before proceeding to the next step._
 
 ### Step 3: setup dependencies with `renv`
 
