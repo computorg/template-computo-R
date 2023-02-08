@@ -71,7 +71,7 @@ To render a document, run `quarto render`. By default, both PDF and HTML documen
 quarto render template-computo-R.qmd # will render both to html and PDF
 ```
 
-::: {.callout-info}
+::: {.callout-tip}
 ## Note
 
 To check the syntax of the formatting below, you can use the `</> source` button at the top left of this document.
