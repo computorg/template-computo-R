@@ -60,9 +60,8 @@ This action will
 
 1. Check out repository on the ubuntu-latest machine
 2. Install quarto and dependencies, including the Computo extension for Quarto
-3. Install a recent version of R
-4. Install R Dependencies with `renv`, suing your `renv.lock` file
-5. Render your .qmd file and Publish the results on a gh-page (both HTML and PDF)
+3. Install R and dependencies with `renv`, using your `renv.lock` file
+4. Render your .qmd file and Publish the results on a gh-page (both HTML and PDF)
 
 **Note**: _Gitlab CI can be used to obtained similar results._
 

@@ -35,7 +35,7 @@ citation:
   issn: "2824-7795"
 bibliography: references.bib
 github-user: computorg
-repo: "template-computo-quarto"
+repo: "template-computo-r"
 draft: true # set to false once the build is running
 published: false # will be set to true once accepted
 format:
@@ -208,7 +208,7 @@ page](https://quarto.org/docs/authoring/cross-references.html).
 
 ## Advanced formatting
 
-Advanced formatting features are possible and documented (including interactive plots, pseudo-code, (Tikz) diagrams, Lua filters, mixing R + Python in the same document), but are beyond the scope of this simple introducton. We point several entries in this direction.
+Advanced formatting features are possible and documented (including interactive plots, pseudo-code, (Tikz) diagrams, Lua filters, mixing R + Python in the same document), but are beyond the scope of this simple introduction. We point several entries in this direction.
 
 ::: {.callout-warning}
 ## More information
