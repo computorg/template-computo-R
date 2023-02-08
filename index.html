@@ -255,22 +255,21 @@ ISSN 2824-7795</p>
   </ul></li>
   <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting"><span class="toc-section-number">2</span>  Formatting</a>
   <ul class="collapse">
-  <li><a href="#note" id="toc-note" class="nav-link" data-scroll-target="#note"><span class="toc-section-number">2.1</span>  Note</a></li>
-  <li><a href="#basic-markdown-formatting" id="toc-basic-markdown-formatting" class="nav-link" data-scroll-target="#basic-markdown-formatting"><span class="toc-section-number">2.2</span>  Basic markdown formatting</a></li>
-  <li><a href="#mathematics" id="toc-mathematics" class="nav-link" data-scroll-target="#mathematics"><span class="toc-section-number">2.3</span>  Mathematics</a>
+  <li><a href="#basic-markdown-formatting" id="toc-basic-markdown-formatting" class="nav-link" data-scroll-target="#basic-markdown-formatting"><span class="toc-section-number">2.1</span>  Basic markdown formatting</a></li>
+  <li><a href="#mathematics" id="toc-mathematics" class="nav-link" data-scroll-target="#mathematics"><span class="toc-section-number">2.2</span>  Mathematics</a>
   <ul class="collapse">
-  <li><a href="#mathematical-formulae" id="toc-mathematical-formulae" class="nav-link" data-scroll-target="#mathematical-formulae"><span class="toc-section-number">2.3.1</span>  Mathematical formulae</a></li>
-  <li><a href="#theorems-and-other-amsthem-like-environments" id="toc-theorems-and-other-amsthem-like-environments" class="nav-link" data-scroll-target="#theorems-and-other-amsthem-like-environments"><span class="toc-section-number">2.3.2</span>  Theorems and other amsthem-like environments</a></li>
+  <li><a href="#mathematical-formulae" id="toc-mathematical-formulae" class="nav-link" data-scroll-target="#mathematical-formulae"><span class="toc-section-number">2.2.1</span>  Mathematical formulae</a></li>
+  <li><a href="#theorems-and-other-amsthem-like-environments" id="toc-theorems-and-other-amsthem-like-environments" class="nav-link" data-scroll-target="#theorems-and-other-amsthem-like-environments"><span class="toc-section-number">2.2.2</span>  Theorems and other amsthem-like environments</a></li>
   </ul></li>
-  <li><a href="#r-code" id="toc-r-code" class="nav-link" data-scroll-target="#r-code"><span class="toc-section-number">2.4</span>  R Code</a></li>
-  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="toc-section-number">2.5</span>  Figures</a></li>
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="toc-section-number">2.6</span>  Tables</a></li>
-  <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references"><span class="toc-section-number">2.7</span>  Handling references</a>
+  <li><a href="#r-code" id="toc-r-code" class="nav-link" data-scroll-target="#r-code"><span class="toc-section-number">2.3</span>  R Code</a></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="toc-section-number">2.4</span>  Figures</a></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="toc-section-number">2.5</span>  Tables</a></li>
+  <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references"><span class="toc-section-number">2.6</span>  Handling references</a>
   <ul class="collapse">
-  <li><a href="#bibliographic-references" id="toc-bibliographic-references" class="nav-link" data-scroll-target="#bibliographic-references"><span class="toc-section-number">2.7.1</span>  Bibliographic references</a></li>
-  <li><a href="#other-cross-references" id="toc-other-cross-references" class="nav-link" data-scroll-target="#other-cross-references"><span class="toc-section-number">2.7.2</span>  Other cross-references</a></li>
+  <li><a href="#bibliographic-references" id="toc-bibliographic-references" class="nav-link" data-scroll-target="#bibliographic-references"><span class="toc-section-number">2.6.1</span>  Bibliographic references</a></li>
+  <li><a href="#other-cross-references" id="toc-other-cross-references" class="nav-link" data-scroll-target="#other-cross-references"><span class="toc-section-number">2.6.2</span>  Other cross-references</a></li>
   </ul></li>
-  <li><a href="#advanced-formatting" id="toc-advanced-formatting" class="nav-link" data-scroll-target="#advanced-formatting"><span class="toc-section-number">2.8</span>  Advanced formatting</a></li>
+  <li><a href="#advanced-formatting" id="toc-advanced-formatting" class="nav-link" data-scroll-target="#advanced-formatting"><span class="toc-section-number">2.7</span>  Advanced formatting</a></li>
   </ul></li>
   <li><a href="#finalize-your-submission" id="toc-finalize-your-submission" class="nav-link" data-scroll-target="#finalize-your-submission"><span class="toc-section-number">3</span>  Finalize your submission</a>
   <ul class="collapse">
@@ -307,12 +306,21 @@ ISSN 2824-7795</p>
 <p>This section covers basic formatting guidelines for <a href="https://quarto.org/">Quarto</a>, a versatile formatting system for authoring document integrating markdown, LaTeX and various code block interpreted either via Jupyter or Knitr (and thus dealing with Python, R or Julia). It relies on the <a href="https://pandoc.org/MANUAL.html">Pandoc</a> document converter.</p>
 <p>To render a document, run <code>quarto render</code>. By default, both PDF and HTML documents are generated:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode .bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render template-computo-R.qmd <span class="co"># will render both to html and PDF</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="note" class="level2 callout-info" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="note"><span class="header-section-number">2.1</span> Note</h2>
+<div class="callout callout-style-default callout-tip callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>To check the syntax of the formatting below, you can use the <code>&lt;/&gt; source</code> button at the top left of this document.</p>
-</section>
-<section id="basic-markdown-formatting" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="basic-markdown-formatting"><span class="header-section-number">2.2</span> Basic markdown formatting</h2>
+</div>
+</div>
+<section id="basic-markdown-formatting" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="basic-markdown-formatting"><span class="header-section-number">2.1</span> Basic markdown formatting</h2>
 <p><strong>Bold text</strong> or <em>italic</em></p>
 <ul>
 <li>This is a list</li>
@@ -326,10 +334,10 @@ ISSN 2824-7795</p>
 <li>This is my third item</li>
 </ol>
 </section>
-<section id="mathematics" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="mathematics"><span class="header-section-number">2.3</span> Mathematics</h2>
-<section id="mathematical-formulae" class="level3" data-number="2.3.1">
-<h3 data-number="2.3.1" class="anchored" data-anchor-id="mathematical-formulae"><span class="header-section-number">2.3.1</span> Mathematical formulae</h3>
+<section id="mathematics" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="mathematics"><span class="header-section-number">2.2</span> Mathematics</h2>
+<section id="mathematical-formulae" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="mathematical-formulae"><span class="header-section-number">2.2.1</span> Mathematical formulae</h3>
 <p><a href="https://www.latex-project.org/">LaTeX</a> code is natively supported<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, which makes it possible to use mathematical formulae:</p>
 <p><span class="math display">
 f(x_1, \dots, x_n; \mu, \sigma^2) =
@@ -348,8 +356,8 @@ x_L \\ x_N \end{array}\right] \\
 \end{aligned}
 \tag{1}</span></span></p>
 </section>
-<section id="theorems-and-other-amsthem-like-environments" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="theorems-and-other-amsthem-like-environments"><span class="header-section-number">2.3.2</span> Theorems and other amsthem-like environments</h3>
+<section id="theorems-and-other-amsthem-like-environments" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="theorems-and-other-amsthem-like-environments"><span class="header-section-number">2.2.2</span> Theorems and other amsthem-like environments</h3>
 <p>Quarto includes a nice support for theorems, with predefined prefix labels for theorems, lemmas, proposition, etc. see <a href="https://quarto.org/docs/authoring/cross-references.html#theorems-and-proofs">this page</a>. Here is a simple example:</p>
 <div id="thm-slln" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 1 (Strong law of large numbers) </strong></span>The sample average converges almost surely to the expected value:</p>
@@ -358,8 +366,8 @@ x_L \\ x_N \end{array}\right] \\
 <p>See <a href="#thm-slln">Theorem&nbsp;1</a>.</p>
 </section>
 </section>
-<section id="r-code" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="r-code"><span class="header-section-number">2.4</span> R Code</h2>
+<section id="r-code" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="r-code"><span class="header-section-number">2.3</span> R Code</h2>
 <p>Quarto uses either Jupyter or knitr to render code chunks. This can be triggered in the yaml header. In this tutorial, we use <code>knitr</code>, (<code>R</code>, <code>knitr</code> and <code>markdown</code> must be installed on your computer)</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
@@ -373,8 +381,8 @@ x_L \\ x_N \end{array}\right] \\
 </details>
 </div>
 </section>
-<section id="figures" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="figures"><span class="header-section-number">2.5</span> Figures</h2>
+<section id="figures" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="figures"><span class="header-section-number">2.4</span> Figures</h2>
 <p>Plots can be generated as follows:</p>
 <div class="cell">
 <details open="">
@@ -397,8 +405,8 @@ x_L \\ x_N \end{array}\right] \\
 </figure>
 </div>
 </section>
-<section id="tables" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="tables"><span class="header-section-number">2.6</span> Tables</h2>
+<section id="tables" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="tables"><span class="header-section-number">2.5</span> Tables</h2>
 <p>Tables (with label: <code>@tbl-mylabel</code> renders <a href="#tbl-mylabel">Table&nbsp;1</a>) can be generated with markdown as follows</p>
 <div id="tbl-mylabel" class="anchored">
 <table class="table">
@@ -481,19 +489,19 @@ x_L \\ x_N \end{array}\right] \\
 </div>
 </div>
 </section>
-<section id="sec-references" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="sec-references"><span class="header-section-number">2.7</span> Handling references</h2>
-<section id="bibliographic-references" class="level3" data-number="2.7.1">
-<h3 data-number="2.7.1" class="anchored" data-anchor-id="bibliographic-references"><span class="header-section-number">2.7.1</span> Bibliographic references</h3>
+<section id="sec-references" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="sec-references"><span class="header-section-number">2.6</span> Handling references</h2>
+<section id="bibliographic-references" class="level3" data-number="2.6.1">
+<h3 data-number="2.6.1" class="anchored" data-anchor-id="bibliographic-references"><span class="header-section-number">2.6.1</span> Bibliographic references</h3>
 <p>References are displayed as footnotes using <a href="http://www.bibtex.org/">BibTeX</a>, e.g.&nbsp;<code>[@computo]</code> will be displayed as <span class="citation" data-cites="computo">(<a href="#ref-computo" role="doc-biblioref">Computo Team 2020</a>)</span>, where <code>computo</code> is the bibtex key for this specific entry. The bibliographic information is automatically retrieved from the <code>.bib</code> file specified in the header of this document (here: <code>references.bib</code>).</p>
 </section>
-<section id="other-cross-references" class="level3" data-number="2.7.2">
-<h3 data-number="2.7.2" class="anchored" data-anchor-id="other-cross-references"><span class="header-section-number">2.7.2</span> Other cross-references</h3>
+<section id="other-cross-references" class="level3" data-number="2.6.2">
+<h3 data-number="2.6.2" class="anchored" data-anchor-id="other-cross-references"><span class="header-section-number">2.6.2</span> Other cross-references</h3>
 <p>As already (partially) seen, Quarto includes a mechanism similar to the bibliographic references for sections, equations, theorems, figures, lists, etc. Have a look at <a href="https://quarto.org/docs/authoring/cross-references.html">this page</a>.</p>
 </section>
 </section>
-<section id="advanced-formatting" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="advanced-formatting"><span class="header-section-number">2.8</span> Advanced formatting</h2>
+<section id="advanced-formatting" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="advanced-formatting"><span class="header-section-number">2.7</span> Advanced formatting</h2>
 <p>Advanced formatting features are possible and documented (including interactive plots, pseudo-code, (Tikz) diagrams, Lua filters, mixing R + Python in the same document), but are beyond the scope of this simple introduction. We point several entries in this direction.</p>
 <div class="callout callout-style-default callout-warning callout-captioned">
 <div class="callout-header d-flex align-content-center">
@@ -1001,7 +1009,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render template-computo-R.qmd <span class="co"># will render both to html and PDF</span></span>
 <span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a>::: {.callout-info}</span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip}</span>
 <span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Note</span></span>
 <span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a>To check the syntax of the formatting below, you can use the <span class="in">`&lt;/&gt; source`</span> button at the top left of this document.</span>
