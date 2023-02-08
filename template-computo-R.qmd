@@ -246,7 +246,11 @@ Non-CRAN packages (*e.g.* Github packages) can be used. Once you are done, you c
 renv::snapshot()
 ```
 
-The only file that needs to be versioned by git is `renv.lock`. By default, the rest is ignored thanks to `.gitignore`. More details for using `renv` can be found either
+::: {.callout-important}
+The only file that needs to be versioned by git is `renv.lock`. By default, the rest is ignored thanks to `.gitignore`. 
+:::
+
+More details for using `renv` can be found either
 
 - on the [`renv` packge webpage](https://rstudio.github.io/renv/articles/renv.html), or
 - on the [quarto page dedicated to environments](https://quarto.org/docs/projects/virtual-environments.html#using-renv)
