@@ -548,7 +548,20 @@ More information
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>The only file that needs to be versioned by git is <code>renv.lock</code>. By default, the rest is ignored thanks to <code>.gitignore</code>. More details for using <code>renv</code> can be found either</p>
+<div class="callout callout-style-default callout-important callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The only file that needs to be versioned by git is <code>renv.lock</code>. By default, the rest is ignored thanks to <code>.gitignore</code>.</p>
+</div>
+</div>
+<p>More details for using <code>renv</code> can be found either</p>
 <ul>
 <li>on the <a href="https://rstudio.github.io/renv/articles/renv.html"><code>renv</code> packge webpage</a>, or</li>
 <li>on the <a href="https://quarto.org/docs/projects/virtual-environments.html#using-renv">quarto page dedicated to environments</a></li>
@@ -1184,34 +1197,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb12-246"><a href="#cb12-246" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span>
 <span id="cb12-247"><a href="#cb12-247" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-248"><a href="#cb12-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-249"><a href="#cb12-249" aria-hidden="true" tabindex="-1"></a>The only file that needs to be versioned by git is <span class="in">`renv.lock`</span>. By default, the rest is ignored thanks to <span class="in">`.gitignore`</span>. More details for using <span class="in">`renv`</span> can be found either</span>
-<span id="cb12-250"><a href="#cb12-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-251"><a href="#cb12-251" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>on the <span class="co">[</span><span class="ot">`renv` packge webpage</span><span class="co">](https://rstudio.github.io/renv/articles/renv.html)</span>, or</span>
-<span id="cb12-252"><a href="#cb12-252" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>on the <span class="co">[</span><span class="ot">quarto page dedicated to environments</span><span class="co">](https://quarto.org/docs/projects/virtual-environments.html#using-renv)</span></span>
-<span id="cb12-253"><a href="#cb12-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-254"><a href="#cb12-254" aria-hidden="true" tabindex="-1"></a><span class="fu">## Continuous integration</span></span>
-<span id="cb12-255"><a href="#cb12-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-256"><a href="#cb12-256" aria-hidden="true" tabindex="-1"></a>The repository associated with this template is pre-configure to trigger an action on push that performs the following:</span>
+<span id="cb12-249"><a href="#cb12-249" aria-hidden="true" tabindex="-1"></a>::: {.callout-important}</span>
+<span id="cb12-250"><a href="#cb12-250" aria-hidden="true" tabindex="-1"></a>The only file that needs to be versioned by git is <span class="in">`renv.lock`</span>. By default, the rest is ignored thanks to <span class="in">`.gitignore`</span>. </span>
+<span id="cb12-251"><a href="#cb12-251" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb12-252"><a href="#cb12-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-253"><a href="#cb12-253" aria-hidden="true" tabindex="-1"></a>More details for using <span class="in">`renv`</span> can be found either</span>
+<span id="cb12-254"><a href="#cb12-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-255"><a href="#cb12-255" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>on the <span class="co">[</span><span class="ot">`renv` packge webpage</span><span class="co">](https://rstudio.github.io/renv/articles/renv.html)</span>, or</span>
+<span id="cb12-256"><a href="#cb12-256" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>on the <span class="co">[</span><span class="ot">quarto page dedicated to environments</span><span class="co">](https://quarto.org/docs/projects/virtual-environments.html#using-renv)</span></span>
 <span id="cb12-257"><a href="#cb12-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-258"><a href="#cb12-258" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Check out repository on the <span class="in">`ubuntu-latest`</span> machine</span>
-<span id="cb12-259"><a href="#cb12-259" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Install quarto and dependencies, including the Computo extension</span>
-<span id="cb12-260"><a href="#cb12-260" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Install R and dependencies with <span class="in">`renv`</span>, using your <span class="in">`renv.lock`</span> file</span>
-<span id="cb12-261"><a href="#cb12-261" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Render your .qmd file and Publish the results on a gh-page (both HTML and PDF)</span>
-<span id="cb12-262"><a href="#cb12-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-263"><a href="#cb12-263" aria-hidden="true" tabindex="-1"></a>The file <span class="co">[</span><span class="ot">.github/workflows/build_n_publish.yml</span><span class="co">](https://github.com/computorg/template-computo-R/blob/main/.github/workflows/build_n_publish.yml)</span> is largely inspired from <span class="co">[</span><span class="ot">this file</span><span class="co">](https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv)</span>.</span>
-<span id="cb12-264"><a href="#cb12-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-265"><a href="#cb12-265" aria-hidden="true" tabindex="-1"></a>Once this is successful, you are ready to submit your manuscript to the <span class="co">[</span><span class="ot">Computo submission platform</span><span class="co">](https://computo.scholasticahq.com/)</span>.</span>
+<span id="cb12-258"><a href="#cb12-258" aria-hidden="true" tabindex="-1"></a><span class="fu">## Continuous integration</span></span>
+<span id="cb12-259"><a href="#cb12-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-260"><a href="#cb12-260" aria-hidden="true" tabindex="-1"></a>The repository associated with this template is pre-configure to trigger an action on push that performs the following:</span>
+<span id="cb12-261"><a href="#cb12-261" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-262"><a href="#cb12-262" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Check out repository on the <span class="in">`ubuntu-latest`</span> machine</span>
+<span id="cb12-263"><a href="#cb12-263" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Install quarto and dependencies, including the Computo extension</span>
+<span id="cb12-264"><a href="#cb12-264" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Install R and dependencies with <span class="in">`renv`</span>, using your <span class="in">`renv.lock`</span> file</span>
+<span id="cb12-265"><a href="#cb12-265" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Render your .qmd file and Publish the results on a gh-page (both HTML and PDF)</span>
 <span id="cb12-266"><a href="#cb12-266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-267"><a href="#cb12-267" aria-hidden="true" tabindex="-1"></a><span class="fu"># References {.unnumbered}</span></span>
+<span id="cb12-267"><a href="#cb12-267" aria-hidden="true" tabindex="-1"></a>The file <span class="co">[</span><span class="ot">.github/workflows/build_n_publish.yml</span><span class="co">](https://github.com/computorg/template-computo-R/blob/main/.github/workflows/build_n_publish.yml)</span> is largely inspired from <span class="co">[</span><span class="ot">this file</span><span class="co">](https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv)</span>.</span>
 <span id="cb12-268"><a href="#cb12-268" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-269"><a href="#cb12-269" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb12-270"><a href="#cb12-270" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb12-271"><a href="#cb12-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-272"><a href="#cb12-272" aria-hidden="true" tabindex="-1"></a><span class="fu"># Session information {.appendix .unnumbered}</span></span>
-<span id="cb12-273"><a href="#cb12-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-274"><a href="#cb12-274" aria-hidden="true" tabindex="-1"></a><span class="in">```{r session-info}</span></span>
-<span id="cb12-275"><a href="#cb12-275" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
-<span id="cb12-276"><a href="#cb12-276" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-269"><a href="#cb12-269" aria-hidden="true" tabindex="-1"></a>Once this is successful, you are ready to submit your manuscript to the <span class="co">[</span><span class="ot">Computo submission platform</span><span class="co">](https://computo.scholasticahq.com/)</span>.</span>
+<span id="cb12-270"><a href="#cb12-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-271"><a href="#cb12-271" aria-hidden="true" tabindex="-1"></a><span class="fu"># References {.unnumbered}</span></span>
+<span id="cb12-272"><a href="#cb12-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-273"><a href="#cb12-273" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb12-274"><a href="#cb12-274" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb12-275"><a href="#cb12-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-276"><a href="#cb12-276" aria-hidden="true" tabindex="-1"></a><span class="fu"># Session information {.appendix .unnumbered}</span></span>
+<span id="cb12-277"><a href="#cb12-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-278"><a href="#cb12-278" aria-hidden="true" tabindex="-1"></a><span class="in">```{r session-info}</span></span>
+<span id="cb12-279"><a href="#cb12-279" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
+<span id="cb12-280"><a href="#cb12-280" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
