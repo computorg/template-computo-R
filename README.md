@@ -1,5 +1,5 @@
 
-# Template for contribution to Computo for R users
+# Computo template for R users
 
 [![build and publish](https://github.com/computorg/template-computo-R/actions/workflows/build.yml/badge.svg)](https://github.com/computorg/template-computo-R/actions/workflows/build.yml)
 
