@@ -255,21 +255,22 @@ ISSN 2824-7795</p>
   </ul></li>
   <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting"><span class="toc-section-number">2</span>  Formatting</a>
   <ul class="collapse">
-  <li><a href="#basic-markdown-formatting" id="toc-basic-markdown-formatting" class="nav-link" data-scroll-target="#basic-markdown-formatting"><span class="toc-section-number">2.1</span>  Basic markdown formatting</a></li>
-  <li><a href="#mathematics" id="toc-mathematics" class="nav-link" data-scroll-target="#mathematics"><span class="toc-section-number">2.2</span>  Mathematics</a>
+  <li><a href="#note" id="toc-note" class="nav-link" data-scroll-target="#note"><span class="toc-section-number">2.1</span>  Note</a></li>
+  <li><a href="#basic-markdown-formatting" id="toc-basic-markdown-formatting" class="nav-link" data-scroll-target="#basic-markdown-formatting"><span class="toc-section-number">2.2</span>  Basic markdown formatting</a></li>
+  <li><a href="#mathematics" id="toc-mathematics" class="nav-link" data-scroll-target="#mathematics"><span class="toc-section-number">2.3</span>  Mathematics</a>
   <ul class="collapse">
-  <li><a href="#mathematical-formulae" id="toc-mathematical-formulae" class="nav-link" data-scroll-target="#mathematical-formulae"><span class="toc-section-number">2.2.1</span>  Mathematical formulae</a></li>
-  <li><a href="#theorems-and-other-amsthem-like-environments" id="toc-theorems-and-other-amsthem-like-environments" class="nav-link" data-scroll-target="#theorems-and-other-amsthem-like-environments"><span class="toc-section-number">2.2.2</span>  Theorems and other amsthem-like environments</a></li>
+  <li><a href="#mathematical-formulae" id="toc-mathematical-formulae" class="nav-link" data-scroll-target="#mathematical-formulae"><span class="toc-section-number">2.3.1</span>  Mathematical formulae</a></li>
+  <li><a href="#theorems-and-other-amsthem-like-environments" id="toc-theorems-and-other-amsthem-like-environments" class="nav-link" data-scroll-target="#theorems-and-other-amsthem-like-environments"><span class="toc-section-number">2.3.2</span>  Theorems and other amsthem-like environments</a></li>
   </ul></li>
-  <li><a href="#r-code" id="toc-r-code" class="nav-link" data-scroll-target="#r-code"><span class="toc-section-number">2.3</span>  R Code</a></li>
-  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="toc-section-number">2.4</span>  Figures</a></li>
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="toc-section-number">2.5</span>  Tables</a></li>
-  <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references"><span class="toc-section-number">2.6</span>  Handling references</a>
+  <li><a href="#r-code" id="toc-r-code" class="nav-link" data-scroll-target="#r-code"><span class="toc-section-number">2.4</span>  R Code</a></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="toc-section-number">2.5</span>  Figures</a></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="toc-section-number">2.6</span>  Tables</a></li>
+  <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references"><span class="toc-section-number">2.7</span>  Handling references</a>
   <ul class="collapse">
-  <li><a href="#bibliographic-references" id="toc-bibliographic-references" class="nav-link" data-scroll-target="#bibliographic-references"><span class="toc-section-number">2.6.1</span>  Bibliographic references</a></li>
-  <li><a href="#other-cross-references" id="toc-other-cross-references" class="nav-link" data-scroll-target="#other-cross-references"><span class="toc-section-number">2.6.2</span>  Other cross-references</a></li>
+  <li><a href="#bibliographic-references" id="toc-bibliographic-references" class="nav-link" data-scroll-target="#bibliographic-references"><span class="toc-section-number">2.7.1</span>  Bibliographic references</a></li>
+  <li><a href="#other-cross-references" id="toc-other-cross-references" class="nav-link" data-scroll-target="#other-cross-references"><span class="toc-section-number">2.7.2</span>  Other cross-references</a></li>
   </ul></li>
-  <li><a href="#advanced-formatting" id="toc-advanced-formatting" class="nav-link" data-scroll-target="#advanced-formatting"><span class="toc-section-number">2.7</span>  Advanced formatting</a></li>
+  <li><a href="#advanced-formatting" id="toc-advanced-formatting" class="nav-link" data-scroll-target="#advanced-formatting"><span class="toc-section-number">2.8</span>  Advanced formatting</a></li>
   </ul></li>
   <li><a href="#finalize-your-submission" id="toc-finalize-your-submission" class="nav-link" data-scroll-target="#finalize-your-submission"><span class="toc-section-number">3</span>  Finalize your submission</a>
   <ul class="collapse">
@@ -289,25 +290,29 @@ ISSN 2824-7795</p>
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 <section id="about-this-document" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="about-this-document"><span class="header-section-number">1.1</span> About this document</h2>
-<p>This document, accompanied with the <a href="https://github.com/computorg/template-computo-R/">hopefully finely tuned git repos</a>, provides a template for writing contributions to <strong>Computo</strong> <span class="citation" data-cites="computo">(<a href="#ref-computo" role="doc-biblioref">Computo Team 2020</a>)</span>. We show how <code>R</code> <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2020</a>)</span> code can be included and how the repository can be set up for triggering github actions for rendering the document, where dependencies are handled by <code>renv</code>.</p>
+<p>This document, accompanied with the <a href="https://github.com/computorg/template-computo-R/">hopefully finely tuned git repos</a>, provides a template for writing contributions to <strong>Computo</strong> <span class="citation" data-cites="computo">(<a href="#ref-computo" role="doc-biblioref">Computo Team 2020</a>)</span>. We show how <code>R</code> code <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2020</a>)</span> can be included and how the repository can be set up for triggering github actions for rendering the document, with dependencies handled by <code>renv</code>.</p>
 </section>
 <section id="setup-a-github-repository-for-preparing-your-submission" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="setup-a-github-repository-for-preparing-your-submission"><span class="header-section-number">1.2</span> Setup a github repository for preparing your submission</h2>
-<p>You can start by clicking the “use this template” button, on the top of the page of the <a href="https://github.com/computorg/template-computo-R/">github repository associated to this template</a>. Of course, you can set your repository private during the preparation of your manuscript.</p>
+<p>You can start by clicking the “use this template” button, on the top of the page of the <a href="https://github.com/computorg/template-computo-R/">github repository associated to this document</a>. Of course, you can set your repository private during the preparation of your manuscript.</p>
 </section>
 <section id="quarto" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="quarto"><span class="header-section-number">1.3</span> Quarto</h2>
-<p>You need <a href="https://quarto.org/">quarto</a> installed on your system and the <a href="https://github.com/computorg/computo-quarto-extension">Computo extension</a> to prepare your document. For the latter, once quarto is installed, run the following to install the extension in the current directory (it creates a <code>_extension</code> directory which is ignored by tanks to <code>.gitignore</code> by default):</p>
+<p>You need <a href="https://quarto.org/">quarto</a> installed on your system and the <a href="https://github.com/computorg/computo-quarto-extension">Computo extension</a> to prepare your document. For the latter, once quarto is installed, run the following to install the extension in the current directory (it creates a <code>_extension</code> directory which is ignored by git thanks to <code>.gitignore</code> by default):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode .bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add computorg/computo-quarto-extension</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="formatting" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Formatting</h1>
 <p>This section covers basic formatting guidelines for <a href="https://quarto.org/">Quarto</a>, a versatile formatting system for authoring document integrating markdown, LaTeX and various code block interpreted either via Jupyter or Knitr (and thus dealing with Python, R or Julia). It relies on the <a href="https://pandoc.org/MANUAL.html">Pandoc</a> document converter.</p>
-<p>To render/compile a document, run <code>quarto render</code>. By default, both PDF and HTML documents are generated:</p>
+<p>To render a document, run <code>quarto render</code>. By default, both PDF and HTML documents are generated:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode .bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render template-computo-R.qmd <span class="co"># will render both to html and PDF</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<section id="basic-markdown-formatting" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="basic-markdown-formatting"><span class="header-section-number">2.1</span> Basic markdown formatting</h2>
+<section id="note" class="level2 callout-info" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="note"><span class="header-section-number">2.1</span> Note</h2>
+<p>To check the syntax of the formatting below, you can use the <code>&lt;/&gt; source</code> button at the top left of this document.</p>
+</section>
+<section id="basic-markdown-formatting" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="basic-markdown-formatting"><span class="header-section-number">2.2</span> Basic markdown formatting</h2>
 <p><strong>Bold text</strong> or <em>italic</em></p>
 <ul>
 <li>This is a list</li>
@@ -321,12 +326,11 @@ ISSN 2824-7795</p>
 <li>This is my third item</li>
 </ol>
 </section>
-<section id="mathematics" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="mathematics"><span class="header-section-number">2.2</span> Mathematics</h2>
-<section id="mathematical-formulae" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="mathematical-formulae"><span class="header-section-number">2.2.1</span> Mathematical formulae</h3>
+<section id="mathematics" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="mathematics"><span class="header-section-number">2.3</span> Mathematics</h2>
+<section id="mathematical-formulae" class="level3" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="mathematical-formulae"><span class="header-section-number">2.3.1</span> Mathematical formulae</h3>
 <p><a href="https://www.latex-project.org/">LaTeX</a> code is natively supported<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, which makes it possible to use mathematical formulae:</p>
-<p>will render</p>
 <p><span class="math display">
 f(x_1, \dots, x_n; \mu, \sigma^2) =
 \frac{1}{\sigma \sqrt{2\pi}} \exp{\left(- \frac{1}{2\sigma^2}\sum_{i=1}^n(x_i - \mu)^2\right)}
@@ -344,8 +348,8 @@ x_L \\ x_N \end{array}\right] \\
 \end{aligned}
 \tag{1}</span></span></p>
 </section>
-<section id="theorems-and-other-amsthem-like-environments" class="level3" data-number="2.2.2">
-<h3 data-number="2.2.2" class="anchored" data-anchor-id="theorems-and-other-amsthem-like-environments"><span class="header-section-number">2.2.2</span> Theorems and other amsthem-like environments</h3>
+<section id="theorems-and-other-amsthem-like-environments" class="level3" data-number="2.3.2">
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="theorems-and-other-amsthem-like-environments"><span class="header-section-number">2.3.2</span> Theorems and other amsthem-like environments</h3>
 <p>Quarto includes a nice support for theorems, with predefined prefix labels for theorems, lemmas, proposition, etc. see <a href="https://quarto.org/docs/authoring/cross-references.html#theorems-and-proofs">this page</a>. Here is a simple example:</p>
 <div id="thm-slln" class="theorem">
 <p><span class="theorem-title"><strong>Theorem 1 (Strong law of large numbers) </strong></span>The sample average converges almost surely to the expected value:</p>
@@ -354,8 +358,8 @@ x_L \\ x_N \end{array}\right] \\
 <p>See <a href="#thm-slln">Theorem&nbsp;1</a>.</p>
 </section>
 </section>
-<section id="r-code" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="r-code"><span class="header-section-number">2.3</span> R Code</h2>
+<section id="r-code" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="r-code"><span class="header-section-number">2.4</span> R Code</h2>
 <p>Quarto uses either Jupyter or knitr to render code chunks. This can be triggered in the yaml header. In this tutorial, we use <code>knitr</code>, (<code>R</code>, <code>knitr</code> and <code>markdown</code> must be installed on your computer)</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
@@ -369,8 +373,8 @@ x_L \\ x_N \end{array}\right] \\
 </details>
 </div>
 </section>
-<section id="figures" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="figures"><span class="header-section-number">2.4</span> Figures</h2>
+<section id="figures" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="figures"><span class="header-section-number">2.5</span> Figures</h2>
 <p>Plots can be generated as follows:</p>
 <div class="cell">
 <details open="">
@@ -393,8 +397,8 @@ x_L \\ x_N \end{array}\right] \\
 </figure>
 </div>
 </section>
-<section id="tables" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="tables"><span class="header-section-number">2.5</span> Tables</h2>
+<section id="tables" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="tables"><span class="header-section-number">2.6</span> Tables</h2>
 <p>Tables (with label: <code>@tbl-mylabel</code> renders <a href="#tbl-mylabel">Table&nbsp;1</a>) can be generated with markdown as follows</p>
 <div id="tbl-mylabel" class="anchored">
 <table class="table">
@@ -477,34 +481,35 @@ x_L \\ x_N \end{array}\right] \\
 </div>
 </div>
 </section>
-<section id="sec-references" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="sec-references"><span class="header-section-number">2.6</span> Handling references</h2>
-<section id="bibliographic-references" class="level3" data-number="2.6.1">
-<h3 data-number="2.6.1" class="anchored" data-anchor-id="bibliographic-references"><span class="header-section-number">2.6.1</span> Bibliographic references</h3>
+<section id="sec-references" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="sec-references"><span class="header-section-number">2.7</span> Handling references</h2>
+<section id="bibliographic-references" class="level3" data-number="2.7.1">
+<h3 data-number="2.7.1" class="anchored" data-anchor-id="bibliographic-references"><span class="header-section-number">2.7.1</span> Bibliographic references</h3>
 <p>References are displayed as footnotes using <a href="http://www.bibtex.org/">BibTeX</a>, e.g.&nbsp;<code>[@computo]</code> will be displayed as <span class="citation" data-cites="computo">(<a href="#ref-computo" role="doc-biblioref">Computo Team 2020</a>)</span>, where <code>computo</code> is the bibtex key for this specific entry. The bibliographic information is automatically retrieved from the <code>.bib</code> file specified in the header of this document (here: <code>references.bib</code>).</p>
 </section>
-<section id="other-cross-references" class="level3" data-number="2.6.2">
-<h3 data-number="2.6.2" class="anchored" data-anchor-id="other-cross-references"><span class="header-section-number">2.6.2</span> Other cross-references</h3>
+<section id="other-cross-references" class="level3" data-number="2.7.2">
+<h3 data-number="2.7.2" class="anchored" data-anchor-id="other-cross-references"><span class="header-section-number">2.7.2</span> Other cross-references</h3>
 <p>As already (partially) seen, Quarto includes a mechanism similar to the bibliographic references for sections, equations, theorems, figures, lists, etc. Have a look at <a href="https://quarto.org/docs/authoring/cross-references.html">this page</a>.</p>
 </section>
 </section>
-<section id="advanced-formatting" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="advanced-formatting"><span class="header-section-number">2.7</span> Advanced formatting</h2>
+<section id="advanced-formatting" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="advanced-formatting"><span class="header-section-number">2.8</span> Advanced formatting</h2>
+<p>Advanced formatting features are possible and documented (including interactive plots, pseudo-code, (Tikz) diagrams, Lua filters, mixing R + Python in the same document), but are beyond the scope of this simple introducton. We point several entries in this direction.</p>
 <div class="callout callout-style-default callout-warning callout-captioned">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-caption-container flex-fill">
-For more information
+More information
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
 <li><p><a href="https://quarto.org">The Quarto web site</a> for comprehensive documentation.</p></li>
-<li><p><a href="https://computo.sfds.asso.fr/published-paper-tsne/">The template available in the Computo Quarto extension</a>, which uses advanced features and the knitr kernel (interactive plots, pseudocode, diagrams, etc.).</p></li>
-<li><p><a href="https://computo.sfds.asso.fr/published-paper-tsne/">Our mock version of the t-SNE paper</a> for a full and advanced example using the Jupyter kernel.</p></li>
-<li><p><a href="https://computo.sfds.asso.fr/publications/">Also look at the previously published papers in Computo</a> for even more advanced examples.</p></li>
+<li><p><a href="https://computo.sfds.asso.fr/published-paper-tsne/">The template distributed with the Computo Quarto extension</a>, which uses such advanced features.</p></li>
+<li><p><a href="https://computo.sfds.asso.fr/published-paper-tsne/">Our mock version of the t-SNE paper</a>, a full and advanced example using Python and the Jupyter kernel.</p></li>
+<li><p><a href="https://computo.sfds.asso.fr/publications/">The previously published papers in Computo</a> can be used as references.</p></li>
 </ul>
 </div>
 </div>
@@ -514,21 +519,21 @@ For more information
 <h1 data-number="3"><span class="header-section-number">3</span> Finalize your submission</h1>
 <section id="handle-r-dependencies-with-renv" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="handle-r-dependencies-with-renv"><span class="header-section-number">3.1</span> Handle <code>R</code> dependencies with <code>renv</code></h2>
-<p>To make your work reproducible, you need to fix the packages and environment used to run your analysis. For the <code>R</code> system, the <code>renv</code> package is a possible reliable method, supported by the <code>quarto</code> community. You basically need a couples of command to setup your environment on your local machine:</p>
+<p>To make your work reproducible, you need to fix the packages and environment used to run your analysis. For the <code>R</code> system, the <code>renv</code> package is one of the possible reliable method, supported by the community. You basically need a couple of commands to setup your environment on your local machine. First,</p>
 <div class="cell">
 <details open="">
 <summary>Hide/Show the code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>This will initialize your repository. Then you just need to install the dependencies required to run your contribution, for instance,</p>
+<p>will initialize your repository. Then you just need to install the dependencies required to run your contribution, for instance,</p>
 <div class="cell">
 <details open="">
 <summary>Hide/Show the code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="st">"ggplot2"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="st">"ggplot2"</span>) <span class="co"># or equivalently install.packages("ggplot2")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>Once you are done, you can fix everything via the command</p>
+<p>Non-CRAN packages (<em>e.g.</em> Github packages) can be used. Once you are done, you can fix everything with the command</p>
 <div class="cell">
 <details open="">
 <summary>Hide/Show the code</summary>
@@ -972,15 +977,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb12-47"><a href="#cb12-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-48"><a href="#cb12-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## About this document</span></span>
 <span id="cb12-49"><a href="#cb12-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>This document, accompanied with the <span class="co">[</span><span class="ot">hopefully finely tuned git repos</span><span class="co">](https://github.com/computorg/template-computo-R/)</span>, provides a template for writing contributions to **Computo** <span class="co">[</span><span class="ot">@computo</span><span class="co">]</span>. We show how <span class="in">`R`</span> <span class="co">[</span><span class="ot">@R-base</span><span class="co">]</span> code can be included and how the repository can be set up for triggering github actions for rendering the document, where dependencies are handled by <span class="in">`renv`</span>.</span>
+<span id="cb12-50"><a href="#cb12-50" aria-hidden="true" tabindex="-1"></a>This document, accompanied with the <span class="co">[</span><span class="ot">hopefully finely tuned git repos</span><span class="co">](https://github.com/computorg/template-computo-R/)</span>, provides a template for writing contributions to **Computo** <span class="co">[</span><span class="ot">@computo</span><span class="co">]</span>. We show how <span class="in">`R`</span> code <span class="co">[</span><span class="ot">@R-base</span><span class="co">]</span> can be included and how the repository can be set up for triggering github actions for rendering the document, with dependencies handled by <span class="in">`renv`</span>.</span>
 <span id="cb12-51"><a href="#cb12-51" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-52"><a href="#cb12-52" aria-hidden="true" tabindex="-1"></a><span class="fu">## Setup a github repository for preparing your submission</span></span>
 <span id="cb12-53"><a href="#cb12-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>You can start by clicking the "use this template" button, on the top of the page of the <span class="co">[</span><span class="ot">github repository associated to this template</span><span class="co">](https://github.com/computorg/template-computo-R/)</span>. Of course, you can set your repository private during the preparation of your manuscript.</span>
+<span id="cb12-54"><a href="#cb12-54" aria-hidden="true" tabindex="-1"></a>You can start by clicking the "use this template" button, on the top of the page of the <span class="co">[</span><span class="ot">github repository associated to this document</span><span class="co">](https://github.com/computorg/template-computo-R/)</span>. Of course, you can set your repository private during the preparation of your manuscript.</span>
 <span id="cb12-55"><a href="#cb12-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-56"><a href="#cb12-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quarto</span></span>
 <span id="cb12-57"><a href="#cb12-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>You need <span class="co">[</span><span class="ot">quarto</span><span class="co">](https://quarto.org/)</span> installed on your system and the <span class="co">[</span><span class="ot">Computo extension</span><span class="co">](https://github.com/computorg/computo-quarto-extension)</span> to prepare your document. For the latter, once quarto is installed,  run the following to install the extension in the current directory (it creates a <span class="in">`_extension`</span> directory which is ignored by tanks to <span class="in">`.gitignore`</span> by default):</span>
+<span id="cb12-58"><a href="#cb12-58" aria-hidden="true" tabindex="-1"></a>You need <span class="co">[</span><span class="ot">quarto</span><span class="co">](https://quarto.org/)</span> installed on your system and the <span class="co">[</span><span class="ot">Computo extension</span><span class="co">](https://github.com/computorg/computo-quarto-extension)</span> to prepare your document. For the latter, once quarto is installed,  run the following to install the extension in the current directory (it creates a <span class="in">`_extension`</span> directory which is ignored by git thanks to <span class="in">`.gitignore`</span> by default):</span>
 <span id="cb12-59"><a href="#cb12-59" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-60"><a href="#cb12-60" aria-hidden="true" tabindex="-1"></a><span class="in">```.bash</span></span>
 <span id="cb12-61"><a href="#cb12-61" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> add computorg/computo-quarto-extension</span>
@@ -990,209 +995,215 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb12-65"><a href="#cb12-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-66"><a href="#cb12-66" aria-hidden="true" tabindex="-1"></a>This section covers basic formatting guidelines for <span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org/)</span>, a versatile formatting system for authoring document integrating markdown, LaTeX and various code block interpreted either via Jupyter or Knitr (and thus dealing with Python, R or Julia). It relies on the <span class="co">[</span><span class="ot">Pandoc</span><span class="co">](https://pandoc.org/MANUAL.html)</span> document converter.</span>
 <span id="cb12-67"><a href="#cb12-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a>To render/compile a document, run <span class="in">`quarto render`</span>. By default, both PDF and HTML documents are generated:</span>
+<span id="cb12-68"><a href="#cb12-68" aria-hidden="true" tabindex="-1"></a>To render a document, run <span class="in">`quarto render`</span>. By default, both PDF and HTML documents are generated:</span>
 <span id="cb12-69"><a href="#cb12-69" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-70"><a href="#cb12-70" aria-hidden="true" tabindex="-1"></a><span class="in">```.bash</span></span>
 <span id="cb12-71"><a href="#cb12-71" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render template-computo-R.qmd <span class="co"># will render both to html and PDF</span></span>
 <span id="cb12-72"><a href="#cb12-72" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-73"><a href="#cb12-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a><span class="fu">## Basic markdown formatting</span></span>
-<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a>**Bold text** or _italic_</span>
-<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>This is a list</span>
-<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>With more elements</span>
-<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>It isn't numbered.</span>
+<span id="cb12-74"><a href="#cb12-74" aria-hidden="true" tabindex="-1"></a>::: {.callout-info}</span>
+<span id="cb12-75"><a href="#cb12-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Note</span></span>
+<span id="cb12-76"><a href="#cb12-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-77"><a href="#cb12-77" aria-hidden="true" tabindex="-1"></a>To check the syntax of the formatting below, you can use the <span class="in">`&lt;/&gt; source`</span> button at the top left of this document.</span>
+<span id="cb12-78"><a href="#cb12-78" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb12-79"><a href="#cb12-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-80"><a href="#cb12-80" aria-hidden="true" tabindex="-1"></a><span class="fu">## Basic markdown formatting</span></span>
 <span id="cb12-81"><a href="#cb12-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a>But we can also do a numbered list</span>
+<span id="cb12-82"><a href="#cb12-82" aria-hidden="true" tabindex="-1"></a>**Bold text** or _italic_</span>
 <span id="cb12-83"><a href="#cb12-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>This is my first item</span>
-<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>This is my second item</span>
-<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>This is my third item</span>
+<span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>This is a list</span>
+<span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>With more elements</span>
+<span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>It isn't numbered.</span>
 <span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a><span class="fu">## Mathematics</span></span>
+<span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a>But we can also do a numbered list</span>
 <span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a><span class="fu">### Mathematical formulae</span></span>
-<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">LaTeX</span><span class="co">](https://www.latex-project.org/)</span> code is natively supported<span class="ot">[^lualatex]</span>, which makes it possible to use mathematical formulae:</span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>This is my first item</span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>This is my second item</span>
+<span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>This is my third item</span>
 <span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a><span class="ot">[^lualatex]: </span>We use <span class="co">[</span><span class="ot">lualatex</span><span class="co">](https://lualatex.org/)</span> for this purpose.</span>
+<span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a><span class="fu">## Mathematics</span></span>
 <span id="cb12-95"><a href="#cb12-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a>will render</span>
+<span id="cb12-96"><a href="#cb12-96" aria-hidden="true" tabindex="-1"></a><span class="fu">### Mathematical formulae</span></span>
 <span id="cb12-97"><a href="#cb12-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a>f(x_1, \dots, x_n; \mu, \sigma^2) =</span>
-<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a>\frac{1}{\sigma \sqrt{2\pi}} \exp{\left(- \frac{1}{2\sigma^2}\sum_{i=1}^n(x_i - \mu)^2\right)}</span>
-<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a>It is also posible to cross-reference an equation, see @eq-mylabel:</span>
-<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-98"><a href="#cb12-98" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">LaTeX</span><span class="co">](https://www.latex-project.org/)</span> code is natively supported<span class="ot">[^lualatex]</span>, which makes it possible to use mathematical formulae:</span>
+<span id="cb12-99"><a href="#cb12-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-100"><a href="#cb12-100" aria-hidden="true" tabindex="-1"></a><span class="ot">[^lualatex]: </span>We use <span class="co">[</span><span class="ot">lualatex</span><span class="co">](https://lualatex.org/)</span> for this purpose.</span>
+<span id="cb12-101"><a href="#cb12-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-102"><a href="#cb12-102" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb12-103"><a href="#cb12-103" aria-hidden="true" tabindex="-1"></a>f(x_1, \dots, x_n; \mu, \sigma^2) =</span>
+<span id="cb12-104"><a href="#cb12-104" aria-hidden="true" tabindex="-1"></a>\frac{1}{\sigma \sqrt{2\pi}} \exp{\left(- \frac{1}{2\sigma^2}\sum_{i=1}^n(x_i - \mu)^2\right)}</span>
 <span id="cb12-105"><a href="#cb12-105" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a>\begin{aligned}</span>
-<span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a>D_{x_N} &amp; = \frac12</span>
-<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a>\left[\begin{array}{cc}</span>
-<span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a>x_L^\top &amp; x_N^\top \end{array}\right] \,</span>
-<span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a>\left<span class="co">[</span><span class="ot">\begin{array}{cc}  L_L &amp; B \\ B^\top &amp; L_N \end{array}\right</span><span class="co">]</span> \,</span>
-<span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a>\left[\begin{array}{c}</span>
-<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a>x_L <span class="sc">\\</span> x_N \end{array}\right] <span class="sc">\\</span></span>
-<span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a>&amp; = \frac12 (x_L^\top L_L x_L + 2 x_N^\top B^\top x_L + x_N^\top L_N x_N),</span>
-<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a>\end{aligned}</span>
-<span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a>$$ {#eq-mylabel}</span>
-<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a><span class="fu">### Theorems and other amsthem-like environments</span></span>
-<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a>Quarto includes a nice support for theorems, with predefined prefix labels for theorems, lemmas, proposition, etc. see <span class="co">[</span><span class="ot">this page</span><span class="co">](https://quarto.org/docs/authoring/cross-references.html#theorems-and-proofs)</span>. Here is a simple example:</span>
+<span id="cb12-106"><a href="#cb12-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-107"><a href="#cb12-107" aria-hidden="true" tabindex="-1"></a>It is also posible to cross-reference an equation, see @eq-mylabel:</span>
+<span id="cb12-108"><a href="#cb12-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-109"><a href="#cb12-109" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb12-110"><a href="#cb12-110" aria-hidden="true" tabindex="-1"></a>\begin{aligned}</span>
+<span id="cb12-111"><a href="#cb12-111" aria-hidden="true" tabindex="-1"></a>D_{x_N} &amp; = \frac12</span>
+<span id="cb12-112"><a href="#cb12-112" aria-hidden="true" tabindex="-1"></a>\left[\begin{array}{cc}</span>
+<span id="cb12-113"><a href="#cb12-113" aria-hidden="true" tabindex="-1"></a>x_L^\top &amp; x_N^\top \end{array}\right] \,</span>
+<span id="cb12-114"><a href="#cb12-114" aria-hidden="true" tabindex="-1"></a>\left<span class="co">[</span><span class="ot">\begin{array}{cc}  L_L &amp; B \\ B^\top &amp; L_N \end{array}\right</span><span class="co">]</span> \,</span>
+<span id="cb12-115"><a href="#cb12-115" aria-hidden="true" tabindex="-1"></a>\left[\begin{array}{c}</span>
+<span id="cb12-116"><a href="#cb12-116" aria-hidden="true" tabindex="-1"></a>x_L <span class="sc">\\</span> x_N \end{array}\right] <span class="sc">\\</span></span>
+<span id="cb12-117"><a href="#cb12-117" aria-hidden="true" tabindex="-1"></a>&amp; = \frac12 (x_L^\top L_L x_L + 2 x_N^\top B^\top x_L + x_N^\top L_N x_N),</span>
+<span id="cb12-118"><a href="#cb12-118" aria-hidden="true" tabindex="-1"></a>\end{aligned}</span>
+<span id="cb12-119"><a href="#cb12-119" aria-hidden="true" tabindex="-1"></a>$$ {#eq-mylabel}</span>
 <span id="cb12-120"><a href="#cb12-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a>::: {#thm-slln}</span>
-<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a><span class="fu">## Strong law of large numbers</span></span>
-<span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a>The sample average converges almost surely to the expected value:</span>
-<span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a>$$\overline{X}_n\ \xrightarrow{\text{a.s.}}\ \mu \qquad\textrm{when}\ n \to \infty.$$</span>
-<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a>See @thm-slln.</span>
-<span id="cb12-130"><a href="#cb12-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a><span class="fu">## R Code</span></span>
+<span id="cb12-121"><a href="#cb12-121" aria-hidden="true" tabindex="-1"></a><span class="fu">### Theorems and other amsthem-like environments</span></span>
+<span id="cb12-122"><a href="#cb12-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-123"><a href="#cb12-123" aria-hidden="true" tabindex="-1"></a>Quarto includes a nice support for theorems, with predefined prefix labels for theorems, lemmas, proposition, etc. see <span class="co">[</span><span class="ot">this page</span><span class="co">](https://quarto.org/docs/authoring/cross-references.html#theorems-and-proofs)</span>. Here is a simple example:</span>
+<span id="cb12-124"><a href="#cb12-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-125"><a href="#cb12-125" aria-hidden="true" tabindex="-1"></a>::: {#thm-slln}</span>
+<span id="cb12-126"><a href="#cb12-126" aria-hidden="true" tabindex="-1"></a><span class="fu">## Strong law of large numbers</span></span>
+<span id="cb12-127"><a href="#cb12-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-128"><a href="#cb12-128" aria-hidden="true" tabindex="-1"></a>The sample average converges almost surely to the expected value:</span>
+<span id="cb12-129"><a href="#cb12-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-130"><a href="#cb12-130" aria-hidden="true" tabindex="-1"></a>$$\overline{X}_n\ \xrightarrow{\text{a.s.}}\ \mu \qquad\textrm{when}\ n \to \infty.$$</span>
+<span id="cb12-131"><a href="#cb12-131" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb12-132"><a href="#cb12-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a>Quarto uses either Jupyter or knitr to render code chunks. This can be triggered in the yaml header. In this tutorial, we use <span class="in">`knitr`</span>, (<span class="in">`R`</span>, <span class="in">`knitr`</span> and <span class="in">`markdown`</span> must be installed on your computer)</span>
+<span id="cb12-133"><a href="#cb12-133" aria-hidden="true" tabindex="-1"></a>See @thm-slln.</span>
 <span id="cb12-134"><a href="#cb12-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a><span class="in">``` yaml</span></span>
-<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
-<span id="cb12-138"><a href="#cb12-138" aria-hidden="true" tabindex="-1"></a>author<span class="at"> </span>"Jane<span class="at"> </span>Doe"</span>
-<span id="cb12-139"><a href="#cb12-139" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb12-140"><a href="#cb12-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-141"><a href="#cb12-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-142"><a href="#cb12-142" aria-hidden="true" tabindex="-1"></a><span class="in">`R`</span> code <span class="co">[</span><span class="ot">@R-base</span><span class="co">]</span> chunks may be embedded as follows:</span>
-<span id="cb12-143"><a href="#cb12-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-144"><a href="#cb12-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{r r-code, echo=TRUE}</span></span>
-<span id="cb12-145"><a href="#cb12-145" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
-<span id="cb12-146"><a href="#cb12-146" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-135"><a href="#cb12-135" aria-hidden="true" tabindex="-1"></a><span class="fu">## R Code</span></span>
+<span id="cb12-136"><a href="#cb12-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-137"><a href="#cb12-137" aria-hidden="true" tabindex="-1"></a>Quarto uses either Jupyter or knitr to render code chunks. This can be triggered in the yaml header. In this tutorial, we use <span class="in">`knitr`</span>, (<span class="in">`R`</span>, <span class="in">`knitr`</span> and <span class="in">`markdown`</span> must be installed on your computer)</span>
+<span id="cb12-138"><a href="#cb12-138" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-139"><a href="#cb12-139" aria-hidden="true" tabindex="-1"></a><span class="in">``` yaml</span></span>
+<span id="cb12-140"><a href="#cb12-140" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb12-141"><a href="#cb12-141" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"My Document"</span></span>
+<span id="cb12-142"><a href="#cb12-142" aria-hidden="true" tabindex="-1"></a>author<span class="at"> </span>"Jane<span class="at"> </span>Doe"</span>
+<span id="cb12-143"><a href="#cb12-143" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb12-144"><a href="#cb12-144" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-145"><a href="#cb12-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-146"><a href="#cb12-146" aria-hidden="true" tabindex="-1"></a><span class="in">`R`</span> code <span class="co">[</span><span class="ot">@R-base</span><span class="co">]</span> chunks may be embedded as follows:</span>
 <span id="cb12-147"><a href="#cb12-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-148"><a href="#cb12-148" aria-hidden="true" tabindex="-1"></a><span class="fu">## Figures</span></span>
-<span id="cb12-149"><a href="#cb12-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-150"><a href="#cb12-150" aria-hidden="true" tabindex="-1"></a>Plots can be generated as follows:</span>
+<span id="cb12-148"><a href="#cb12-148" aria-hidden="true" tabindex="-1"></a><span class="in">```{r r-code, echo=TRUE}</span></span>
+<span id="cb12-149"><a href="#cb12-149" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span>
+<span id="cb12-150"><a href="#cb12-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-151"><a href="#cb12-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-152"><a href="#cb12-152" aria-hidden="true" tabindex="-1"></a><span class="in">```{r pressure, message = FALSE}</span></span>
-<span id="cb12-153"><a href="#cb12-153" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb12-154"><a href="#cb12-154" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(displ, hwy)) <span class="sc">+</span></span>
-<span id="cb12-155"><a href="#cb12-155" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb12-156"><a href="#cb12-156" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span>
-<span id="cb12-157"><a href="#cb12-157" aria-hidden="true" tabindex="-1"></a>p</span>
-<span id="cb12-158"><a href="#cb12-158" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-159"><a href="#cb12-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-160"><a href="#cb12-160" aria-hidden="true" tabindex="-1"></a>It is also possible to create figures from static images:</span>
-<span id="cb12-161"><a href="#cb12-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-162"><a href="#cb12-162" aria-hidden="true" tabindex="-1"></a>:::{#fig-logo}</span>
+<span id="cb12-152"><a href="#cb12-152" aria-hidden="true" tabindex="-1"></a><span class="fu">## Figures</span></span>
+<span id="cb12-153"><a href="#cb12-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-154"><a href="#cb12-154" aria-hidden="true" tabindex="-1"></a>Plots can be generated as follows:</span>
+<span id="cb12-155"><a href="#cb12-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-156"><a href="#cb12-156" aria-hidden="true" tabindex="-1"></a><span class="in">```{r pressure, message = FALSE}</span></span>
+<span id="cb12-157"><a href="#cb12-157" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb12-158"><a href="#cb12-158" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(displ, hwy)) <span class="sc">+</span></span>
+<span id="cb12-159"><a href="#cb12-159" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb12-160"><a href="#cb12-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span>
+<span id="cb12-161"><a href="#cb12-161" aria-hidden="true" tabindex="-1"></a>p</span>
+<span id="cb12-162"><a href="#cb12-162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-163"><a href="#cb12-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-164"><a href="#cb12-164" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://computo.sfds.asso.fr/assets/img/logo_text_vertical.png)</span>{height=200}</span>
+<span id="cb12-164"><a href="#cb12-164" aria-hidden="true" tabindex="-1"></a>It is also possible to create figures from static images:</span>
 <span id="cb12-165"><a href="#cb12-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-166"><a href="#cb12-166" aria-hidden="true" tabindex="-1"></a>Computo logo (label)</span>
-<span id="cb12-167"><a href="#cb12-167" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb12-168"><a href="#cb12-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-166"><a href="#cb12-166" aria-hidden="true" tabindex="-1"></a>:::{#fig-logo}</span>
+<span id="cb12-167"><a href="#cb12-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-168"><a href="#cb12-168" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://computo.sfds.asso.fr/assets/img/logo_text_vertical.png)</span>{height=200}</span>
 <span id="cb12-169"><a href="#cb12-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-170"><a href="#cb12-170" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tables</span></span>
-<span id="cb12-171"><a href="#cb12-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-172"><a href="#cb12-172" aria-hidden="true" tabindex="-1"></a>Tables (with label: <span class="in">`@tbl-mylabel`</span> renders @tbl-mylabel) can be generated with markdown as follows</span>
+<span id="cb12-170"><a href="#cb12-170" aria-hidden="true" tabindex="-1"></a>Computo logo (label)</span>
+<span id="cb12-171"><a href="#cb12-171" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb12-172"><a href="#cb12-172" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-173"><a href="#cb12-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-174"><a href="#cb12-174" aria-hidden="true" tabindex="-1"></a>| Tables   |      Are      |  Cool |</span>
-<span id="cb12-175"><a href="#cb12-175" aria-hidden="true" tabindex="-1"></a>|----------|:-------------:|------:|</span>
-<span id="cb12-176"><a href="#cb12-176" aria-hidden="true" tabindex="-1"></a>| col 1 is |  left-aligned | $1600 |</span>
-<span id="cb12-177"><a href="#cb12-177" aria-hidden="true" tabindex="-1"></a>| col 2 is |    centered   |   $12 |</span>
-<span id="cb12-178"><a href="#cb12-178" aria-hidden="true" tabindex="-1"></a>| col 3 is | right-aligned |    $1 |</span>
-<span id="cb12-179"><a href="#cb12-179" aria-hidden="true" tabindex="-1"></a>: my table caption {#tbl-mylabel}</span>
-<span id="cb12-180"><a href="#cb12-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-181"><a href="#cb12-181" aria-hidden="true" tabindex="-1"></a>Table can also be generated by some code, for instance with knitr here:</span>
-<span id="cb12-182"><a href="#cb12-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-183"><a href="#cb12-183" aria-hidden="true" tabindex="-1"></a><span class="in">```{r cars}</span></span>
-<span id="cb12-184"><a href="#cb12-184" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summary</span>(cars), <span class="at">caption =</span> <span class="st">"Table caption."</span>)</span>
-<span id="cb12-185"><a href="#cb12-185" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-174"><a href="#cb12-174" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tables</span></span>
+<span id="cb12-175"><a href="#cb12-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-176"><a href="#cb12-176" aria-hidden="true" tabindex="-1"></a>Tables (with label: <span class="in">`@tbl-mylabel`</span> renders @tbl-mylabel) can be generated with markdown as follows</span>
+<span id="cb12-177"><a href="#cb12-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-178"><a href="#cb12-178" aria-hidden="true" tabindex="-1"></a>| Tables   |      Are      |  Cool |</span>
+<span id="cb12-179"><a href="#cb12-179" aria-hidden="true" tabindex="-1"></a>|----------|:-------------:|------:|</span>
+<span id="cb12-180"><a href="#cb12-180" aria-hidden="true" tabindex="-1"></a>| col 1 is |  left-aligned | $1600 |</span>
+<span id="cb12-181"><a href="#cb12-181" aria-hidden="true" tabindex="-1"></a>| col 2 is |    centered   |   $12 |</span>
+<span id="cb12-182"><a href="#cb12-182" aria-hidden="true" tabindex="-1"></a>| col 3 is | right-aligned |    $1 |</span>
+<span id="cb12-183"><a href="#cb12-183" aria-hidden="true" tabindex="-1"></a>: my table caption {#tbl-mylabel}</span>
+<span id="cb12-184"><a href="#cb12-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-185"><a href="#cb12-185" aria-hidden="true" tabindex="-1"></a>Table can also be generated by some code, for instance with knitr here:</span>
 <span id="cb12-186"><a href="#cb12-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-187"><a href="#cb12-187" aria-hidden="true" tabindex="-1"></a><span class="fu">## Handling references {#sec-references}</span></span>
-<span id="cb12-188"><a href="#cb12-188" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-189"><a href="#cb12-189" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bibliographic references</span></span>
+<span id="cb12-187"><a href="#cb12-187" aria-hidden="true" tabindex="-1"></a><span class="in">```{r cars}</span></span>
+<span id="cb12-188"><a href="#cb12-188" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summary</span>(cars), <span class="at">caption =</span> <span class="st">"Table caption."</span>)</span>
+<span id="cb12-189"><a href="#cb12-189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-190"><a href="#cb12-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-191"><a href="#cb12-191" aria-hidden="true" tabindex="-1"></a>References are displayed as footnotes using</span>
-<span id="cb12-192"><a href="#cb12-192" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">BibTeX</span><span class="co">](http://www.bibtex.org/)</span>, e.g. <span class="in">`[@computo]`</span> will be displayed</span>
-<span id="cb12-193"><a href="#cb12-193" aria-hidden="true" tabindex="-1"></a>as <span class="co">[</span><span class="ot">@computo</span><span class="co">]</span>, where <span class="in">`computo`</span> is the bibtex key for this specific</span>
-<span id="cb12-194"><a href="#cb12-194" aria-hidden="true" tabindex="-1"></a>entry. The bibliographic information is automatically retrieved from</span>
-<span id="cb12-195"><a href="#cb12-195" aria-hidden="true" tabindex="-1"></a>the <span class="in">`.bib`</span> file specified in the header of this document (here:</span>
-<span id="cb12-196"><a href="#cb12-196" aria-hidden="true" tabindex="-1"></a><span class="in">`references.bib`</span>).</span>
-<span id="cb12-197"><a href="#cb12-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-198"><a href="#cb12-198" aria-hidden="true" tabindex="-1"></a><span class="fu">### Other cross-references</span></span>
-<span id="cb12-199"><a href="#cb12-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-200"><a href="#cb12-200" aria-hidden="true" tabindex="-1"></a>As already (partially) seen, Quarto includes a mechanism similar to the</span>
-<span id="cb12-201"><a href="#cb12-201" aria-hidden="true" tabindex="-1"></a>bibliographic references for sections, equations, theorems, figures,</span>
-<span id="cb12-202"><a href="#cb12-202" aria-hidden="true" tabindex="-1"></a>lists, etc. Have a look at [this</span>
-<span id="cb12-203"><a href="#cb12-203" aria-hidden="true" tabindex="-1"></a>page](https://quarto.org/docs/authoring/cross-references.html).</span>
-<span id="cb12-204"><a href="#cb12-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-205"><a href="#cb12-205" aria-hidden="true" tabindex="-1"></a><span class="fu">## Advanced formatting</span></span>
-<span id="cb12-206"><a href="#cb12-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-207"><a href="#cb12-207" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
-<span id="cb12-208"><a href="#cb12-208" aria-hidden="true" tabindex="-1"></a><span class="fu">## For more information</span></span>
-<span id="cb12-209"><a href="#cb12-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-210"><a href="#cb12-210" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">The Quarto web site</span><span class="co">](https://quarto.org)</span> for comprehensive documentation.</span>
-<span id="cb12-211"><a href="#cb12-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-212"><a href="#cb12-212" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">The template available in the Computo Quarto extension</span><span class="co">](https://computo.sfds.asso.fr/published-paper-tsne/)</span>, which uses advanced features and the knitr kernel (interactive plots, pseudocode, diagrams, etc.).</span>
-<span id="cb12-213"><a href="#cb12-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-214"><a href="#cb12-214" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Our mock version of the t-SNE paper</span><span class="co">](https://computo.sfds.asso.fr/published-paper-tsne/)</span> for a full and advanced example using the Jupyter kernel.</span>
+<span id="cb12-191"><a href="#cb12-191" aria-hidden="true" tabindex="-1"></a><span class="fu">## Handling references {#sec-references}</span></span>
+<span id="cb12-192"><a href="#cb12-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-193"><a href="#cb12-193" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bibliographic references</span></span>
+<span id="cb12-194"><a href="#cb12-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-195"><a href="#cb12-195" aria-hidden="true" tabindex="-1"></a>References are displayed as footnotes using</span>
+<span id="cb12-196"><a href="#cb12-196" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">BibTeX</span><span class="co">](http://www.bibtex.org/)</span>, e.g. <span class="in">`[@computo]`</span> will be displayed</span>
+<span id="cb12-197"><a href="#cb12-197" aria-hidden="true" tabindex="-1"></a>as <span class="co">[</span><span class="ot">@computo</span><span class="co">]</span>, where <span class="in">`computo`</span> is the bibtex key for this specific</span>
+<span id="cb12-198"><a href="#cb12-198" aria-hidden="true" tabindex="-1"></a>entry. The bibliographic information is automatically retrieved from</span>
+<span id="cb12-199"><a href="#cb12-199" aria-hidden="true" tabindex="-1"></a>the <span class="in">`.bib`</span> file specified in the header of this document (here:</span>
+<span id="cb12-200"><a href="#cb12-200" aria-hidden="true" tabindex="-1"></a><span class="in">`references.bib`</span>).</span>
+<span id="cb12-201"><a href="#cb12-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-202"><a href="#cb12-202" aria-hidden="true" tabindex="-1"></a><span class="fu">### Other cross-references</span></span>
+<span id="cb12-203"><a href="#cb12-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-204"><a href="#cb12-204" aria-hidden="true" tabindex="-1"></a>As already (partially) seen, Quarto includes a mechanism similar to the</span>
+<span id="cb12-205"><a href="#cb12-205" aria-hidden="true" tabindex="-1"></a>bibliographic references for sections, equations, theorems, figures,</span>
+<span id="cb12-206"><a href="#cb12-206" aria-hidden="true" tabindex="-1"></a>lists, etc. Have a look at [this</span>
+<span id="cb12-207"><a href="#cb12-207" aria-hidden="true" tabindex="-1"></a>page](https://quarto.org/docs/authoring/cross-references.html).</span>
+<span id="cb12-208"><a href="#cb12-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-209"><a href="#cb12-209" aria-hidden="true" tabindex="-1"></a><span class="fu">## Advanced formatting</span></span>
+<span id="cb12-210"><a href="#cb12-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-211"><a href="#cb12-211" aria-hidden="true" tabindex="-1"></a>Advanced formatting features are possible and documented (including interactive plots, pseudo-code, (Tikz) diagrams, Lua filters, mixing R + Python in the same document), but are beyond the scope of this simple introducton. We point several entries in this direction.</span>
+<span id="cb12-212"><a href="#cb12-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-213"><a href="#cb12-213" aria-hidden="true" tabindex="-1"></a>::: {.callout-warning}</span>
+<span id="cb12-214"><a href="#cb12-214" aria-hidden="true" tabindex="-1"></a><span class="fu">## More information</span></span>
 <span id="cb12-215"><a href="#cb12-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-216"><a href="#cb12-216" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Also look at the previously published papers in Computo</span><span class="co">](https://computo.sfds.asso.fr/publications/)</span> for even more advanced examples.</span>
+<span id="cb12-216"><a href="#cb12-216" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">The Quarto web site</span><span class="co">](https://quarto.org)</span> for comprehensive documentation.</span>
 <span id="cb12-217"><a href="#cb12-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-218"><a href="#cb12-218" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb12-218"><a href="#cb12-218" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">The template distributed with the Computo Quarto extension</span><span class="co">](https://computo.sfds.asso.fr/published-paper-tsne/)</span>, which uses such advanced features.</span>
 <span id="cb12-219"><a href="#cb12-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-220"><a href="#cb12-220" aria-hidden="true" tabindex="-1"></a><span class="fu"># Finalize your submission</span></span>
+<span id="cb12-220"><a href="#cb12-220" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">Our mock version of the t-SNE paper</span><span class="co">](https://computo.sfds.asso.fr/published-paper-tsne/)</span>, a full and advanced example using Python and the Jupyter kernel.</span>
 <span id="cb12-221"><a href="#cb12-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-222"><a href="#cb12-222" aria-hidden="true" tabindex="-1"></a><span class="fu">## Handle `R` dependencies with `renv`</span></span>
+<span id="cb12-222"><a href="#cb12-222" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="co">[</span><span class="ot">The previously published papers in Computo</span><span class="co">](https://computo.sfds.asso.fr/publications/)</span> can be used as references.</span>
 <span id="cb12-223"><a href="#cb12-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-224"><a href="#cb12-224" aria-hidden="true" tabindex="-1"></a>To make your work reproducible, you need to fix the packages and environment used to run your analysis. For the <span class="in">`R`</span> system, the <span class="in">`renv`</span> package is a possible reliable method, supported by the <span class="in">`quarto`</span> community. You basically need a couples of command to setup your environment on your local machine:</span>
+<span id="cb12-224"><a href="#cb12-224" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb12-225"><a href="#cb12-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-226"><a href="#cb12-226" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
-<span id="cb12-227"><a href="#cb12-227" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span>
-<span id="cb12-228"><a href="#cb12-228" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-226"><a href="#cb12-226" aria-hidden="true" tabindex="-1"></a><span class="fu"># Finalize your submission</span></span>
+<span id="cb12-227"><a href="#cb12-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-228"><a href="#cb12-228" aria-hidden="true" tabindex="-1"></a><span class="fu">## Handle `R` dependencies with `renv`</span></span>
 <span id="cb12-229"><a href="#cb12-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-230"><a href="#cb12-230" aria-hidden="true" tabindex="-1"></a>This will initialize your repository. Then you just need to install the dependencies required to run your contribution, for instance, </span>
+<span id="cb12-230"><a href="#cb12-230" aria-hidden="true" tabindex="-1"></a>To make your work reproducible, you need to fix the packages and environment used to run your analysis. For the <span class="in">`R`</span> system, the <span class="in">`renv`</span> package is one of the possible reliable method, supported by the community. You basically need a couple of commands to setup your environment on your local machine. First,</span>
 <span id="cb12-231"><a href="#cb12-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-232"><a href="#cb12-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-233"><a href="#cb12-233" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval=FALSE}</span></span>
-<span id="cb12-234"><a href="#cb12-234" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb12-235"><a href="#cb12-235" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb12-236"><a href="#cb12-236" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-237"><a href="#cb12-237" aria-hidden="true" tabindex="-1"></a>Once you are done, you can fix everything via the command</span>
+<span id="cb12-232"><a href="#cb12-232" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval = FALSE}</span></span>
+<span id="cb12-233"><a href="#cb12-233" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span>
+<span id="cb12-234"><a href="#cb12-234" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-235"><a href="#cb12-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-236"><a href="#cb12-236" aria-hidden="true" tabindex="-1"></a>will initialize your repository. Then you just need to install the dependencies required to run your contribution, for instance, </span>
+<span id="cb12-237"><a href="#cb12-237" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-238"><a href="#cb12-238" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-239"><a href="#cb12-239" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval=FALSE}</span></span>
-<span id="cb12-240"><a href="#cb12-240" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span>
+<span id="cb12-240"><a href="#cb12-240" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="st">"ggplot2"</span>) <span class="co"># or equivalently install.packages("ggplot2")</span></span>
 <span id="cb12-241"><a href="#cb12-241" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb12-242"><a href="#cb12-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-243"><a href="#cb12-243" aria-hidden="true" tabindex="-1"></a>The only file that needs to be versioned by git is <span class="in">`renv.lock`</span>. By default, the rest is ignored thanks to <span class="in">`.gitignore`</span>. More details for using <span class="in">`renv`</span> can be found either</span>
+<span id="cb12-243"><a href="#cb12-243" aria-hidden="true" tabindex="-1"></a>Non-CRAN packages (*e.g.* Github packages) can be used. Once you are done, you can fix everything with the command</span>
 <span id="cb12-244"><a href="#cb12-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-245"><a href="#cb12-245" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>on the <span class="co">[</span><span class="ot">`renv` packge webpage</span><span class="co">](https://rstudio.github.io/renv/articles/renv.html)</span>, or</span>
-<span id="cb12-246"><a href="#cb12-246" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>on the <span class="co">[</span><span class="ot">quarto page dedicated to environments</span><span class="co">](https://quarto.org/docs/projects/virtual-environments.html#using-renv)</span></span>
-<span id="cb12-247"><a href="#cb12-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-248"><a href="#cb12-248" aria-hidden="true" tabindex="-1"></a><span class="fu">## Continuous integration</span></span>
-<span id="cb12-249"><a href="#cb12-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-250"><a href="#cb12-250" aria-hidden="true" tabindex="-1"></a>The repository associated with this template is pre-configure to trigger an action on push that performs the following:</span>
-<span id="cb12-251"><a href="#cb12-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-252"><a href="#cb12-252" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Check out repository on the <span class="in">`ubuntu-latest`</span> machine</span>
-<span id="cb12-253"><a href="#cb12-253" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Install quarto and dependencies, including the Computo extension</span>
-<span id="cb12-254"><a href="#cb12-254" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Install R and dependencies with <span class="in">`renv`</span>, using your <span class="in">`renv.lock`</span> file</span>
-<span id="cb12-255"><a href="#cb12-255" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Render your .qmd file and Publish the results on a gh-page (both HTML and PDF)</span>
-<span id="cb12-256"><a href="#cb12-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-257"><a href="#cb12-257" aria-hidden="true" tabindex="-1"></a>The file <span class="co">[</span><span class="ot">.github/workflows/build_n_publish.yml</span><span class="co">](https://github.com/computorg/template-computo-R/blob/main/.github/workflows/build_n_publish.yml)</span> is largely inspired from <span class="co">[</span><span class="ot">this file</span><span class="co">](https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv)</span>.</span>
-<span id="cb12-258"><a href="#cb12-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-259"><a href="#cb12-259" aria-hidden="true" tabindex="-1"></a>Once this is successful, you are ready to submit your manuscript to the <span class="co">[</span><span class="ot">Computo submission platform</span><span class="co">](https://computo.scholasticahq.com/)</span>.</span>
-<span id="cb12-260"><a href="#cb12-260" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-261"><a href="#cb12-261" aria-hidden="true" tabindex="-1"></a><span class="fu"># References {.unnumbered}</span></span>
+<span id="cb12-245"><a href="#cb12-245" aria-hidden="true" tabindex="-1"></a><span class="in">```{r, eval=FALSE}</span></span>
+<span id="cb12-246"><a href="#cb12-246" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span>
+<span id="cb12-247"><a href="#cb12-247" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb12-248"><a href="#cb12-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-249"><a href="#cb12-249" aria-hidden="true" tabindex="-1"></a>The only file that needs to be versioned by git is <span class="in">`renv.lock`</span>. By default, the rest is ignored thanks to <span class="in">`.gitignore`</span>. More details for using <span class="in">`renv`</span> can be found either</span>
+<span id="cb12-250"><a href="#cb12-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-251"><a href="#cb12-251" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>on the <span class="co">[</span><span class="ot">`renv` packge webpage</span><span class="co">](https://rstudio.github.io/renv/articles/renv.html)</span>, or</span>
+<span id="cb12-252"><a href="#cb12-252" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>on the <span class="co">[</span><span class="ot">quarto page dedicated to environments</span><span class="co">](https://quarto.org/docs/projects/virtual-environments.html#using-renv)</span></span>
+<span id="cb12-253"><a href="#cb12-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-254"><a href="#cb12-254" aria-hidden="true" tabindex="-1"></a><span class="fu">## Continuous integration</span></span>
+<span id="cb12-255"><a href="#cb12-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-256"><a href="#cb12-256" aria-hidden="true" tabindex="-1"></a>The repository associated with this template is pre-configure to trigger an action on push that performs the following:</span>
+<span id="cb12-257"><a href="#cb12-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-258"><a href="#cb12-258" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Check out repository on the <span class="in">`ubuntu-latest`</span> machine</span>
+<span id="cb12-259"><a href="#cb12-259" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Install quarto and dependencies, including the Computo extension</span>
+<span id="cb12-260"><a href="#cb12-260" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Install R and dependencies with <span class="in">`renv`</span>, using your <span class="in">`renv.lock`</span> file</span>
+<span id="cb12-261"><a href="#cb12-261" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Render your .qmd file and Publish the results on a gh-page (both HTML and PDF)</span>
 <span id="cb12-262"><a href="#cb12-262" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-263"><a href="#cb12-263" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb12-264"><a href="#cb12-264" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb12-265"><a href="#cb12-265" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-266"><a href="#cb12-266" aria-hidden="true" tabindex="-1"></a><span class="fu"># Session information {.appendix .unnumbered}</span></span>
-<span id="cb12-267"><a href="#cb12-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-268"><a href="#cb12-268" aria-hidden="true" tabindex="-1"></a><span class="in">```{r session-info}</span></span>
-<span id="cb12-269"><a href="#cb12-269" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
-<span id="cb12-270"><a href="#cb12-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-263"><a href="#cb12-263" aria-hidden="true" tabindex="-1"></a>The file <span class="co">[</span><span class="ot">.github/workflows/build_n_publish.yml</span><span class="co">](https://github.com/computorg/template-computo-R/blob/main/.github/workflows/build_n_publish.yml)</span> is largely inspired from <span class="co">[</span><span class="ot">this file</span><span class="co">](https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv)</span>.</span>
+<span id="cb12-264"><a href="#cb12-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-265"><a href="#cb12-265" aria-hidden="true" tabindex="-1"></a>Once this is successful, you are ready to submit your manuscript to the <span class="co">[</span><span class="ot">Computo submission platform</span><span class="co">](https://computo.scholasticahq.com/)</span>.</span>
+<span id="cb12-266"><a href="#cb12-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-267"><a href="#cb12-267" aria-hidden="true" tabindex="-1"></a><span class="fu"># References {.unnumbered}</span></span>
+<span id="cb12-268"><a href="#cb12-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-269"><a href="#cb12-269" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb12-270"><a href="#cb12-270" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb12-271"><a href="#cb12-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-272"><a href="#cb12-272" aria-hidden="true" tabindex="-1"></a><span class="fu"># Session information {.appendix .unnumbered}</span></span>
+<span id="cb12-273"><a href="#cb12-273" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-274"><a href="#cb12-274" aria-hidden="true" tabindex="-1"></a><span class="in">```{r session-info}</span></span>
+<span id="cb12-275"><a href="#cb12-275" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span>
+<span id="cb12-276"><a href="#cb12-276" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
