@@ -51,9 +51,13 @@ This document, accompanied with the [hopefully finely tuned git repos](https://g
 
 ## Setup a github repository for preparing your submission
 
-You can start by clicking the "use this template" button, on the top of the page of the [github repository associated to this document](https://github.com/computorg/template-computo-R/). Of course, you can set your repository private during the preparation of your manuscript.
+You can start by clicking the **"use this template"** button, on the top of the page of the [github repository associated to this document](https://github.com/computorg/template-computo-R/). Of course, you can set your repository private during the preparation of your manuscript.
 
 ## Quarto
+
+[Quarto](https://quarto.org/) is a versatile formatting system for authoring documents integrating markdown, LaTeX and code blocks interpreted either via Jupyter or Knitr (thus supporting Python, R and Julia). It relies on the [Pandoc](https://pandoc.org/MANUAL.html) document converter.
+
+## Requirements
 
 You need [quarto](https://quarto.org/) installed on your system and the [Computo extension](https://github.com/computorg/computo-quarto-extension) to prepare your document. For the latter, once quarto is installed,  run the following to install the extension in the current directory (it creates a `_extension` directory which is ignored by git thanks to `.gitignore` by default):
 
@@ -61,9 +65,19 @@ You need [quarto](https://quarto.org/) installed on your system and the [Computo
 quarto add computorg/computo-quarto-extension
 ```
 
+[`R`](https://www.r-project.org/) and the following `R` packages must be installed on your computer: [`knitr`](https://cran.r-project.org/package=knitr), [`markdown`](https://cran.r-project.org/package=markdown).
+
+## Link with your usual tools
+
+Quarto is expecting a `.qmd` markdown file, but will also works with a standard [`Rmarkdown`](https://rmarkdown.rstudio.com/) (`.Rmd`) file. In addition, especially if you are not comfortable with the command line interface, quarto is fully integrated inside the [Rstudio IDE](https://quarto.org/docs/get-started/hello/rstudio.html) so that you can write and build your quarto document inside Rstudio.
+
+Quarto can also process a [Jupyter notebook](https://quarto.org/docs/get-started/hello/jupyter.html) file if you are used to it (it will just require to add the proper YAML metadata^[the same metadata as in the [`template-computo-R.qmd` file](https://github.com/computorg/template-computo-R/blob/main/template-computo-R.qmd) in the first cell, type "Raw", of the notebook]).
+
+**Note**: _More advanced Jupyter-related functionality like Myst/Jupyter book are not supported in this Quarto setup. The markdown syntax inside the Jupyter notebook should follow the Quarto syntax (c.f. [below](#formatting)). If you are more comfortable with using Myst/Jupyter book, we provide a [specific template](https://github.com/computorg/template-computo-myst) but it will requires more formatting work for Computo editorial team, thus highly encourage authors to use the Quarto templates._
+
 # Formatting
 
-This section covers basic formatting guidelines for [Quarto](https://quarto.org/), a versatile formatting system for authoring document integrating markdown, LaTeX and various code block interpreted either via Jupyter or Knitr (and thus dealing with Python, R or Julia). It relies on the [Pandoc](https://pandoc.org/MANUAL.html) document converter.
+This section covers basic formatting guidelines for quarto documents.
 
 To render a document, run `quarto render`. By default, both PDF and HTML documents are generated:
 
@@ -134,7 +148,7 @@ See @thm-slln.
 
 ## R Code
 
-Quarto uses either Jupyter or knitr to render code chunks. This can be triggered in the yaml header. In this tutorial, we use `knitr`, (`R`, `knitr` and `markdown` must be installed on your computer)
+Quarto uses either Jupyter or knitr to render code chunks. This can be triggered in the yaml header. In this tutorial, we use `knitr` (`R` and packages `knitr`, `markdown` must be installed on your computer).
 
 ``` yaml
 ---
@@ -213,9 +227,12 @@ Advanced formatting features are possible and documented (including interactive 
 ::: {.callout-warning}
 ## More information
 
-- [The Quarto web site](https://quarto.org) for comprehensive documentation.
+- [The Quarto web site](https://quarto.org) for comprehensive documentation, including:
+  + [Tutorial](https://quarto.org/docs/get-started/)
+  + [User guide](https://quarto.org/docs/guide/)
+  + [Options reference](https://quarto.org/docs/reference/)
 
-- [The template distributed with the Computo Quarto extension](https://computo.sfds.asso.fr/published-paper-tsne/), which uses such advanced features.
+- [The template distributed with the Computo Quarto extension](https://computo.sfds.asso.fr/computo-quarto-extension/), which uses such advanced features.
 
 - [Our mock version of the t-SNE paper](https://computo.sfds.asso.fr/published-paper-tsne/), a full and advanced example using Python and the Jupyter kernel.
 
@@ -276,7 +293,11 @@ quarto publish gh-pages
 ```
 
 Then, set the branch `gh-page` as the source of your github page, and trigger the action to check that everything works fine.
-::: 
+:::
+
+## Data and large files
+
+If your submission materials contain files larger than 50MB, **especially data files**, they won’t fit on a git repository as is. For this reason, we encourage you to put your data or any materials you deem necessary on an external “open data” centered repository hub such a [Zenodo](https://zenodo.org/) or [OSF](https://osf.io/).
 
 # References {.unnumbered}
 
