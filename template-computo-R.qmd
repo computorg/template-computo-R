@@ -184,6 +184,7 @@ It is also possible to create figures from static images:
 Computo logo (label)
 :::
 
+**Note:** _Until Quarto version 1.3+ is released, including a remote image (from a web URL) in a document (like the image above) will work in the rendered HTML document but will generate an error when building the PDF document (c.f. [related bug report](https://github.com/quarto-dev/quarto-cli/issues/4443))._
 
 ## Tables
 
