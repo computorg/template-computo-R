@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.217">
+<meta name="generator" content="quarto-1.4.161">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jane Doe">
 <meta name="author" content="John Doe">
-<meta name="dcterms.date" content="2023-02-22">
+<meta name="dcterms.date" content="2023-06-21">
 <meta name="keywords" content="key1, key2, key3">
 <meta name="description" content="This document provides a template based on the quarto system for contributions to Computo, using the quarto journal extension, the knitr kernel (R user) and renv to set-up the dependencies.">
 
@@ -22,9 +22,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -51,48 +52,19 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+/* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
 }
-.hanging div.csl-entry {
+.hanging-indent div.csl-entry {
   margin-left:2em;
   text-indent:-2em;
 }
@@ -106,8 +78,7 @@ div.csl-right-inline {
 }
 div.csl-indent {
   margin-left: 2em;
-}
-</style>
+}</style>
 
 
 <script src="template-computo-R_files/libs/clipboard/clipboard.min.js"></script>
@@ -121,18 +92,22 @@ div.csl-indent {
 <link href="template-computo-R_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="template-computo-R_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <style>
-    .quarto-title-block .quarto-title-banner,
-    .quarto-title-block .quarto-title-banner h1,
-    .quarto-title-block .quarto-title-banner h2,
-    .quarto-title-block .quarto-title-banner h3,
-    .quarto-title-block .quarto-title-banner h4,
-    .quarto-title-block .quarto-title-banner h5,
-    .quarto-title-block .quarto-title-banner h6
-    {
-      color: #FFFFFF;
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: #FFFFFF;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: #FFFFFF;
 background: #034E79;
-    }
-    </style>
+      }
+</style>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -206,14 +181,14 @@ ISSN 2824-7795</p>
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">February 22, 2023</p>
+        <p class="date">June 21, 2023</p>
       </div>
     </div>
                                     
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">February 22, 2023</p>
+        <p class="date-modified">June 21, 2023</p>
       </div>
     </div>
       
@@ -247,40 +222,40 @@ ISSN 2824-7795</p>
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="toc-section-number">1</span>  Introduction</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
   <ul class="collapse">
-  <li><a href="#about-this-document" id="toc-about-this-document" class="nav-link" data-scroll-target="#about-this-document"><span class="toc-section-number">1.1</span>  About this document</a></li>
-  <li><a href="#setup-a-github-repository-for-preparing-your-submission" id="toc-setup-a-github-repository-for-preparing-your-submission" class="nav-link" data-scroll-target="#setup-a-github-repository-for-preparing-your-submission"><span class="toc-section-number">1.2</span>  Setup a github repository for preparing your submission</a></li>
-  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="toc-section-number">1.3</span>  Quarto</a></li>
-  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements"><span class="toc-section-number">1.4</span>  Requirements</a></li>
-  <li><a href="#link-with-your-usual-tools" id="toc-link-with-your-usual-tools" class="nav-link" data-scroll-target="#link-with-your-usual-tools"><span class="toc-section-number">1.5</span>  Link with your usual tools</a></li>
+  <li><a href="#about-this-document" id="toc-about-this-document" class="nav-link" data-scroll-target="#about-this-document"><span class="header-section-number">1.1</span> About this document</a></li>
+  <li><a href="#setup-a-github-repository-for-preparing-your-submission" id="toc-setup-a-github-repository-for-preparing-your-submission" class="nav-link" data-scroll-target="#setup-a-github-repository-for-preparing-your-submission"><span class="header-section-number">1.2</span> Setup a github repository for preparing your submission</a></li>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link" data-scroll-target="#quarto"><span class="header-section-number">1.3</span> Quarto</a></li>
+  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements"><span class="header-section-number">1.4</span> Requirements</a></li>
+  <li><a href="#link-with-your-usual-tools" id="toc-link-with-your-usual-tools" class="nav-link" data-scroll-target="#link-with-your-usual-tools"><span class="header-section-number">1.5</span> Link with your usual tools</a></li>
   </ul></li>
-  <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting"><span class="toc-section-number">2</span>  Formatting</a>
+  <li><a href="#formatting" id="toc-formatting" class="nav-link" data-scroll-target="#formatting"><span class="header-section-number">2</span> Formatting</a>
   <ul class="collapse">
-  <li><a href="#basic-markdown-formatting" id="toc-basic-markdown-formatting" class="nav-link" data-scroll-target="#basic-markdown-formatting"><span class="toc-section-number">2.1</span>  Basic markdown formatting</a></li>
-  <li><a href="#mathematics" id="toc-mathematics" class="nav-link" data-scroll-target="#mathematics"><span class="toc-section-number">2.2</span>  Mathematics</a>
+  <li><a href="#basic-markdown-formatting" id="toc-basic-markdown-formatting" class="nav-link" data-scroll-target="#basic-markdown-formatting"><span class="header-section-number">2.1</span> Basic markdown formatting</a></li>
+  <li><a href="#mathematics" id="toc-mathematics" class="nav-link" data-scroll-target="#mathematics"><span class="header-section-number">2.2</span> Mathematics</a>
   <ul class="collapse">
-  <li><a href="#mathematical-formulae" id="toc-mathematical-formulae" class="nav-link" data-scroll-target="#mathematical-formulae"><span class="toc-section-number">2.2.1</span>  Mathematical formulae</a></li>
-  <li><a href="#theorems-and-other-amsthem-like-environments" id="toc-theorems-and-other-amsthem-like-environments" class="nav-link" data-scroll-target="#theorems-and-other-amsthem-like-environments"><span class="toc-section-number">2.2.2</span>  Theorems and other amsthem-like environments</a></li>
+  <li><a href="#mathematical-formulae" id="toc-mathematical-formulae" class="nav-link" data-scroll-target="#mathematical-formulae"><span class="header-section-number">2.2.1</span> Mathematical formulae</a></li>
+  <li><a href="#theorems-and-other-amsthem-like-environments" id="toc-theorems-and-other-amsthem-like-environments" class="nav-link" data-scroll-target="#theorems-and-other-amsthem-like-environments"><span class="header-section-number">2.2.2</span> Theorems and other amsthem-like environments</a></li>
   </ul></li>
-  <li><a href="#r-code" id="toc-r-code" class="nav-link" data-scroll-target="#r-code"><span class="toc-section-number">2.3</span>  R Code</a></li>
-  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="toc-section-number">2.4</span>  Figures</a></li>
-  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="toc-section-number">2.5</span>  Tables</a></li>
-  <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references"><span class="toc-section-number">2.6</span>  Handling references</a>
+  <li><a href="#r-code" id="toc-r-code" class="nav-link" data-scroll-target="#r-code"><span class="header-section-number">2.3</span> R Code</a></li>
+  <li><a href="#figures" id="toc-figures" class="nav-link" data-scroll-target="#figures"><span class="header-section-number">2.4</span> Figures</a></li>
+  <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="header-section-number">2.5</span> Tables</a></li>
+  <li><a href="#sec-references" id="toc-sec-references" class="nav-link" data-scroll-target="#sec-references"><span class="header-section-number">2.6</span> Handling references</a>
   <ul class="collapse">
-  <li><a href="#bibliographic-references" id="toc-bibliographic-references" class="nav-link" data-scroll-target="#bibliographic-references"><span class="toc-section-number">2.6.1</span>  Bibliographic references</a></li>
-  <li><a href="#other-cross-references" id="toc-other-cross-references" class="nav-link" data-scroll-target="#other-cross-references"><span class="toc-section-number">2.6.2</span>  Other cross-references</a></li>
+  <li><a href="#bibliographic-references" id="toc-bibliographic-references" class="nav-link" data-scroll-target="#bibliographic-references"><span class="header-section-number">2.6.1</span> Bibliographic references</a></li>
+  <li><a href="#other-cross-references" id="toc-other-cross-references" class="nav-link" data-scroll-target="#other-cross-references"><span class="header-section-number">2.6.2</span> Other cross-references</a></li>
   </ul></li>
-  <li><a href="#advanced-formatting" id="toc-advanced-formatting" class="nav-link" data-scroll-target="#advanced-formatting"><span class="toc-section-number">2.7</span>  Advanced formatting</a></li>
+  <li><a href="#advanced-formatting" id="toc-advanced-formatting" class="nav-link" data-scroll-target="#advanced-formatting"><span class="header-section-number">2.7</span> Advanced formatting</a></li>
   </ul></li>
-  <li><a href="#finalize-your-submission" id="toc-finalize-your-submission" class="nav-link" data-scroll-target="#finalize-your-submission"><span class="toc-section-number">3</span>  Finalize your submission</a>
+  <li><a href="#finalize-your-submission" id="toc-finalize-your-submission" class="nav-link" data-scroll-target="#finalize-your-submission"><span class="header-section-number">3</span> Finalize your submission</a>
   <ul class="collapse">
-  <li><a href="#handle-r-dependencies-with-renv" id="toc-handle-r-dependencies-with-renv" class="nav-link" data-scroll-target="#handle-r-dependencies-with-renv"><span class="toc-section-number">3.1</span>  Handle <code>R</code> dependencies with <code>renv</code></a></li>
-  <li><a href="#continuous-integration" id="toc-continuous-integration" class="nav-link" data-scroll-target="#continuous-integration"><span class="toc-section-number">3.2</span>  Continuous integration</a></li>
-  <li><a href="#data-and-large-files" id="toc-data-and-large-files" class="nav-link" data-scroll-target="#data-and-large-files"><span class="toc-section-number">3.3</span>  Data and large files</a></li>
+  <li><a href="#handle-r-dependencies-with-renv" id="toc-handle-r-dependencies-with-renv" class="nav-link" data-scroll-target="#handle-r-dependencies-with-renv"><span class="header-section-number">3.1</span> Handle <code>R</code> dependencies with <code>renv</code></a></li>
+  <li><a href="#continuous-integration" id="toc-continuous-integration" class="nav-link" data-scroll-target="#continuous-integration"><span class="header-section-number">3.2</span> Continuous integration</a></li>
+  <li><a href="#data-and-large-files" id="toc-data-and-large-files" class="nav-link" data-scroll-target="#data-and-large-files"><span class="header-section-number">3.3</span> Data and large files</a></li>
   </ul></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  <li><a href="#session-information" id="toc-session-information" class="nav-link" data-scroll-target="#session-information">Session information</a></li>
+  
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="template-computo-R.pdf"><i class="bi bi-file-pdf"></i>PDF (computo)</a></li></ul></div></nav>
 </div>
@@ -320,12 +295,12 @@ ISSN 2824-7795</p>
 <p>This section covers basic formatting guidelines for quarto documents.</p>
 <p>To render a document, run <code>quarto render</code>. By default, both PDF and HTML documents are generated:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode .bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render template-computo-R.qmd <span class="co"># will render both to html and PDF</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="callout callout-style-default callout-tip callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Note
 </div>
 </div>
@@ -357,7 +332,7 @@ Note
 f(x_1, \dots, x_n; \mu, \sigma^2) =
 \frac{1}{\sigma \sqrt{2\pi}} \exp{\left(- \frac{1}{2\sigma^2}\sum_{i=1}^n(x_i - \mu)^2\right)}
 </span></p>
-<p>It is also posible to cross-reference an equation, see <a href="#eq-mylabel">Equation&nbsp;1</a>:</p>
+<p>It is also posible to cross-reference an equation, see <a href="#eq-mylabel" class="quarto-xref">Equation&nbsp;1</a>:</p>
 <p><span id="eq-mylabel"><span class="math display">
 \begin{aligned}
 D_{x_N} &amp; = \frac12
@@ -377,7 +352,7 @@ x_L \\ x_N \end{array}\right] \\
 <p><span class="theorem-title"><strong>Theorem 1 (Strong law of large numbers) </strong></span>The sample average converges almost surely to the expected value:</p>
 <p><span class="math display">\overline{X}_n\ \xrightarrow{\text{a.s.}}\ \mu \qquad\textrm{when}\ n \to \infty.</span></p>
 </div>
-<p>See <a href="#thm-slln">Theorem&nbsp;1</a>.</p>
+<p>See <a href="#thm-slln" class="quarto-xref">Theorem&nbsp;1</a>.</p>
 </section>
 </section>
 <section id="r-code" class="level2" data-number="2.3">
@@ -390,7 +365,7 @@ x_L \\ x_N \end{array}\right] \\
 <p><code>R</code> code <span class="citation" data-cites="R-base">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2020</a>)</span> chunks may be embedded as follows:</p>
 <div class="cell">
 <details open="">
-<summary>Hide/Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
@@ -400,7 +375,7 @@ x_L \\ x_N \end{array}\right] \\
 <p>Plots can be generated as follows:</p>
 <div class="cell">
 <details open="">
-<summary>Hide/Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggplot2"</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(displ, hwy)) <span class="sc">+</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
@@ -415,14 +390,14 @@ x_L \\ x_N \end{array}\right] \\
 <div id="fig-logo" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="https://computo.sfds.asso.fr/assets/img/logo_text_vertical.png" height="200" class="figure-img"></p>
-<p></p><figcaption class="figure-caption">Figure&nbsp;1: Computo logo (label)</figcaption><p></p>
+<figcaption class="figure-caption">Figure&nbsp;1: Computo logo (label)</figcaption>
 </figure>
 </div>
 <p><strong>Note:</strong> <em>Until Quarto version 1.3+ is released, including a remote image (from a web URL) in a document (like the image above) will work in the rendered HTML document but will generate an error when building the PDF document (c.f. <a href="https://github.com/quarto-dev/quarto-cli/issues/4443">related bug report</a>).</em></p>
 </section>
 <section id="tables" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="tables"><span class="header-section-number">2.5</span> Tables</h2>
-<p>Tables (with label: <code>@tbl-mylabel</code> renders <a href="#tbl-mylabel">Table&nbsp;1</a>) can be generated with markdown as follows</p>
+<p>Tables (with label: <code>@tbl-mylabel</code> renders <a href="#tbl-mylabel" class="quarto-xref">Table&nbsp;1</a>) can be generated with markdown as follows</p>
 <div id="tbl-mylabel" class="anchored">
 <table class="table">
 <caption>Table&nbsp;1: my table caption</caption>
@@ -455,11 +430,11 @@ x_L \\ x_N \end{array}\right] \\
 <p>Table can also be generated by some code, for instance with knitr here:</p>
 <div class="cell">
 <details open="">
-<summary>Hide/Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summary</span>(cars), <span class="at">caption =</span> <span class="st">"Table caption."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<table class="table table-sm table-striped">
+<table class="table table-sm table-striped small">
 <caption>Table caption.</caption>
 <thead>
 <tr class="header">
@@ -518,12 +493,12 @@ x_L \\ x_N \end{array}\right] \\
 <section id="advanced-formatting" class="level2" data-number="2.7">
 <h2 data-number="2.7" class="anchored" data-anchor-id="advanced-formatting"><span class="header-section-number">2.7</span> Advanced formatting</h2>
 <p>Advanced formatting features are possible and documented (including interactive plots, pseudo-code, (Tikz) diagrams, Lua filters, mixing R + Python in the same document), but are beyond the scope of this simple introduction. We point several entries in this direction.</p>
-<div class="callout callout-style-default callout-warning callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 More information
 </div>
 </div>
@@ -550,30 +525,30 @@ More information
 <p>To make your work reproducible, you need to fix the packages and environment used to run your analysis. For the <code>R</code> system, the <code>renv</code> package is one of the possible reliable method, supported by the community. You basically need a couple of commands to setup your environment on your local machine. First,</p>
 <div class="cell">
 <details open="">
-<summary>Hide/Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>will initialize your repository. Then you just need to install the dependencies required to run your contribution, for instance,</p>
 <div class="cell">
 <details open="">
-<summary>Hide/Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">install</span>(<span class="st">"ggplot2"</span>) <span class="co"># or equivalently install.packages("ggplot2")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <p>Non-CRAN packages (<em>e.g.</em> Github packages) can be used. Once you are done, you can fix everything with the command</p>
 <div class="cell">
 <details open="">
-<summary>Hide/Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="callout callout-style-default callout-important callout-captioned">
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Important
 </div>
 </div>
@@ -598,12 +573,12 @@ Important
 </ol>
 <p>The file <a href="https://github.com/computorg/template-computo-R/blob/main/.github/workflows/build_n_publish.yml">.github/workflows/build_n_publish.yml</a> is largely inspired from <a href="https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv">this file</a>.</p>
 <p>Once this is successful, you are ready to submit your manuscript to the <a href="https://computo.scholasticahq.com/">Computo submission platform</a>.</p>
-<div class="callout callout-style-default callout-warning callout-captioned">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Warning
 </div>
 </div>
@@ -621,11 +596,11 @@ Warning
 </section>
 <section id="references" class="level1 unnumbered">
 <h1 class="unnumbered">References</h1>
-<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography">
-<div id="ref-computo" class="csl-entry" role="doc-biblioentry">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-computo" class="csl-entry" role="listitem">
 Computo Team. 2020. <span>“Computo: Reproducible Computational/Algorithmic Contributions in Statistics and Machine Learning.”</span>
 </div>
-<div id="ref-R-base" class="csl-entry" role="doc-biblioentry">
+<div id="ref-R-base" class="csl-entry" role="listitem">
 R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>
 </div>
@@ -633,17 +608,17 @@ R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</
 
 
 
-<div id="quarto-appendix" class="default"><section id="session-information" class="level1 appendix unnumbered"><h2 class="quarto-appendix-heading">Session information</h2><div class="quarto-appendix-contents">
+<div id="quarto-appendix" class="default"><section id="session-information" class="level1 appendix unnumbered"><h2 class="anchored quarto-appendix-heading">Session information</h2><div class="quarto-appendix-contents">
 
 <div class="cell">
 <details open="">
-<summary>Hide/Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>R version 4.2.2 (2022-10-31)
 Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 22.04.1 LTS
+Running under: Ubuntu 22.04.2 LTS
 
 Matrix products: default
 BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3
@@ -676,18 +651,18 @@ loaded via a namespace (and not attached):
 </div>
 <!-- -->
 
-</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+</div></section><aside id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
 <li id="fn1"><p>the same metadata as in the <a href="https://github.com/computorg/template-computo-R/blob/main/template-computo-R.qmd"><code>template-computo-R.qmd</code> file</a> in the first cell, type “Raw”, of the notebook<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>We use <a href="https://lualatex.org/">lualatex</a> for this purpose.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
-</section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{doe2023,
-  author = {Jane Doe and John Doe},
+</aside><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Reuse</h2><div id="quarto-reuse" class="quarto-appendix-contents"><div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></div></div></section><section class="quarto-appendix-contents"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@article{doe2023,
+  author = {Doe, Jane and Doe, John},
   publisher = {Société Française de Statistique},
   title = {Template for Contribution to {Computo}},
   journal = {Computo},
-  date = {23-02-22},
+  date = {2023-06-21},
   url = {https://computo.sfds.asso.fr/template-computo-quarto},
   doi = {xxxx},
   issn = {2824-7795},
@@ -700,9 +675,9 @@ loaded via a namespace (and not attached):
     tellus. Mauris urna erat, rhoncus sed faucibus sit amet, venenatis
     eu ipsum.}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-doe2023" class="csl-entry quarto-appendix-citeas" role="doc-biblioentry">
-Jane Doe, and John Doe. 23AD. <span>“Template for Contribution to
-Computo.”</span> <em>Computo</em>, February. <a href="https://doi.org/xxxx">https://doi.org/xxxx</a>.
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-doe2023" class="csl-entry quarto-appendix-citeas" role="listitem">
+Doe, Jane, and John Doe. 2023. <span>“Template for Contribution to
+Computo.”</span> <em>Computo</em>, June. <a href="https://doi.org/xxxx">https://doi.org/xxxx</a>.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -732,9 +707,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -821,10 +810,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   if (showAllCode) {
     showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -834,8 +822,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -848,6 +845,60 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    if (id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        for (let i = 0; i < 2; i++) {
+          container.appendChild(note.children[i].cloneNode(true));
+        }
+        return container.innerHTML
+      } else {
+        return note.innerHTML;
+      }
+    } else {
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      try { hash = new URL(url).hash; } catch {}
+      const id = hash.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note !== null) {
+        try {
+          const html = processXRef(id, note);
+          instance.setContent(html);
+        } finally {
+          instance.enable();
+          instance.show();
+        }
+      } else {
+        // See if we can fetch this
+        fetch(url.split('#')[0])
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.getElementById(id);
+          if (note !== null) {
+            const html = processXRef(id, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -891,6 +942,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1303,6 +1355,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-312"><a href="#cb13-312" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
+
 
 
 
