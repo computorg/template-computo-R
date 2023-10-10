@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.398">
+<meta name="generator" content="quarto-1.4.412">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jane Doe">
 <meta name="author" content="John Doe">
-<meta name="dcterms.date" content="2023-10-06">
+<meta name="dcterms.date" content="2023-10-10">
 <meta name="keywords" content="key1, key2, key3">
 <meta name="description" content="This document provides a template based on the quarto system for contributions to Computo, using the quarto journal extension, the knitr kernel (R user) and renv to set-up the dependencies.">
 
@@ -182,14 +182,14 @@ ISSN 2824-7795</p>
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 6, 2023</p>
+        <p class="date">October 10, 2023</p>
       </div>
     </div>
                                     
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">October 6, 2023</p>
+        <p class="date-modified">October 10, 2023</p>
       </div>
     </div>
       
@@ -675,7 +675,7 @@ loaded via a namespace (and not attached):
   title = {Template for Contribution to {Computo}},
   journal = {Computo},
   pages = {undefined},
-  date = {2023-10-06},
+  date = {2023-10-10},
   url = {https://computo.sfds.asso.fr/template-computo-quarto},
   doi = {xxxx},
   issn = {2824-7795},
@@ -1145,6 +1145,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (!isInternal(link.href)) {
           // target, if specified
           link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
       }
     }
 });
