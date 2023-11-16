@@ -282,7 +282,7 @@ The repository associated with this template is pre-configure to trigger an acti
 3. Install R and dependencies with `renv`, using your `renv.lock` file
 4. Render your .qmd file and Publish the results on a gh-page (both HTML and PDF)
 
-The file [.github/workflows/build_n_publish.yml](https://github.com/computorg/template-computo-R/blob/main/.github/workflows/build_n_publish.yml) is largely inspired from [this file](https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv).
+The file [.github/workflows/build.yml](https://github.com/computorg/template-computo-R/blob/main/.github/workflows/build.yml) is largely inspired from [this file](https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv).
 
 Once this is successful, you are ready to submit your manuscript to the [Computo submission platform](https://computo.scholasticahq.com/).
 
