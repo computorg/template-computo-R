@@ -64,7 +64,7 @@ See [this page](https://computo.sfds.asso.fr/template-computo-R/#handle-r-depend
 
 ### Step 4: proof reproducibility
 
-Put everything together and check that your work is indeed reproducible. To this end, you need to rely on a github action, whose default is pre-configured and found here: [.github/workflows/build.yml](https://github.com/computorg/template-computo-R/blob/main/.github/workflows/build_n_publish.yml)
+Put everything together and check that your work is indeed reproducible. To this end, you need to rely on a github action, whose default is pre-configured and found here: [.github/workflows/build.yml](https://github.com/computorg/template-computo-R/blob/main/.github/workflows/build.yml)
 
 This action will
 
