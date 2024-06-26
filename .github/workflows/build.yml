@@ -19,11 +19,13 @@ jobs:
       - name: Set up quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
+          version: pre-release
           tinytex: true
 
       - name: register tinytex globally for diagram.lua
         run: |
           mkdir -p ~/.local/bin
+          ~/.TinyTeX/bin/x86_64-linux/tlmgr update --self
           ~/.TinyTeX/bin/x86_64-linux/tlmgr option sys_bin ~/.local/bin
           ~/.TinyTeX/bin/x86_64-linux/tlmgr path add
           ~/.TinyTeX/bin/x86_64-linux/tlmgr install libertinus-fonts
