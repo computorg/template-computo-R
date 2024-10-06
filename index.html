@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.15">
+<meta name="generator" content="quarto-1.6.21">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jane Doe">
 <meta name="author" content="John Doe">
-<meta name="dcterms.date" content="2024-09-29">
+<meta name="dcterms.date" content="2024-10-06">
 <meta name="keywords" content="key1, key2, key3">
 <meta name="description" content="This document provides a template based on the quarto system for contributions to Computo, using the quarto journal extension, the knitr kernel (R user) and renv to set-up the dependencies.">
 
@@ -91,7 +91,7 @@ div.csl-indent {
 <link href="template-computo-R_files/libs/quarto-html/quarto-syntax-highlighting-6f7931aacaeb22aa467d6667c6f1725d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="template-computo-R_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="template-computo-R_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="template-computo-R_files/libs/bootstrap/bootstrap-b5255278e755812c7170897e31def730.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="template-computo-R_files/libs/bootstrap/bootstrap-3d562f37409bf2d9a8bc8ded1d1c4080.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <style>
 
       .quarto-title-block .quarto-title-banner h1,
@@ -210,14 +210,14 @@ ISSN 2824-7795</p>
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">September 29, 2024</p>
+        <p class="date">October 6, 2024</p>
       </div>
     </div>
                                     
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">September 29, 2024</p>
+        <p class="date-modified">October 6, 2024</p>
       </div>
     </div>
       
@@ -442,26 +442,26 @@ Figure&nbsp;1: Computo logo (label)
 Table&nbsp;1: my table caption
 </figcaption>
 <div aria-describedby="tbl-mylabel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="caption-top">
+<table class="caption-top table">
 <thead>
-<tr>
+<tr class="header">
 <th>Tables</th>
 <th style="text-align: center;">Are</th>
 <th style="text-align: right;">Cool</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>col 1 is</td>
 <td style="text-align: center;">left-aligned</td>
 <td style="text-align: right;">$1600</td>
 </tr>
-<tr>
+<tr class="even">
 <td>col 2 is</td>
 <td style="text-align: center;">centered</td>
 <td style="text-align: right;">$12</td>
 </tr>
-<tr>
+<tr class="odd">
 <td>col 3 is</td>
 <td style="text-align: center;">right-aligned</td>
 <td style="text-align: right;">$1</td>
@@ -478,42 +478,42 @@ Table&nbsp;1: my table caption
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">summary</span>(cars), <span class="at">caption =</span> <span class="st">"Table caption."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<table class="caption-top">
+<table class="caption-top table table-sm table-striped small">
 <caption>Table caption.</caption>
 <thead>
-<tr>
+<tr class="header">
 <th style="text-align: left;"></th>
 <th style="text-align: left;">speed</th>
 <th style="text-align: left;">dist</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"></td>
 <td style="text-align: left;">Min. : 4.0</td>
 <td style="text-align: left;">Min. : 2.00</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"></td>
 <td style="text-align: left;">1st Qu.:12.0</td>
 <td style="text-align: left;">1st Qu.: 26.00</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"></td>
 <td style="text-align: left;">Median :15.0</td>
 <td style="text-align: left;">Median : 36.00</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"></td>
 <td style="text-align: left;">Mean :15.4</td>
 <td style="text-align: left;">Mean : 42.98</td>
 </tr>
-<tr>
+<tr class="odd">
 <td style="text-align: left;"></td>
 <td style="text-align: left;">3rd Qu.:19.0</td>
 <td style="text-align: left;">3rd Qu.: 56.00</td>
 </tr>
-<tr>
+<tr class="even">
 <td style="text-align: left;"></td>
 <td style="text-align: left;">Max. :25.0</td>
 <td style="text-align: left;">Max. :120.00</td>
@@ -709,7 +709,7 @@ loaded via a namespace (and not attached):
   publisher = {Société Française de Statistique},
   title = {Template for Contribution to {Computo}},
   journal = {Computo},
-  date = {2024-09-29},
+  date = {2024-10-06},
   url = {https://computo.sfds.asso.fr/template-computo-quarto},
   doi = {xxxx},
   issn = {2824-7795},
@@ -724,7 +724,7 @@ loaded via a namespace (and not attached):
 }
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-doe2024" class="csl-entry quarto-appendix-citeas" role="listitem">
 Doe, Jane, and John Doe. 2024. <span>“Template for Contribution to
-Computo.”</span> <em>Computo</em>, September. <a href="https://doi.org/xxxx">https://doi.org/xxxx</a>.
+Computo.”</span> <em>Computo</em>, October. <a href="https://doi.org/xxxx">https://doi.org/xxxx</a>.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
