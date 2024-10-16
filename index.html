@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.25">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Jane Doe">
 <meta name="author" content="John Doe">
-<meta name="dcterms.date" content="2024-10-13">
+<meta name="dcterms.date" content="2024-10-16">
 <meta name="keywords" content="key1, key2, key3">
 <meta name="description" content="This document provides a template based on the quarto system for contributions to Computo, using the quarto journal extension, the knitr kernel (R user) and renv to set-up the dependencies.">
 
@@ -88,10 +88,12 @@ div.csl-indent {
 <script src="template-computo-R_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="template-computo-R_files/libs/quarto-html/anchor.min.js"></script>
 <link href="template-computo-R_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="template-computo-R_files/libs/quarto-html/quarto-syntax-highlighting-6f7931aacaeb22aa467d6667c6f1725d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="template-computo-R_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="template-computo-R_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="template-computo-R_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="template-computo-R_files/libs/bootstrap/bootstrap-bd987972e5885778c45a80ac90485a07.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="template-computo-R_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="template-computo-R_files/libs/quarto-contrib/pseudocode-2.4.1/pseudocode.min.js"></script>
+<link href="template-computo-R_files/libs/quarto-contrib/pseudocode-2.4.1/pseudocode.min.css" rel="stylesheet">
 <style>
 
       .quarto-title-block .quarto-title-banner h1,
@@ -210,14 +212,14 @@ ISSN 2824-7795</p>
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">October 13, 2024</p>
+        <p class="date">October 16, 2024</p>
       </div>
     </div>
                                     
       <div>
       <div class="quarto-title-meta-heading">Modified</div>
       <div class="quarto-title-meta-contents">
-        <p class="date-modified">October 13, 2024</p>
+        <p class="date-modified">October 16, 2024</p>
       </div>
     </div>
       
@@ -660,13 +662,13 @@ R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>R version 4.4.0 (2024-04-24)
+<pre><code>R version 4.4.1 (2024-06-14)
 Platform: x86_64-pc-linux-gnu
 Running under: Ubuntu 22.04.5 LTS
 
 Matrix products: default
-BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
-LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0
+BLAS:   /usr/lib/x86_64-linux-gnu/blas/libblas.so.3.10.0 
+LAPACK: /usr/lib/x86_64-linux-gnu/lapack/liblapack.so.3.10.0
 
 locale:
  [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       
@@ -674,7 +676,7 @@ locale:
  [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          
 [10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   
 
-time zone: UTC
+time zone: Etc/UTC
 tzcode source: system (glibc)
 
 attached base packages:
@@ -687,12 +689,12 @@ loaded via a namespace (and not attached):
  [1] vctrs_0.6.5       nlme_3.1-163      cli_3.6.2         knitr_1.46       
  [5] rlang_1.1.3       xfun_0.43         renv_1.0.7        jsonlite_1.8.8   
  [9] labeling_0.4.3    glue_1.7.0        colorspace_2.1-0  htmltools_0.5.8.1
-[13] scales_1.3.0      fansi_1.0.6       rmarkdown_2.26    grid_4.4.0       
+[13] scales_1.3.0      fansi_1.0.6       rmarkdown_2.26    grid_4.4.1       
 [17] evaluate_0.23     munsell_0.5.1     tibble_3.2.1      fastmap_1.1.1    
-[21] yaml_2.3.8        lifecycle_1.0.4   compiler_4.4.0    pkgconfig_2.0.3  
+[21] yaml_2.3.8        lifecycle_1.0.4   compiler_4.4.1    pkgconfig_2.0.3  
 [25] mgcv_1.9-1        farver_2.1.1      lattice_0.22-5    digest_0.6.35    
-[29] R6_2.5.1          utf8_1.2.4        splines_4.4.0     pillar_1.9.0     
-[33] magrittr_2.0.3    Matrix_1.6-5      withr_3.0.0       tools_4.4.0      
+[29] R6_2.5.1          utf8_1.2.4        splines_4.4.1     pillar_1.9.0     
+[33] magrittr_2.0.3    Matrix_1.6-5      withr_3.0.0       tools_4.4.1      
 [37] gtable_0.3.5     </code></pre>
 </div>
 </div>
@@ -709,7 +711,7 @@ loaded via a namespace (and not attached):
   publisher = {Société Française de Statistique},
   title = {Template for Contribution to {Computo}},
   journal = {Computo},
-  date = {2024-10-13},
+  date = {2024-10-16},
   url = {https://computo.sfds.asso.fr/template-computo-quarto},
   doi = {xxxx},
   issn = {2824-7795},
@@ -1517,6 +1519,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-312"><a href="#cb13-312" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
+    <script type="text/javascript">
+    (function(d) {
+      d.querySelectorAll(".pseudocode-container").forEach(function(el) {
+        let pseudocodeOptions = {
+          indentSize: el.dataset.indentSize || "1.2em",
+          commentDelimiter: el.dataset.commentDelimiter || "//",
+          lineNumber: el.dataset.lineNumber === "true" ? true : false,
+          lineNumberPunc: el.dataset.lineNumberPunc || ":",
+          noEnd: el.dataset.noEnd === "true" ? true : false,
+          titlePrefix: el.dataset.captionPrefix || "Algorithm"
+        };
+        pseudocode.renderElement(el.querySelector(".pseudocode"), pseudocodeOptions);
+      });
+    })(document);
+    (function(d) {
+      d.querySelectorAll(".pseudocode-container").forEach(function(el) {
+        let captionSpan = el.querySelector(".ps-root > .ps-algorithm > .ps-line > .ps-keyword")
+        if (captionSpan !== null) {
+          let captionPrefix = el.dataset.captionPrefix + " ";
+          let captionNumber = "";
+          if (el.dataset.pseudocodeNumber) {
+            captionNumber = el.dataset.pseudocodeNumber + " ";
+            if (el.dataset.chapterLevel) {
+              captionNumber = el.dataset.chapterLevel + "." + captionNumber;
+            }
+          }
+          captionSpan.innerHTML = captionPrefix + captionNumber;
+        }
+      });
+    })(document);
+    </script>
+  
 
 
 
