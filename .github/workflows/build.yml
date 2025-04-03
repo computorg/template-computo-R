@@ -2,27 +2,16 @@ name: Main Workflows
 
 on:
   push:
-    branches: ["main"]
+    branches: ["main","master"]
   repository_dispatch:
     types: [custom-event] 
   workflow_dispatch:
+  pull_request:
+    branches: ["main","master"]
 
-permissions:
-  contents: write
-  pages: write
-
-  
 jobs:
   call_env_workflow:
     uses: computorg/workflows/.github/workflows/global-env.yml@main
-    secrets:
-      token: ${{ secrets.GITHUB_TOKEN }}
-    with:
-      config-path: './config/quarto_config.yml'
   call_quartopublish_workflow:
     uses: computorg/workflows/.github/workflows/publish-render.yml@main
     needs: call_env_workflow
-    with:
-      config-path: './config/quarto_config.yml'
-    secrets:
-      token: ${{ secrets.GITHUB_TOKEN }}
