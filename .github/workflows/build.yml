@@ -2,7 +2,7 @@ name: Main Workflows
 
 on:
   schedule:
-    - cron: "0 8 * * 7"
+    - cron: "0 8 * * 0"
   push:
     branches: ["main","master"]
   repository_dispatch:
