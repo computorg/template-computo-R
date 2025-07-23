@@ -134,7 +134,7 @@ It is also possible to create figures from static images:
 
 :::{#fig-logo}
 
-![](https://computo.sfds.asso.fr/assets/img/logo_text_vertical.png){height=200}
+![](https://computo-journal.org/assets/img/logo_text_vertical.svg){height=200}
 
 Computo logo (label)
 :::
