@@ -29,7 +29,7 @@ date-modified: last-modified
 description: |
   This document provides a template based on the [quarto](https://quarto.org/) system for contributions to Computo, using the [quarto journal extension](https://github.com/computorg/computo-quarto-extension), the knitr kernel (R user) and [renv](https://rstudio.github.io/renv/articles/renv.html) to set-up the dependencies.
   
-  **All important information about writing and preparing an article to be submitted to Computo, and related technicalities** are detailed [in the guidelines for authors](https://computo-journal.org/site/guidelines-authors.html).
+  For a detailed, step-by-step guide on preparing your article and submitting it to Computo, please consult the [guidelines for authors](https://computo-journal.org/site/guidelines-authors.html).
 abstract: >+
   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur posuere vestibulum facilisis. Aenean pretium orci augue, quis lobortis libero accumsan eu. Nam mollis lorem sit amet pellentesque ullamcorper. Curabitur lobortis libero eget malesuada vestibulum. Nam nec nibh massa. Pellentesque porttitor cursus tellus. Mauris urna erat, rhoncus sed faucibus sit amet, venenatis eu ipsum.
 keywords: [key1, key2, key3]
@@ -38,6 +38,7 @@ github-user: computorg
 repo: "template-computo-r"
 draft: true # set to false once the build is running
 published: false # will be set to true once accepted
+license: CC-BY-4.0
 format:
   computo-html: default
   computo-pdf: default

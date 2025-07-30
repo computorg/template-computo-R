@@ -2,11 +2,12 @@
 
 ## About this document
 
-This document, accompanied with the [hopefully finely tuned git repos](https://github.com/computorg/template-computo-R/), provides a template for writing contributions to **Computo** [@computo]. We show how `R` code [@R-base] can be included and how the repository can be set up for triggering github actions for rendering the document, with dependencies handled by `renv`.
+This document, accompanied with the [tuned git repos](https://github.com/computorg/template-computo-R/), provides a template for writing contributions to **Computo** [@computo]. 
 
-## Setup a github repository for preparing your submission
-
-You can start by clicking the **"use this template"** button, on the top of the page of the [github repository associated to this document](https://github.com/computorg/template-computo-R/). Of course, you can set your repository private during the preparation of your manuscript.
+::: {.callout-tip}
+## Note
+This document provides only the main steps and key formatting principles. For a detailed, step-by-step guide on preparing your article and submitting it to Computo, please consult the [guidelines for authors](https://computo-journal.org/site/guidelines-authors.html).
+:::
 
 ## Quarto
 
@@ -21,14 +22,6 @@ quarto add computorg/computo-quarto-extension
 ```
 
 [`R`](https://www.r-project.org/) and the following `R` packages must be installed on your computer: [`knitr`](https://cran.r-project.org/package=knitr), [`markdown`](https://cran.r-project.org/package=markdown).
-
-## Link with your usual tools
-
-Quarto is expecting a `.qmd` markdown file, but will also works with a standard [`Rmarkdown`](https://rmarkdown.rstudio.com/) (`.Rmd`) file. In addition, especially if you are not comfortable with the command line interface, quarto is fully integrated inside the [Rstudio IDE](https://quarto.org/docs/get-started/hello/rstudio.html) so that you can write and build your quarto document inside Rstudio.
-
-Quarto can also process a [Jupyter notebook](https://quarto.org/docs/get-started/hello/jupyter.html) file if you are used to it (it will just require to add the proper YAML metadata^[the same metadata as in the [`template-computo-R.qmd` file](https://github.com/computorg/template-computo-R/blob/main/template-computo-R.qmd) in the first cell, type "Raw", of the notebook]).
-
-**Note**: _More advanced Jupyter-related functionality like Myst/Jupyter book are not supported in this Quarto setup. The markdown syntax inside the Jupyter notebook should follow the Quarto syntax (c.f. [below](#formatting)). If you are more comfortable with using Myst/Jupyter book, we provide a [specific template](https://github.com/computorg/template-computo-myst) but it will requires more formatting work for Computo editorial team, thus highly encourage authors to use the Quarto templates._
 
 # Formatting
 
@@ -195,65 +188,6 @@ Advanced formatting features are possible and documented (including interactive 
 - [The previously published papers in Computo](https://computo.sfds.asso.fr/publications/) can be used as references.
 
 :::
-
-# Finalize your submission
-
-## Handle `R` dependencies with `renv`
-
-To make your work reproducible, you need to fix the packages and environment used to run your analysis. For the `R` system, the `renv` package is one of the possible reliable method, supported by the community. You basically need a couple of commands to setup your environment on your local machine. First,
-
-```{r, eval = FALSE}
-renv::init()
-```
-
-will initialize your repository. Then you just need to install the dependencies required to run your contribution, for instance, 
-
-
-```{r, eval=FALSE}
-renv::install("ggplot2") # or equivalently install.packages("ggplot2")
-```
-
-Non-CRAN packages (*e.g.* Github packages) can be used. Once you are done, you can fix everything with the command
-
-```{r, eval=FALSE}
-renv::snapshot()
-```
-
-::: {.callout-important}
-The only file that needs to be versioned by git is `renv.lock`. By default, the rest is ignored thanks to `.gitignore`. 
-:::
-
-More details for using `renv` can be found either
-
-- on the [`renv` packge webpage](https://rstudio.github.io/renv/articles/renv.html), or
-- on the [quarto page dedicated to environments](https://quarto.org/docs/projects/virtual-environments.html#using-renv)
-
-## Continuous integration
-
-The repository associated with this template is pre-configure to trigger an action on push that performs the following:
-
-1. Check out repository on the `ubuntu-latest` machine
-2. Install quarto and dependencies, including the Computo extension
-3. Install R and dependencies with `renv`, using your `renv.lock` file
-4. Render your .qmd file and Publish the results on a gh-page (both HTML and PDF)
-
-The file [.github/workflows/build.yml](https://github.com/computorg/template-computo-R/blob/main/.github/workflows/build.yml) is largely inspired from [this file](https://quarto.org/docs/publishing/github-pages.html#example-knitr-with-renv).
-
-Once this is successful, you are ready to submit your manuscript to the [Computo submission platform](https://computo.scholasticahq.com/).
-
-::: {.callout-warning}
-The first time, you possibly need to create the branch for the action to work. This can be done by running the following command from your computer, in your git repository:
-
-```.bash
-quarto publish gh-pages
-```
-
-Then, set the branch `gh-page` as the source of your github page, and trigger the action to check that everything works fine.
-:::
-
-## Data and large files
-
-If your submission materials contain files larger than 50MB, **especially data files**, they won’t fit on a git repository as is. For this reason, we encourage you to put your data or any materials you deem necessary on an external “open data” centered repository hub such a [Zenodo](https://zenodo.org/) or [OSF](https://osf.io/).
 
 # References {.unnumbered}
 

@@ -9,9 +9,8 @@ extension](https://github.com/computorg/computo-quarto-extension), the
 knitr kernel (R user) and
 [renv](https://rstudio.github.io/renv/articles/renv.html) to set-up the
 dependencies.  
-**All important information about writing and preparing an article to be
-submitted to Computo, and related technicalities** are detailed [in the
-guidelines for
+For a detailed, step-by-step guide on preparing your article and
+submitting it to Computo, please consult the [guidelines for
 authors](https://computo-journal.org/site/guidelines-authors.html).*
 
 [![build and
@@ -23,8 +22,8 @@ License](https://i.creativecommons.org/l/by/4.0/80x15.png)](http://creativecommo
 
 - [Jane Doe](https://janedoe.someplace.themoon.org) (Name of Affiliation
   one)
-- [John Doe](https://johndoe.someplace.themoon.org) (Name of
-  Afficiliation two)
+- [John Doe](https://johndoe.someplace.themoon.org) (Name of Affiliation
+  two)
 
 ### Abstract
 
