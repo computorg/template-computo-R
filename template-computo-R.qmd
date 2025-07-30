@@ -6,7 +6,7 @@ This document, accompanied with the [tuned git repos](https://github.com/computo
 
 ::: {.callout-tip}
 ## Note
-This document provides only the main steps and key formatting principles. For a detailed, step-by-step guide on preparing your article and submitting it to Computo, please consult the [guidelines for authors](https://computo-journal.org/site/guidelines-authors.html).
+The content of this document only provides key formatting principles. For a detailed, step-by-step guide on preparing your article and submitting it to Computo, please consult the [guidelines for authors](https://computo-journal.org/site/guidelines-authors.html).
 :::
 
 ## Quarto

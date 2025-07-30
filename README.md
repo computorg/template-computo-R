@@ -2,15 +2,15 @@
 Jane Doe, John Doe
 2025-07-30
 
-*This document provides a template based on the
-[quarto](https://quarto.org/) system for contributions to Computo, using
-the [quarto journal
+*Template for preparing a submission to Computo, using the [quarto
+journal
 extension](https://github.com/computorg/computo-quarto-extension), the
 knitr kernel (R user) and
 [renv](https://rstudio.github.io/renv/articles/renv.html) to set-up the
 dependencies.  
-For a detailed, step-by-step guide on preparing your article and
-submitting it to Computo, please consult the [guidelines for
+For a detailed, step-by-step guide on preparing your article, setting up
+the continuous integration and submitting it to Computo, please consult
+the [guidelines for
 authors](https://computo-journal.org/site/guidelines-authors.html).*
 
 [![build and
