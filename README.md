@@ -1,8 +1,6 @@
 # Template for contribution to Computo
 Jane Doe, John Doe
-2025-07-30
-
-***?meta:description***
+2026-06-30
 
 [![build and
 publish](https://github.com/computorg/template-computo-r/actions/workflows/build.yml/badge.svg)](https://github.com/computorg/template-computo-r/actions/workflows/build.yml)
