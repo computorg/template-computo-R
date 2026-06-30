@@ -2,11 +2,11 @@
 
 ## About this document
 
-This document, accompanied with the [tuned git repos](https://github.com/computorg/template-computo-R/), provides a template for writing contributions to **Computo** [@computo]. 
+This document, accompanied by the [tuned git repos](https://github.com/computorg/template-computo-R/), provides a template for writing contributions to **Computo** [@computo].
 
 ::: {.callout-tip}
 ## Note
-The content of this document only provides key formatting principles. For a detailed, step-by-step guide on preparing your article and submitting it to Computo, please consult the [guidelines for authors](https://computo-journal.org/site/guidelines-authors.html).
+This document provides only the key formatting principles. For a detailed, step-by-step guide on preparing your article and submitting it to Computo, please consult the [guidelines for authors](https://computo-journal.org/site/guidelines-authors.html).
 :::
 
 ## Quarto
@@ -15,7 +15,7 @@ The content of this document only provides key formatting principles. For a deta
 
 ## Requirements
 
-You need [quarto](https://quarto.org/) installed on your system and the [Computo extension](https://github.com/computorg/computo-quarto-extension) to prepare your document. For the latter, once quarto is installed,  run the following to install the extension in the current directory (it creates a `_extension` directory which is ignored by git thanks to `.gitignore` by default):
+You need [quarto](https://quarto.org/) installed on your system and the [Computo extension](https://github.com/computorg/computo-quarto-extension) to prepare your document. For the latter, once quarto is installed, run the following to install the extension in the current directory (it creates a `_extension` directory which is ignored by git thanks to `.gitignore` by default):
 
 ```.bash
 quarto add computorg/computo-quarto-extension
@@ -30,7 +30,7 @@ This section covers basic formatting guidelines for quarto documents.
 To render a document, run `quarto render`. By default, both PDF and HTML documents are generated:
 
 ```.bash
-quarto render template-computo-R.qmd # will render both to html and PDF
+quarto render # will render both to html and PDF
 ```
 
 ::: {.callout-tip}
@@ -66,7 +66,7 @@ f(x_1, \dots, x_n; \mu, \sigma^2) =
 \frac{1}{\sigma \sqrt{2\pi}} \exp{\left(- \frac{1}{2\sigma^2}\sum_{i=1}^n(x_i - \mu)^2\right)}
 $$
 
-It is also posible to cross-reference an equation, see @eq-mylabel:
+It is also possible to cross-reference an equation, see @eq-mylabel:
 
 $$
 \begin{aligned}
@@ -101,7 +101,7 @@ Quarto uses either Jupyter or knitr to render code chunks. This can be triggered
 ``` yaml
 ---
 title: "My Document"
-author "Jane Doe"
+author: "Jane Doe"
 ---
 ```
 
@@ -171,7 +171,7 @@ page](https://quarto.org/docs/authoring/cross-references.html).
 
 ## Advanced formatting
 
-Advanced formatting features are possible and documented (including interactive plots, pseudo-code, (Tikz) diagrams, Lua filters, mixing R + Python in the same document), but are beyond the scope of this simple introduction. We point several entries in this direction.
+Advanced formatting features are possible and documented (including interactive plots, pseudo-code, (Tikz) diagrams, Lua filters, mixing R + Python in the same document), but are beyond the scope of this simple introduction. We list a few useful resources below.
 
 ::: {.callout-warning}
 ## More information

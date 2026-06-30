@@ -27,7 +27,7 @@ author:
 date: last-modified
 date-modified: last-modified
 description: |
-  Template for preparing a submission to Computo, using the [quarto journal extension](https://github.com/computorg/computo-quarto-extension), the knitr kernel (R user) and [renv](https://rstudio.github.io/renv/articles/renv.html) to set-up the dependencies.
+  Template for preparing a submission to Computo, using the [quarto journal extension](https://github.com/computorg/computo-quarto-extension), the knitr kernel (R user) and [renv](https://rstudio.github.io/renv/articles/renv.html) to set up the dependencies.
   
   For a detailed, step-by-step guide on preparing your article, setting up the continuous integration and submitting it to Computo, please consult the [guidelines for authors](https://computo-journal.org/site/guidelines-authors.html).
 abstract: >+
@@ -36,7 +36,7 @@ keywords: [key1, key2, key3]
 bibliography: references.bib
 github-user: computorg
 repo: "template-computo-r"
-draft: true # set to false once the build is running
+status: "draft"
 published: false # will be set to true once accepted
 license: CC-BY-4.0
 format:

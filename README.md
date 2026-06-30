@@ -6,7 +6,7 @@ Jane Doe, John Doe
 journal
 extension](https://github.com/computorg/computo-quarto-extension), the
 knitr kernel (R user) and
-[renv](https://rstudio.github.io/renv/articles/renv.html) to set-up the
+[renv](https://rstudio.github.io/renv/articles/renv.html) to set up the
 dependencies.  
 For a detailed, step-by-step guide on preparing your article, setting up
 the continuous integration and submitting it to Computo, please consult
