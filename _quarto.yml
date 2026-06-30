@@ -1,7 +1,7 @@
 project:
   type: default
   render:
-    - template-computo-R.qmd
+    - main.qmd
     - README.qmd
 
 title: "Template for contribution to Computo"
