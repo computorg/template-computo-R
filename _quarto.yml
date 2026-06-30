@@ -34,7 +34,7 @@ keywords: [key1, key2, key3]
 bibliography: references.bib
 github-user: computorg
 repo: "template-computo-r"
-status: "draft"
+status: "submitted"
 citation:
   type: article-journal
   container-title: "Computo"
