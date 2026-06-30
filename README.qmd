@@ -2,8 +2,6 @@
 format: gfm
 ---
 
-_{{< meta description >}}_
-
 [![build and publish](https://github.com/{{< meta github-user >}}/{{< meta repo >}}/actions/workflows/build.yml/badge.svg)](https://github.com/{{< meta github-user >}}/{{< meta repo >}}/actions/workflows/build.yml)
 [![Creative Commons License](https://i.creativecommons.org/l/by/4.0/80x15.png)](http://creativecommons.org/licenses/by/4.0/)
 
