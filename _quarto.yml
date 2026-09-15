@@ -40,6 +40,9 @@ citation:
   container-title: "Computo"
   issn: "2824-7795"
   doi: "10.5072/computo.0000" # placeholder DOI (10.5072 is the official DOI test prefix), replace once assigned
+  # set at acceptance, with the published repository name (used by Google Scholar):
+  # url: "https://computo-journal.org/published-YYYYMM-name/"
+  # pdf-url: "https://computo-journal.org/published-YYYYMM-name/main.pdf"
 license: CC-BY-4.0
 format:
   computo-html: default
