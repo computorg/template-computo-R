@@ -20,5 +20,5 @@ jobs:
       id-token: write
       contents: write
       pages: write
-    uses: computorg/workflows/.github/workflows/publish-render.yml@main
+    uses: computorg/workflows/.github/workflows/publish-render.yml@quarto-gh-token
     needs: call_env_workflow
