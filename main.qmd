@@ -189,6 +189,19 @@ Advanced formatting features are possible and documented (including interactive 
 
 :::
 
+# Use of generative AI {.unnumbered}
+
+<!-- Mandatory: see https://computo-journal.org/site/about.html#generative-ai-policy
+     Keep one of the two paragraphs and adapt it. -->
+
+The authors used [tool, version] to assist with [language editing /
+formatting / code readability / ...] and to shape the content by
+[drafting part of the text / summarising the literature / suggesting
+methods / writing code for ...]. The authors checked all the content
+and take full responsibility for it.
+
+No generative AI tool was used in the preparation of this article.
+
 # References {.unnumbered}
 
 ::: {#refs}
