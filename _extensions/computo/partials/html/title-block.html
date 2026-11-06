@@ -1,0 +1,29 @@
+<header id="title-block-header" class="quarto-title-block default$if(quarto-template-params.banner-header-class)$ $quarto-template-params.banner-header-class$$endif$">
+
+  $status-alert.html()$
+
+  <div class="quarto-title-banner">
+    <div class="quarto-title column-body">
+      <h1 class="title"><a href="https://computo-journal.org">
+        <img src="logo_notext_white.png" height="60px">
+      </a> &nbsp; $title$</h1>
+      $if(subtitle)$
+      <p class="subtitle lead">$subtitle$</p>
+      $endif$
+      <p><a href="http://creativecommons.org/licenses/by/4.0/"><img src='https://i.creativecommons.org/l/by/4.0/80x15.png' alt='Creative Commons BY License'></a>
+ISSN 2824-7795</p>
+      $if(categories)$
+        $if(quarto-template-params.title-block-categories)$
+      <div class="quarto-categories">
+        $for(categories)$
+        <div class="quarto-category">$categories$</div>
+        $endfor$
+      </div>
+        $endif$
+      $endif$
+    </div>
+  </div>
+    
+  $title-metadata.html()$
+
+  </header>

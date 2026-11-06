@@ -1,0 +1,14 @@
+$if(submitted)$
+<div id="quarto-draft-alert" class="alert alert-warning" role="alert">
+  <i class="bi bi-exclamation-triangle-fill"></i>
+  <strong>Draft submission.</strong> This article has been submitted to Computo but has not been accepted or published yet.
+</div>
+<!-- A submitted article is not citable yet: hide Quarto's "Citation" appendix -->
+<style>#quarto-citation { display: none; }</style>
+$endif$
+$if(accepted)$
+<div id="quarto-draft-alert" class="alert alert-info" role="alert">
+  <i class="bi bi-info-circle-fill"></i>
+  <strong>In press.</strong> This article has been accepted by Computo but has not been formally published yet.
+</div>
+$endif$

@@ -1,0 +1,94 @@
+title: Computo Format Template
+author: Computorg Team
+version: 1.0.4
+contributes:
+  shortcodes:
+    - shortcodes.lua
+  formats:
+    common:
+      # define below YAML configuration common to all formats
+      filters:
+        # You can include here Lua filters from your extension format
+        - abstract-section
+        - diagram
+        - pseudocode
+        - list-table
+        - color-text.lua
+        - status.lua
+        - canonical.lua
+      knitr:
+        opts_chunk:
+          screenshot.opts:
+            cliprect: viewport
+            vwidth: 640
+            vheight: 400
+      number-sections: true
+      toc: true
+      toc-title: Contents
+      code-copy: true
+      code-block-background: true
+      # Chicago author-date without the "accepted <date>" clause in the citation of the article
+      csl: computo.csl
+    pdf:
+      echo: false
+      pdf-engine: lualatex
+      papersize: a4
+      geometry: 
+        - a4paper
+        - textheight=24cm
+        - textwidth=15.5cm
+      fontfamily: libertinus
+      fontsize: 11pt
+      highlight-style: github
+      monofont: Latin Modern Mono
+      monofontoptions:
+        - Scale=0.92
+      include-in-header:
+        - "partials/pdf/include-in-header.tex"
+      template-partials:
+        - "partials/pdf/before-body.tex"
+      format-resources:
+        - logo_text_white.pdf
+      filters:
+        - pdf-table-fit.lua
+    html:
+      theme: [custom.scss]
+      title-block-banner: "#034E79"
+      title-block-banner-color: "#FFFFFF"
+      license: "CC BY"
+      reference-section-title: Bibliography
+      date-format: long
+      format-resources:
+        - logo_notext_white.png
+      hover-citations: true
+      hover-footnotes: true
+      fig-format: svg
+      knitr:
+        opts_chunk:
+          dev: svglite
+      highlight-style: github
+      code-block-background: true
+      code-tools:
+        source: true
+        toggle: false
+        caption: "source"
+      code-copy: true
+      code-summary: "Hide/Show the code"
+      code-fold: hide
+      anchor-sections: true
+      link-external-icon: false
+      link-external-newwindow: true
+      crossref:
+      sec-prefix: Section
+      eq-prefix: Equation
+      fig-prefix: Figure
+      tbl-prefix: Table
+      html-math-method: mathjax
+      include-in-header:
+        - "partials/html/mathjax-ams.html"
+      template-partials:
+        - "partials/html/title-block.html"
+        - "partials/html/title-metadata.html"
+        - "partials/html/status-alert.html"
+      filters:
+        - strip-legacy-plotly-mathjax.lua
